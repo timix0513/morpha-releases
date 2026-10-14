@@ -9,10 +9,15 @@ man Claude im Gespräch selbst zeigt.
 
 Hier liegen die fertigen Versionen für Mac und Windows; die App aktualisiert sich von hier.
 
+![Heute: oben „Jetzt“ mit dem nächsten Termin, wie viel offen ist und einem Vorschlag, darunter die Lektüre bis zur nächsten Sitzung](bilder/heute.png)
+
+*Bilder mit erfundenen Kursen. Die Anleitung beschreibt die Oberfläche ab 0.9.0; ältere
+Versionen hatten eine Startseite mit Kacheln.*
+
 **Inhalt:** [Herunterladen](#herunterladen) · [Installieren](#installieren) ·
 [Einrichtung, Einstellungen und Hilfe](#einrichtung-einstellungen-und-hilfe) ·
-[So läuft eine Vorlesung](#so-läuft-eine-vorlesung) · [Startseite, Stundenplan und Kurse](#startseite-stundenplan-und-kurse) ·
-[Aufnehmen](#aufnehmen) · [Auswertung](#auswertung) · [Nachhören](#nachhören) ·
+[So läuft eine Vorlesung](#so-läuft-eine-vorlesung) · [Heute, Woche und Kurse](#heute-woche-und-kurse) ·
+[Aufnehmen](#aufnehmen) · [Auswertung](#auswertung) · [Nachhören](#nachhören) · [Teilen](#teilen) ·
 [Lektüre und Reader](#lektüre-und-reader) · [Lernfortschritt](#lernfortschritt) ·
 [Updates und Daten](#updates-und-daten) · [Mit Claude lernen (MCP)](#mit-claude-lernen-mcp)
 
@@ -43,9 +48,10 @@ Aufnehmen fragt die App nach dem Mikrofon. Das Whisper-Modell (Standard
 
 ## Einrichtung, Einstellungen und Hilfe
 
-**Einrichtung.** Beim ersten Start (ab 0.6.0 auch einmal nach dem Update) führt ein
-Assistent Schritt für Schritt durch alles Wichtige: „Weiter“ (oder `Enter`) und
-„Überspringen“, oben „Zurück“ und „Später“ (`Esc`). Jede Wahl gilt sofort, nichts geht
+**Einrichtung.** Beim ersten Start kommt eine Checkliste mit allem Wichtigen. Der erste
+offene Schritt ist aufgeklappt: „Weiter“ (oder `Enter`) hakt ihn ab und öffnet den
+nächsten; bei Stundenplan und Claude führt der Knopf die Aktion gleich aus, daneben steht
+„Überspringen“. „Später“ (`Esc`) schliesst sie. Jede Wahl gilt sofort, nichts geht
 verloren, wenn man mittendrin aufhört. Die Schritte:
 
 1. **Mikrofon** wählen und mit „Pegel testen“ prüfen, ob es ankommt.
@@ -54,15 +60,15 @@ verloren, wenn man mittendrin aufhört. Die Schritte:
    zuhören* (nur die Folie, markieren mit M, F, D).
 3. **Stundenplan** – die `.ics`-Datei direkt hier importieren und den Kursen zuordnen.
 4. **Transkription** – welches Whisper-Modell.
-5. **Erinnerung** an die Vorlesung (siehe [Mitteilungen](#startseite-stundenplan-und-kurse)).
+5. **Erinnerung** an die Vorlesung (siehe [Mitteilungen](#heute-woche-und-kurse)).
 6. **Claude als Lernbegleiter** – ein Knopf trägt Vorlesung-Sync in Claude Desktop ein,
    der Befehl für Claude Code steht zum Kopieren daneben (siehe [MCP](#mit-claude-lernen-mcp)).
 
 Wieder öffnen: Hilfe → „Einrichtung …“.
 
-**Einstellungen.** Vorlesung-Sync → „Einstellungen …“ (`⌘,`; Windows: Datei →
-„Einstellungen …“, `Strg+,`) oder oben rechts auf der Startseite. Sie gelten für diesen
-Rechner und werden sofort gespeichert.
+**Einstellungen.** Das Zahnrad unten in der Seitenleiste, oder Vorlesung-Sync →
+„Einstellungen …“ (`⌘,`; Windows: Datei → „Einstellungen …“, `Strg+,`). Sie gelten für
+diesen Rechner und werden sofort gespeichert.
 
 | Einstellung | Standard | Wozu |
 |---|---|---|
@@ -72,43 +78,77 @@ Rechner und werden sofort gespeichert.
 | Wie schreibst du mit? | Tastatur | Die drei Modi wie in der Einrichtung. Jeder Schalter im Recorder lässt sich danach weiter einzeln umlegen. |
 | Tastenleiste und Erklärungen | aus | Die Leiste mit allen Tasten unter den Folien und die Erklärtexte während der Aufnahme. Aus: `?` zeigt die Tasten, wenn man sie braucht. |
 | Bei Vorlesungsbeginn melden | an, 5 min vorher | Siehe Mitteilungen. |
-| Farben im Reader | leer | Was jede der acht Markierfarben bedeutet, z.B. Gelb „wichtig“, Rot „widerspricht“. Der Reader zeigt es bei der Farbwahl, im Markdown-Export steht es dabei, und Claude liest es mit. |
+| Claude | – | Ob Vorlesung-Sync in Claude Desktop eingetragen ist, mit Knopf zum Eintragen. |
 | Whisper-Modell | `large-v3-turbo` | Kleiner = schneller, aber ungenauer. Unter Windows (nur CPU) ist `large-v3-turbo-q5_0` einen Versuch wert. Ein neues Modell lädt die App bei der nächsten Transkription. |
+| Grafikkarte nutzen | an | Nur Windows, nur mit passendem Grafiktreiber: Whisper rechnet auf der Grafikkarte, viel schneller. Aus, falls dabei Unsinn herauskommt. |
+| Farben im Reader | leer | Was jede der acht Markierfarben bedeutet, z.B. Gelb „wichtig“, Rot „widerspricht“. Der Reader zeigt es bei der Farbwahl, im Markdown-Export steht es dabei, und Claude liest es mit. |
+| Dein Name | leer | Steht in jeder Vorlesung, die du [teilst](#teilen) („aufgenommen von …“). |
 
 Mikrofon und Pegel gelten ab der nächsten Aufnahme – während einer laufenden ab „Pause“ →
 „Fortsetzen“ –, die Qualität ab der nächsten Aufnahme.
 
-**Hilfe.** Hilfe → „Vorlesung-Sync-Hilfe“ (oder oben rechts auf der Startseite): der Ablauf
-einer Vorlesung und alle Tasten von Aufnahme, Nachhören, Großansicht und Reader.
+**Hilfe.** Hilfe → „Vorlesung-Sync-Hilfe“: der Ablauf einer Vorlesung, wo was steht, Teilen
+und alle Tasten von Heute, Aufnahme, Nachhören, Großansicht und Reader.
 
 ## So läuft eine Vorlesung
 
-1. **Einmal pro Semester:** Stundenplan als `.ics` importieren und den Kursen zuordnen,
-   pro Kurs den Ordner angeben, in dem die Folien landen.
-2. **Im Hörsaal:** Auf der Startseite steht der laufende Termin – „Aufnahme starten“.
-   Folien-PDF anhängen (oder später nachreichen), mitklicken, markieren, schreiben.
+1. **Einmal pro Semester:** Stundenplan als `.ics` importieren (Woche → ⋯) und den Kursen
+   zuordnen, pro Kurs unter ⋯ → „Plan & Ordner“ den Ordner angeben, in dem die Folien landen.
+2. **Im Hörsaal:** Unter **Heute** steht der Termin, sobald er gleich beginnt – „Aufnehmen“
+   (oder `R`). Folien-PDF anhängen (oder später nachreichen), mitklicken, markieren, schreiben.
 3. **Danach:** „Stop & speichern“, in der Auswertung „Transkription starten“. Das
    Transkript steht dann pro Folie, die markierten Stellen mit dem, was dazu gesagt wurde.
 4. **Lernen:** Nachhören, exportieren, oder Claude die Vorlesung mit dir nachbereiten
-   lassen.
+   lassen – Heute schlägt es nach der Vorlesung vor.
 
-## Startseite, Stundenplan und Kurse
+## Heute, Woche und Kurse
 
-**Startseite.** Oben die Karte *Jetzt / Als Nächstes*: der laufende Termin (ab 10 Minuten
-vor Beginn rot) mit „Aufnahme starten“, sonst der nächste. Laufen zwei Kurse gleichzeitig,
-steht der andere darunter. Darunter die nächsten fälligen Lektüren mit Restzeit, der
-Lernfortschritt, die Woche als Raster (✓ aufgenommen, blass verpasst, gestrichelt
-Hinweise wie Prüfungen) und die Kurse als Kacheln. Ein Klick auf einen Termin holt ihn in
-die Karte, `×` zurück zum aktuellen, ein Doppelklick öffnet den Kurs (ab 0.7.1). Lektüre, Lernfortschritt und Kurse lassen sich mit
-einem Klick auf ihren Titel zuklappen; die App merkt sich das (ab 0.7.0).
+**Das Fenster.** Links die Seitenleiste: *Heute*, *Woche*, darunter deine Kurse, jeder mit
+eigener Farbe, und eingeklappt das Archiv. Unten das Zahnrad für die Einstellungen – ein
+Punkt daran heisst, ein Update ist da. Aufnahme, Auswertung und Reader nehmen das ganze
+Fenster; „Zurück“ oder `Esc` führt zurück. **Neu** (oben rechts oder `⌘N`, Windows
+`Strg+N`) legt eine Vorlesung, einen Text oder einen Kurs an.
 
-**Stundenplan.** „Stundenplan importieren…“ über der Woche liest eine Kalenderdatei
-(UniPortal, Google, iCloud, Outlook). Danach ordnest du jeden Titel einem Kurs zu – als
-**Vorlesung** (aufnehmbar), **Hinweis** (Prüfung, Frist) oder **ausblenden**. Die App
-schlägt die Zuordnung vor, auch bei abweichenden Namen. Danach liegen die Werkzeuge hinter
-dem Zahnrad ⚙ rechts über der Woche: „Neu importieren“ ersetzt die Termine und behält die
-Zuordnung, „Zuordnung“ ändert sie später, „Entfernen“ nimmt den Stundenplan heraus. Eine Aufnahme aus dem
-Kalender heisst automatisch z.B. „VL05 Nachfrage I“ (Nummer + Thema).
+**Heute.** Oben die Fläche *Jetzt* – sie zeigt immer genau das, was gerade dran ist, mit
+einem Knopf dafür:
+
+- Läuft eine Aufnahme: Uhr, Folie und Marker, „Zur Aufnahme“. Ist eine unterbrochen
+  (pausiert, Absturz): „Fortsetzen“.
+- Beginnt ein Termin in den nächsten 15 Minuten oder läuft er: Kurs, Raum, „Aufnehmen“ (`R`)
+  – und was fehlt (Folien, ungelesene Lektüre). Laufen zwei Kurse gleichzeitig, steht der
+  andere darunter zum Wechseln.
+- Kurz nach einer Vorlesung: wie weit die Transkription ist, und „Mit Claude nachbereiten“ –
+  der Knopf kopiert den passenden Auftrag für Claude.
+- Sonst: der nächste Termin und **wie viel bis zu den nächsten Sitzungen offen ist**, in
+  Minuten – fällige Anki-Karten (je etwa 10 Sekunden) plus die Lektüre, die bis zur nächsten
+  Sitzung ihres Kurses gelesen sein soll. Überfälliges zählt nicht mit, es steht als
+  „1 überfällig“ daneben. Darunter ein **Vorschlag**: zuerst der Text mit der frühesten
+  Frist („Lesen“), sonst die Anki-Karten des Kurses mit den meisten fälligen. `Enter` führt
+  den Vorschlag aus.
+- In der ersten Woche eine kurze Checkliste: Stundenplan, Claude, erste Aufnahme.
+
+Darunter bis zu drei **Module**: *Lektüre bis zur nächsten Sitzung*, *Diese Woche*, *Offene
+Fragen* (alle ?-Stellen aus Vorlesungen und Texten) und *Fortschritt je Kurs* (Anki). Welche
+und in welcher Reihenfolge: „Startseite anpassen“ ganz unten – ein- und ausschalten,
+ziehen. Ab Werk Lektüre und Woche. Hell oder dunkel richtet sich nach dem System.
+
+![Heute im dunklen Modus](bilder/heute-dunkel.png)
+
+**Woche.** Die Termine der Woche als Raster in den Kursfarben: ✓ aufgenommen, blass
+vergangen, umrandet Hinweise wie Prüfungen oder Abgaben. Heute ist rot markiert, eine Linie
+zeigt die Uhrzeit. Oben die Zeile *Lesen*: welcher Text an welchem Tag fällig ist. Ein
+Klick auf einen Termin öffnet den Kurs, ein Klick auf einen Text den Reader. ‹ Heute ›
+blättert.
+
+![Woche: Termine als Raster in den Kursfarben, darüber die Texte, die an dem Tag fällig sind](bilder/woche.png)
+
+**Stundenplan.** Woche → ⋯ → „Stundenplan importieren …“ (solange keiner da ist, auch als
+Knopf in der leeren Woche) liest eine Kalenderdatei (UniPortal, Google, iCloud, Outlook).
+Danach ordnest du jeden Titel einem Kurs zu – als **Vorlesung** (aufnehmbar), **Hinweis**
+(Prüfung, Frist) oder **ausblenden**. Die App schlägt die Zuordnung vor, auch bei
+abweichenden Namen. Ebenfalls unter ⋯: „Neu importieren“ ersetzt die Termine und behält die
+Zuordnung, „Zuordnung“ ändert sie später, „Entfernen“ nimmt den Stundenplan heraus. Eine
+Aufnahme aus dem Kalender heisst automatisch z.B. „VL05 Nachfrage I“ (Nummer + Thema).
 
 **Mitteilungen.** Beginnt eine Vorlesung aus dem Stundenplan (oder den Wochenterminen eines
 Kurses), die noch nicht aufgenommen ist, meldet sich die App – standardmässig 5 Minuten
@@ -118,16 +158,22 @@ im Hintergrund oder minimiert. Ein- und ausschalten und den Vorlauf ändern unte
 Einstellungen; dort gibt es auch eine Probe-Mitteilung. Beim ersten Mal fragt macOS bzw.
 Windows, ob die App Mitteilungen senden darf.
 
-**Kurse.** Ein Klick auf die Kachel öffnet die Kursseite: nächste Termine, Vorlesungen,
-Lektüre, „Plan & Ordner“, Umbenennen, Entfernen.
+**Kurse.** Ein Klick auf einen Kurs in der Seitenleiste öffnet die Kursseite. Oben der
+nächste Termin, der Raum und der Anki-Stand, darunter was **bis zur nächsten Sitzung** zu
+lesen ist, die **Vorlesungen** (✓ grün = transkribiert) und die **Texte** des Kurses.
+Ältere und erledigte Aufgaben sind eingeklappt.
 
-- „● Aufnahme“ legt die nächste Vorlesung an (höchste VL-Nummer + 1) und nimmt sofort auf.
-- „+ Kurs“ legt einen Kurs an, auch bevor es eine Vorlesung dazu gibt. Heisst ein Kurs
-  nach dem Umbenennen wie ein anderer, werden beide zusammengelegt. Entfernen lässt die
-  Vorlesungen stehen, nur ohne Kurs.
-- „+ Vorlesung“ auf der Startseite legt eine Vorlesung von Hand an, mit oder ohne PDF.
-  PowerPoint vorher als PDF exportieren. „Bearbeiten“ an einer Vorlesung ändert Titel und
-  Kurs.
+![Kursseite: Lektüre bis Montag, Vorlesungen mit Datum und Dauer, Texte](bilder/kurs.png)
+
+- **Aufnehmen** legt die nächste Vorlesung an (höchste VL-Nummer + 1) und nimmt sofort auf.
+- **+** legt eine Vorlesung (mit oder ohne PDF, PowerPoint vorher als PDF exportieren),
+  einen Text oder eine Lese-Aufgabe an oder holt PDFs aus dem Kursordner.
+- **⋯** am Kurs: *Plan & Ordner*, *Umbenennen*, *Farbe*, *Archivieren* (der Kurs rutscht ins
+  Archiv der Seitenleiste und zählt bei „offen“ nicht mehr mit – fürs nächste Semester),
+  *Entfernen* (die Vorlesungen bleiben, nur ohne Kurs). Heisst ein Kurs nach dem Umbenennen
+  wie ein anderer, werden beide zusammengelegt.
+- Eine Zeile anklicken öffnet die Vorlesung bzw. den Text. Fährt man darüber, erscheint
+  rechts ⋯ mit *Bearbeiten* (Titel und Kurs), *Umbenennen*, *Löschen*.
 - **Plan & Ordner:** der Ordner, in dem die Folien des Kurses landen, und Wochentermine
   für Kurse, die nicht im Stundenplan stehen. Mit Kursordner zeigt der Recorder die
   neuesten PDFs daraus (bis zwei Ebenen tief); ein Klick hängt sie an – bewusst nicht
@@ -168,7 +214,8 @@ einblenden: in dieser Karte oder unter Einstellungen.
 
 **Zur Übersicht, während die Aufnahme läuft.** „← Übersicht“ geht jederzeit – die
 Aufnahme läuft weiter. Unten steht dann eine Leiste „Aufnahme läuft“ mit der Uhr (rot,
-wenn kein Ton ankommt) und „Zur Aufnahme“. Kalender, Kurse, Reader, ältere Auswertungen,
+wenn kein Ton ankommt) und „Zur Aufnahme“, unter Heute zeigt *Jetzt* dasselbe mit Folie
+und Markern. Heute, Woche, Kurse, Reader, ältere Auswertungen,
 Einstellungen und Hilfe gehen normal; eine zweite Aufnahme starten geht nicht, und die
 laufende Vorlesung lässt sich solange nicht löschen oder umbenennen.
 
@@ -232,9 +279,9 @@ Folie.
 
 **Pause und später weiter.** „Pause“ hält die Aufnahme an. „Später weiter“ sichert alles
 und beendet die Sitzung – die App darf zu, der Rechner neu starten. Die Vorlesung steht
-dann als *pausiert* in der Übersicht, „Fortsetzen“ macht an derselben Folie und Uhrzeit
+dann unter Heute bei *Jetzt* (und auf der Kursseite als *pausiert*), „Fortsetzen“ macht an derselben Folie und Uhrzeit
 weiter. Das geht auch nach einem Absturz (*Aufnahme unterbrochen*) und über „Weiter
-aufnehmen“ in der Auswertung nach einem Stop (ein vorhandenes Transkript wird dann
+aufnehmen“ (⋯ in der Auswertung) nach einem Stop (ein vorhandenes Transkript wird dann
 verworfen). Gespeichert wird laufend alle paar Sekunden – ein Absturz kostet Sekunden,
 nicht die Vorlesung.
 
@@ -243,8 +290,11 @@ nicht beendet. Wird ein Fenster während der Aufnahme geschlossen, warnt die App
 
 ## Auswertung
 
-Nach dem Stop öffnet sich die Auswertung der Vorlesung (später über die Übersicht oder
-die Kursseite).
+Nach dem Stop öffnet sich die Auswertung der Vorlesung (später über die Kursseite). Oben
+rechts „Nachhören“, daneben Teilen (Exporte, Weitergeben) und ⋯ (Großansicht, Weiter
+aufnehmen, Folienzuordnung, Neu transkribieren).
+
+![Auswertung: markierte Stellen mit dem, was dazu gesagt wurde, darunter das Transkript pro Folie](bilder/auswertung.png)
 
 - **Transkription:** Sprache wählen, „Transkription starten“. Läuft lokal mit Whisper, mit
   dem Modell aus den Einstellungen („ändern“ führt hin); auf dem Mac rechnet man mit etwa
@@ -253,8 +303,8 @@ die Kursseite).
   Füllsätze („Vielen Dank.“); solche Schleifen filtert die App heraus (ab 0.7.0).
 - **Zusammenfassung:** schreibt Claude auf Wunsch (Prompt „Zusammenfassung“, siehe
   [MCP](#3-ausprobieren)). Sie steht oben in der Auswertung, im Markdown-Export und in der
-  PDF mit Transkript; „Zurücknehmen“ holt die vorige Fassung zurück.
-  „Neu transkribieren“ (z.B. mit anderer Sprache) ersetzt das Transkript.
+  PDF mit Transkript; „Zurücknehmen …“ (⋯ neben der Überschrift) holt die vorige Fassung
+  zurück. „Neu transkribieren …“ (⋯ oben, z.B. mit anderer Sprache) ersetzt das Transkript.
 - **Pro Folie:** Thumbnail, Marker, Redezeit, das Gesagte und deine Notizen. Ein Klick
   öffnet die einzelnen Sätze mit Zeitstempel (Klick spielt ab), den Satz davor und danach
   und den Folientext. Sortierbar „nach Folie“ oder „nach Redezeit“. Jeder Satz landet
@@ -262,7 +312,7 @@ die Kursseite).
   zerschnitten.
 - **Markierte Stellen:** alle ★ ? ≡, offene Fragen zuerst, mit Folie und dem Gesagten der
   20 Sekunden davor; ▶ spielt ab dort.
-- **Großansicht:** „Großansicht“ oder ein Klick aufs Folienbild: die Folie gross mit allen
+- **Großansicht:** ⋯ → „Großansicht“ oder ein Klick aufs Folienbild: die Folie gross mit allen
   Zeichnungen, rechts das Gesagte Satz für Satz (Klick spielt ab), Marker als Knöpfe,
   Notizen und Folientext. `←` / `→` blättert, `Leertaste` spielt die Folie ab, `Esc` zurück.
 - **Folien fehlen noch:** PDF einspielen oder aus dem Kursordner wählen. Das Transkript
@@ -270,7 +320,7 @@ die Kursseite).
 - **Folienzuordnung:** Wurde ohne Folien aufgenommen, schlägt die App vor, welche
   PDF-Seite zu welcher getippten Nummer gehört (aus Stichworten, Gesagtem und
   Reihenfolge) – bitte prüfen, Seitenzahl ändern, „Zuordnung übernehmen“.
-- **Exportieren ▾:**
+- **Exportieren** (Teilen-Knopf oben):
   - *PDF mit Transkript* – zum Lesen, Ausdrucken, Weitergeben: oben die Zusammenfassung,
     dann jede Folie mit deinen Zeichnungen, darunter Notiz, markierte Stellen und das
     Gesagte mit Zeitstempeln.
@@ -283,7 +333,7 @@ die Kursseite).
 
 ## Nachhören
 
-„▶ Nachhören“ in der Auswertung: Audio mit mitlaufender Folie, Zeichnungen und
+„Nachhören“ oben rechts in der Auswertung: Audio mit mitlaufender Folie, Zeichnungen und
 Transkript (Folie und Zeichnungen gehen auch schon ohne Transkript). Klick auf einen Satz
 springt dorthin. Tempo und Stelle merkt sich die App pro Vorlesung.
 
@@ -295,33 +345,58 @@ springt dorthin. Tempo und Stelle merkt sich die App pro Vorlesung.
 | `+` / `-` | schneller / langsamer (1–2×) |
 | `Esc` | zurück zur Auswertung |
 
+## Teilen
+
+Für alle, die gefehlt haben – und für langsame Rechner: Eine Vorlesung wird eine Datei
+(`VL05 Nachfrage I.vorlesung`), die du per AirDrop, Messenger, Mail oder Stick weitergibst.
+Ohne Server und ohne Konto.
+
+- **Weitergeben:** in der Auswertung Teilen → „Als Datei weitergeben …“. Ton und
+  Folienwechsel gehen immer mit, Folien, Transkript und Zusammenfassung nach Wahl; deine
+  Marker, Notizen und Zeichnungen nur, wenn du sie ankreuzt. Ohne Folien ist die Datei
+  kleiner, wenn die anderen die PDF schon haben. 90 Minuten Ton sind etwa 43 MB. Dein Name
+  aus den Einstellungen steht dabei („aufgenommen von …“).
+- **Bekommen:** Datei doppelklicken, aufs Fenster ziehen oder Ablage (Windows: Datei) →
+  „Vorlesung importieren …“ (`⌘O` / `Strg+O`). Die App zeigt, was drin ist, schlägt den Kurs
+  vor und legt die Vorlesung zum verpassten Termin in die Woche.
+- **Transkribieren lassen:** Ist dein Rechner langsam (Windows ohne Grafikkarte), teil die
+  Vorlesung ohne Transkript mit jemandem, der einen schnelleren hat. Dort transkribieren und
+  unter Teilen „Transkript an … zurückschicken …“ – die kleine Datei ziehst du auf dein
+  Fenster, das Transkript hängt sich an deine Vorlesung. Hast du nach dem Teilen weiter
+  aufgenommen, passt es nicht mehr; dann neu teilen.
+
+Mitschnitte nur weitergeben, wo Aufnahmen erlaubt sind.
+
 ## Lektüre und Reader
 
-Pflichttexte lesen, markieren und die Fristen im Blick haben. Auf der Kursseite steht
-dafür der Abschnitt **Lektüre**: oben die Aufgaben nach Frist mit Fortschritt und
-Restzeit, darunter die Texte.
+Pflichttexte lesen, markieren und die Fristen im Blick haben. Auf der Kursseite steht oben,
+was bis zur nächsten Sitzung zu lesen ist, mit Restzeit, darunter die Texte; unter Heute
+zählt die Lektüre bei „offen“ mit.
 
-- **Texte aufnehmen:** „+ PDF“, „Aus Kursordner…“ oder PDFs auf den Abschnitt ziehen.
+- **Texte aufnehmen:** Neu → „Text …“, auf der Kursseite + → „Aus dem Kursordner …“ oder
+  PDFs auf die Kursseite ziehen.
   Auch ein Scan mit 600 Seiten ist sofort da.
 - **Scans:** Hat eine PDF keinen Text (eingescannt), erkennt die App ihn im Hintergrund –
   eingebaut, auf dem Mac mit Vision, unter Windows mit der Windows-Texterkennung. Den
   Stand zeigen Bibliothek und Reader („Texterkennung 34/120“). Danach lässt sich im Scan
   Text markieren und suchen wie in jeder anderen PDF (ab 0.7.0).
-- **Aufgabe anlegen:** „+ Aufgabe“ – Text, PDF-Seiten von–bis und die Sitzung, bis zu der
+- **Aufgabe anlegen:** auf der Kursseite + → „Aufgabe …“ (oder ⋯ an einem Text) – Text, PDF-Seiten von–bis und die Sitzung, bis zu der
   er gelesen sein soll. Verschiebt sich der Termin im Stundenplan, wandert die Frist mit.
   Aus einem Syllabus legt Claude die Aufgaben an (siehe [Prompts](#3-ausprobieren)).
-- **Als gelesen markieren:** „Gelesen“ neben einer Aufgabe markiert alle ihre Seiten auf
-  einmal – z.B. auf Papier gelesen. „✓ Gelesen“ nimmt es wieder zurück (ab 0.7.1).
+- **Als gelesen markieren:** ⋯ an einer Aufgabe → „Als gelesen markieren“ markiert alle
+  ihre Seiten auf einmal – z.B. auf Papier gelesen.
 
-**Der Reader** (ab 0.7.0 neu, wie in Zotero):
+**Der Reader** (wie in Zotero):
+
+![Reader: Text mit Markierungen, rechts die Anmerkungen, oben der Fortschritt der Aufgabe](bilder/reader.png)
 
 - **Lesen:** scharf bei jedem Zoom. Zoom mit −/+, Strg/⌘ + Mausrad oder Pinch, „Breite
-  anpassen“ und „Ganze Seite“. Scrollen oder Blättern, Rand und Export im Menü ⋯. ☰ öffnet
-  links Inhaltsverzeichnis und Suche (`⌘F`). Links in der PDF funktionieren, „‹ S. …“
+  anpassen“ und „Ganze Seite“. Scrollen oder Blättern und Rand im Menü ⋯. Das
+  Seitenleisten-Symbol links oben öffnet Inhaltsverzeichnis und Suche (`⌘F`). Links in der PDF funktionieren, „‹ S. …“
   springt zurück. Hat die PDF eigene Seitenzahlen (Buchkapitel), zeigt der Reader überall
   diese („S. 213“) – eintippen geht auch. Der Bereich der Aufgabe ist links markiert, der
   Balken oben zeigt gelesene Seiten und Restzeit, „Weiter bei S. …“ springt zur ersten
-  ungelesenen. „Ganzes Dokument“ in der Auswahl links zeigt das für alle Seiten.
+  ungelesenen. „Bis S. … als gelesen markieren“ steht unter ⋯ daneben. „Ganzes Dokument“ in der Auswahl links zeigt das für alle Seiten.
 - **Markieren:** Text mit der Maus ziehen, dann eine Farbe (acht wie in Zotero),
   unterstreichen oder kopieren – oder eine Art: `M` ★ klausurrelevant, `F` ? nicht
   verstanden, `D` ≡ Definition, `T` These, `E` Einwand; danach gleich eine Notiz tippen.
@@ -339,7 +414,7 @@ Restzeit, darunter die Texte.
 - **Stift:** „Stift“ (`P`) mit Stift, Marker und Radierer – mit dem Surface-Stift oder der
   Maus, wie auf den Folien. „Rand“ (`R`) gibt rechts neben jeder Seite kariertes Papier –
   pro Text, nicht für alle.
-- **Exportieren** (Menü ⋯): *PDF mit Anmerkungen* – alle Markierungen, Notizen und Striche
+- **Exportieren** (Teilen-Knopf oben): *PDF mit Anmerkungen* – alle Markierungen, Notizen und Striche
   als echte PDF-Anmerkungen für Vorschau, Acrobat, GoodNotes oder Zotero; *Anmerkungen als
   Markdown* – Zitate mit Seite, Kommentar und Erklärung, für Obsidian oder Claude.
 
@@ -362,24 +437,26 @@ Unter Windows `Strg` statt `⌘`. Alle Tasten stehen auch in der App unter **Hil
 **Lesetempo und Restzeit.** Der Reader zählt, wie lange jede Seite im Blick ist – nur
 solange das Fenster sichtbar ist und in den letzten 3 Minuten gescrollt, getippt oder
 die Maus bewegt wurde. Gelesen ist eine Seite ab 15 Sekunden. Auf Papier gelesen? Unter
-jeder Seite und mit „Bis S. … gelesen“ lässt sie sich von Hand als gelesen (oder wieder
+jeder Seite und mit „Bis S. … als gelesen markieren“ lässt sie sich von Hand als gelesen (oder wieder
 ungelesen) markieren. Das Tempo lernt die App pro Text (am Anfang 2,5 min pro Seite);
 Restzeit = ungelesene Seiten × Tempo.
 
 ## Lernfortschritt
 
-Auf der Startseite pro Kurs: Anki-Karten nach Stufe (neu, lernend, jung, reif) und heute
-fällig, ?-Stellen offen/geklärt, Begriffe, Vorlesungen und die Aktivität der letzten 14
-Tage. Die Anki-Zahlen liest die App nicht selbst – Claude meldet sie über den MCP-Server
-(Prompt „Anki-Stand melden“, siehe unten).
+Fällige Anki-Karten zählen unter Heute bei „offen“ mit (mit dem Alter des Stands), das Modul
+*Fortschritt je Kurs* zeigt pro Kurs die fälligen Karten und den Anteil reifer, die
+Kursseite beides in ihrer Kopfzeile. Die Anki-Zahlen liest die App nicht selbst – Claude
+meldet sie über den MCP-Server (Prompt „Anki-Stand melden“, siehe unten).
 
 ## Updates und Daten
 
-Die App schaut beim Öffnen der Übersicht (höchstens alle 6 Stunden) hier nach einer
-neueren Version; dann steht oben „Version X ist da“ mit „Was ist neu?“. Sofort geht es
-über das Menü: Vorlesung-Sync → „Nach Updates suchen …“ (Windows: Hilfe → „Nach Updates
-suchen …“). Ein Klick lädt das Update, die App schliesst sich und startet neu. Während
-einer Aufnahme oder Transkription wird nie aktualisiert.
+Die App schaut beim Start (höchstens alle 6 Stunden) hier nach einer neueren Version; dann
+hat das Zahnrad unten in der Seitenleiste einen Punkt, und oben in den Einstellungen steht
+„Version X ist da“ mit „Was ist neu?“ und „Aktualisieren“. Sofort geht es über das Menü:
+Vorlesung-Sync → „Nach Updates suchen …“ (Windows: Hilfe → „Nach Updates suchen …“). Ein
+Klick lädt das Update, die App schliesst sich und startet neu. Während einer Aufnahme oder
+Transkription wird nie aktualisiert. Zurück zu einer älteren Version: gleich darunter
+„Vorherige Version installieren …“ – die Vorlesungen bleiben.
 
 Die Vorlesungen liegen getrennt von der App und bleiben bei Updates und beim
 Deinstallieren erhalten:
@@ -406,8 +483,8 @@ Es sind zwei MCP-Server, beide laufen nur lokal und Claude startet sie selbst:
 - **vorlesung-sync** – in der App enthalten (ab 0.4.2; Lernfortschritt ab 0.5.0). Die App
   muss offen sein, solange Claude damit arbeitet.
 - **Anki** (optional) – das Anki-Add-on „Anki MCP Server“. Damit legt Claude Karten direkt
-  in Anki an und meldet den Lernstand an die App; die Startseite zeigt ihn dann als
-  Lernfortschritt pro Kurs.
+  in Anki an und meldet den Lernstand an die App; Heute rechnet die fälligen Karten dann
+  in „offen“ ein.
 
 Gebraucht wird [Claude Desktop](https://claude.ai/download) oder
 [Claude Code](https://claude.com/claude-code).
