@@ -382,7 +382,10 @@ zählt die Lektüre bei „offen“ mit.
 - **Scans:** Hat eine PDF keinen Text (eingescannt), erkennt die App ihn im Hintergrund –
   eingebaut, auf dem Mac mit Vision, unter Windows mit der Windows-Texterkennung. Den
   Stand zeigen Bibliothek und Reader („Texterkennung 34/120“). Danach lässt sich im Scan
-  Text markieren und suchen wie in jeder anderen PDF (ab 0.7.0).
+  Text markieren und suchen wie in jeder anderen PDF (ab 0.7.0). Die App prüft jede Seite
+  einzeln, ein Deckblatt mit Text versteckt den Scan dahinter also nicht. Scheitert eine
+  Seite, läuft der Rest weiter; unter der Seite steht dann „kein Text erkannt · neu
+  erkennen“, in der Bibliothek „1 Seite ohne Text“.
 - **Aufgabe anlegen:** auf der Kursseite + → „Aufgabe …“ (oder ⋯ an einem Text) – Text, PDF-Seiten von–bis und die Sitzung, bis zu der
   er gelesen sein soll. Verschiebt sich der Termin im Stundenplan, wandert die Frist mit.
   Aus einem Syllabus legt Claude die Aufgaben an (siehe [Prompts](#3-ausprobieren)).
@@ -417,6 +420,16 @@ zählt die Lektüre bei „offen“ mit.
 - **Stift:** „Stift“ (`P`) mit Stift, Marker und Radierer – mit dem Surface-Stift oder der
   Maus, wie auf den Folien. „Rand“ (`R`) gibt rechts neben jeder Seite kariertes Papier –
   pro Text, nicht für alle.
+- **Drehen:** ↻ neben dem Zoom dreht die aktuelle Seite um 90° nach rechts, ⋯ → „Alle
+  Seiten drehen“ das ganze Dokument. Markierungen, Notizen und Striche drehen mit, `⌘Z`
+  dreht zurück; Export und Claude sehen die Seite gedreht. Liegt ein Scan laut
+  Texterkennung quer oder steht auf dem Kopf, steht unter der Seite „liegt quer ·
+  aufrecht drehen · passt so“ – ein Klick richtet sie auf, bei mehreren Seiten auch alle
+  auf einmal unter ⋯. Von selbst dreht die App nie.
+- **Text neu erkennen:** ⋯ → „Text dieser Seite neu erkennen“ oder „Text des Dokuments neu
+  erkennen …“, wenn in einem Scan Wörter fehlen oder falsch sind – auch bei Scans, die
+  schon eine schlechte Textebene mitbringen; die wird dabei ersetzt. Im selben Menü steht,
+  wie weit die Erkennung ist. In der Bibliothek: ⋯ an einem Text → „Text neu erkennen …“.
 - **Exportieren** (Teilen-Knopf oben): *PDF mit Anmerkungen* – alle Markierungen, Notizen und Striche
   als echte PDF-Anmerkungen für Vorschau, Acrobat, GoodNotes oder Zotero; *Anmerkungen als
   Markdown* – Zitate mit Seite, Kommentar und Erklärung, für Obsidian oder Claude.
