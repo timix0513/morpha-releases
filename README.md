@@ -52,7 +52,7 @@ Aufnehmen fragt die App nach dem Mikrofon. Das Whisper-Modell (Standard
 
 **Einrichtung.** Beim ersten Start kommt eine Checkliste mit allem Wichtigen. Der erste
 offene Schritt ist aufgeklappt: „Weiter“ (oder `Enter`) hakt ihn ab und öffnet den
-nächsten; bei Stundenplan und Claude führt der Knopf die Aktion gleich aus, daneben steht
+nächsten; bei Stundenplan, Claude und Anki führt der Knopf die Aktion gleich aus, daneben steht
 „Überspringen“. „Später“ (`Esc`) schliesst sie. Jede Wahl gilt sofort, nichts geht
 verloren, wenn man mittendrin aufhört. Die Schritte:
 
@@ -66,6 +66,9 @@ verloren, wenn man mittendrin aufhört. Die Schritte:
 6. **Claude verbinden** – „Mit Claude Desktop verbinden“ installiert Morpha als
    Erweiterung in Claude Desktop, der Befehl für Claude Code steht zum Kopieren daneben
    (siehe [MCP](#mit-claude-lernen-mcp)).
+7. **Anki verbinden** (optional) – „Add-on installieren“ öffnet das Morpha-Add-on in Anki;
+   Anki fragt, ob es installieren soll (siehe [Anki einrichten](#2-anki-einrichten-optional)).
+   Ohne Anki einfach überspringen.
 
 Wieder öffnen: Hilfe → „Einrichtung …“.
 
@@ -82,6 +85,7 @@ diesen Rechner und werden sofort gespeichert.
 | Tastenleiste und Erklärungen | aus | Die Leiste mit allen Tasten unter den Folien und die Erklärtexte während der Aufnahme. Aus: `?` zeigt die Tasten, wenn man sie braucht. |
 | Bei Vorlesungsbeginn melden | an, 5 min vorher | Siehe Mitteilungen. |
 | Claude | – | Ob Claude Desktop verbunden ist, mit Knopf „Verbinden“, und der Befehl für Claude Code. |
+| Anki | – | Ob das Morpha-Add-on in Anki läuft, mit Knopf „Installieren“ bzw. „Aktualisieren“, wenn die App ein neueres mitbringt. |
 | Whisper-Modell | `large-v3-turbo` | Kleiner = schneller, aber ungenauer. Unter Windows (nur CPU) ist `large-v3-turbo-q5_0` einen Versuch wert. Ein neues Modell lädt die App bei der nächsten Transkription. |
 | Grafikkarte nutzen | an | Nur Windows, nur mit passendem Grafiktreiber: Whisper rechnet auf der Grafikkarte, viel schneller. Aus, falls dabei Unsinn herauskommt. |
 | Farben im Reader | leer | Was jede der acht Markierfarben bedeutet, z.B. Gelb „wichtig“, Rot „widerspricht“. Der Reader zeigt es bei der Farbwahl, im Markdown-Export steht es dabei, und Claude liest es mit. |
@@ -461,8 +465,10 @@ Restzeit = ungelesene Seiten × Tempo.
 
 Fällige Anki-Karten zählen unter Heute bei „offen“ mit (mit dem Alter des Stands), das Modul
 *Fortschritt je Kurs* zeigt pro Kurs die fälligen Karten und den Anteil reifer, die
-Kursseite beides in ihrer Kopfzeile. Die Anki-Zahlen liest die App nicht selbst – Claude
-meldet sie über den MCP-Server (Prompt „Anki-Stand melden“, siehe unten).
+Kursseite beides in ihrer Kopfzeile. Die Zahlen meldet das Morpha-Add-on in Anki von
+selbst – nach dem Öffnen, nach dem Synchronisieren, nach dem Lernen und beim Schliessen
+(siehe [Anki einrichten](#2-anki-einrichten-optional)). Gezählt wird das Deck, das zum Kurs
+gehört, samt Unterdecks: auf der Kursseite ⋯ → „Anki-Deck …“.
 
 ## Updates und Daten
 
@@ -515,16 +521,17 @@ Die App ist das Gedächtnis des Semesters, Claude der Tutor. Über einen MCP-Ser
 der App steckt, liest Claude Vorlesungen, Folien, Transkripte, markierte Stellen,
 Stundenplan und Lektüre – und schreibt zurück: offene Fragen als geklärt markieren (mit
 Erklärung), Begriffe anlegen, Lese-Aufgaben aus einem Syllabus anlegen, Stellen in einem
-Text mit wörtlichem Zitat anstreichen, Anki-Karten mit ihrer Stelle verknüpfen. Alles, was Claude ändert, ist in der App als „von Claude“ zu
-sehen und lässt sich einzeln zurücknehmen.
+Text mit wörtlichem Zitat anstreichen, Anki-Karten anlegen – mit der Stelle, aus der sie
+stammen. Alles, was Claude ändert, ist in der App als „von Claude“ zu sehen und lässt sich
+einzeln zurücknehmen.
 
-Es sind zwei MCP-Server, beide laufen nur lokal:
+Alles läuft nur lokal:
 
-- **morpha** – in der App enthalten (bis 0.9 `vorlesung-sync`). Die App muss offen sein,
-  solange Claude damit arbeitet.
-- **Anki** (optional) – das Anki-Add-on „Anki MCP Server“. Damit legt Claude Karten direkt
-  in Anki an und meldet den Lernstand an die App; Heute rechnet die fälligen Karten dann
-  in „offen“ ein.
+- **morpha** – der MCP-Server, in der App enthalten (bis 0.9 `vorlesung-sync`). Die App
+  muss offen sein, solange Claude damit arbeitet.
+- **Morpha-Add-on für Anki** (optional) – damit legt Claude Karten über Morpha direkt in
+  Anki an, unter jeder steht die Stelle aus der Vorlesung, und Heute kennt den Anki-Stand.
+  Claude braucht dafür nichts Zusätzliches.
 
 Gebraucht wird [Claude Desktop](https://claude.ai/download) oder
 [Claude Code](https://claude.com/claude-code).
@@ -593,48 +600,44 @@ Danach Claude ganz beenden und neu öffnen.
 
 ### 2. Anki einrichten (optional)
 
-1. In Anki: Extras → Erweiterungen → „Erweiterungen herunterladen“, Code `124672614`
-   eingeben, Anki neu starten. Solange Anki offen ist, lauscht das Add-on auf
-   `http://127.0.0.1:3141` – nur auf diesem Rechner erreichbar.
-2. **Claude Desktop:** Claude → Einstellungen → Entwickler → „Konfiguration bearbeiten“,
-   in den `mcpServers`-Block (braucht [Node.js](https://nodejs.org) für `npx`):
+Gebraucht wird [Anki](https://apps.ankiweb.net) auf diesem Rechner.
 
-   ```json
-   "anki": {
-     "command": "npx",
-     "args": ["mcp-remote", "http://127.0.0.1:3141"]
-   }
-   ```
+**Ein Klick:** Hilfe → „Einrichtung …“, Schritt „Anki verbinden“ → „Add-on installieren“
+(oder Einstellungen → Anki → „Installieren“). Anki öffnet sich und fragt, ob es das
+Add-on „Morpha“ installieren soll – mit Ja bestätigen, dann **Anki beenden und neu
+öffnen**. Solange Anki offen ist, steht in den Einstellungen „Verbunden ✓“. Kein Node.js,
+kein Add-on-Code, keine Konfiguration.
 
-   Steht dort sonst nichts, sieht die ganze Datei so aus:
+Was das Add-on macht:
 
-   ```json
-   {
-     "mcpServers": {
-       "anki": {
-         "command": "npx",
-         "args": ["mcp-remote", "http://127.0.0.1:3141"]
-       }
-     }
-   }
-   ```
+- **Karten anlegen:** Bitte Claude um Karten („Mach Anki-Karten zu den ★-Stellen von
+  gestern“) – Claude legt sie über Morpha im Deck des Kurses an, mit deinen Notiztypen.
+  Rückgängig geht in Anki wie gewohnt (Bearbeiten → Rückgängig), Claude löscht nie Karten.
+- **Quelle auf der Rückseite:** Unter der Antwort steht, woher die Karte stammt, z.B.
+  „Mikroökonomie · VL03 · Folie 12 · 14:32 ▶“. Ein Klick öffnet Morpha genau dort, auch
+  während einer Aufnahme (sie läuft weiter). Das klappt auch bei geschlossener Morpha – sie
+  startet dann. Auf AnkiMobile und AnkiWeb fehlt die Zeile.
+- **Lernfortschritt:** siehe [Lernfortschritt](#lernfortschritt).
 
-   Danach Claude Desktop ganz beenden und neu öffnen.
+Welches Deck zu welchem Kurs gehört: auf der Kursseite ⋯ → „Anki-Deck …“ (oder Claude
+fragen). Dorthin legt Claude neue Karten des Kurses, und dieses Deck zählt die Startseite.
 
-   **Claude Code:**
+Bringt ein Update von Morpha ein neueres Add-on mit, steht in den Einstellungen unter Anki
+„Aktualisieren“ – derselbe Weg, danach Anki neu starten.
 
-   ```bash
-   claude mcp add --scope user --transport http anki http://127.0.0.1:3141
-   ```
-
-Welches Deck zu welchem Kurs gehört, findet Claude beim ersten „Anki-Stand melden“ selbst
-heraus und fragt nur nach, wenn mehrere Decks passen.
+**Bisher mit dem Anki-MCP eingerichtet** (Add-on „Anki MCP Server“, Code `124672614`, mit
+Node.js)? Das braucht es nicht mehr. Erst das Morpha-Add-on installieren, dann in Claude
+Desktop den Eintrag `"anki"` aus der Konfiguration entfernen (Claude → Einstellungen →
+Entwickler → „Konfiguration bearbeiten“; in Claude Code `claude mcp remove anki`) und in
+Anki das Add-on „Anki MCP Server“ (Extras → Erweiterungen → Löschen). Sonst legt Claude
+Karten womöglich daran vorbei an – ohne Quelle auf der Rückseite.
 
 ### 3. Ausprobieren
 
 Morpha (und Anki) öffnen und Claude fragen: *„Was steht diese Woche in Morpha an?“*
 Claude antwortet mit den Terminen, offenen Fragen und fälliger Lektüre. In Claude Code
-zeigt `claude mcp list` beide Server als „Connected“.
+zeigt `claude mcp list` den Server als „Connected“. Mit Anki: *„Welche Decks habe ich in
+Anki?“*
 
 Fertige Abläufe gibt es als Prompts – in Claude Desktop über „+“ im Eingabefeld →
 Morpha, in Claude Code als Befehl:
@@ -644,8 +647,7 @@ Morpha, in Claude Code als Befehl:
 | Nachbereitung | `/mcp__morpha__nachbereitung` | erst aus dem Kopf abrufen, dann Abgleich mit dem Gesagten, offene Fragen klären, Begriffe festhalten |
 | Zusammenfassung | `/mcp__morpha__zusammenfassung` | Kernaussagen, Ablauf mit Folien, Begriffe, Prüfungsrelevantes und Offenes – erst nach deinem Okay in die App |
 | Syllabus | `/mcp__morpha__syllabus` | Syllabus lesen, Lese-Aufgaben mit Fristen vorschlagen, nach Bestätigung anlegen |
-| Anki-Stand melden | `/mcp__morpha__anki_stand` | Decks zählen und als Lernfortschritt an die App melden |
-| Anki lernen | `/mcp__morpha__anki_lernen` | fällige Karten eines Kurses abfragen, Unverstandenes aus der Vorlesung erklären, danach den Stand melden |
+| Anki lernen | `/mcp__morpha__anki_lernen` | fällige Karten eines Kurses im Chat abfragen, Unverstandenes aus der Vorlesung erklären; bewertet wird danach in Anki |
 
 Sonst einfach fragen: „Erklär mir meine ?-Stellen aus Mikro VL05“, „Frag mich die
 Definitionen von letzter Woche ab“, „Mach Anki-Karten zu den ★-Stellen von gestern“.
@@ -661,4 +663,6 @@ Definitionen von letzter Woche ab“, „Mach Anki-Karten zu den ★-Stellen von
 | „Fehler 404“ | Die App ist zu alt: Morpha → „Nach Updates suchen …“. |
 | „… ist kein gültiges JSON“ | Die App fasst eine kaputte `claude_desktop_config.json` nicht an (die Erweiterung geht trotzdem). Die Datei in Claude → Einstellungen → Entwickler → „Konfiguration bearbeiten“ reparieren. |
 | Server fehlt in Claude Desktop (Eintrag von Hand) | Meist ein Komma zu viel oder zu wenig in der JSON-Datei. Danach Claude ganz beenden. Logs: Mac `~/Library/Logs/Claude/`, Windows `%APPDATA%\Claude\logs\`. |
-| Anki-Werkzeuge fehlen | Ist Anki offen und das Add-on aktiv (Extras → Erweiterungen)? Für Claude Desktop: Node.js installiert? |
+| „Anki ist nicht offen“ / „Morpha-Add-on fehlt in Anki“ | Anki öffnen. Bleibt es dabei, Einstellungen → Anki: „Noch nicht installiert“ → „Installieren“; „Installiert“ → Anki neu starten und unter Extras → Erweiterungen prüfen, ob Morpha eingeschaltet ist. |
+| „Anki antwortet nicht“ | In Anki ist ein Fenster offen (Synchronisieren, Einstellungen) – schliessen und nochmal fragen. |
+| Unter einer Karte steht keine Quelle | Nur Karten, die Claude über Morpha anlegt, haben eine – ältere oder von Hand angelegte nicht. |
