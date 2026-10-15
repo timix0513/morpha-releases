@@ -1,4 +1,4 @@
-# Vorlesung-Sync
+# Morpha
 
 Vorlesungen aufnehmen und mit den Folien verknüpfen: Folien mitklicken, Stellen markieren
 (★ klausurrelevant, ? nicht verstanden, ≡ Definition), mit dem Stift auf die Folie
@@ -8,6 +8,7 @@ Lernbegleiter, der auf all das zugreifen kann. Nichts verlässt den Rechner, aus
 man Claude im Gespräch selbst zeigt.
 
 Hier liegen die fertigen Versionen für Mac und Windows; die App aktualisiert sich von hier.
+Bis 0.9 hiess sie **Vorlesung-Sync** – siehe [Von Vorlesung-Sync zu Morpha](#von-vorlesung-sync-zu-morpha).
 
 ![Heute: oben „Jetzt“ mit dem nächsten Termin, wie viel offen ist und einem Vorschlag, darunter die Lektüre bis zur nächsten Sitzung](bilder/heute.png)
 
@@ -19,21 +20,22 @@ Versionen hatten eine Startseite mit Kacheln.*
 [So läuft eine Vorlesung](#so-läuft-eine-vorlesung) · [Heute, Woche und Kurse](#heute-woche-und-kurse) ·
 [Aufnehmen](#aufnehmen) · [Auswertung](#auswertung) · [Nachhören](#nachhören) · [Teilen](#teilen) ·
 [Lektüre und Reader](#lektüre-und-reader) · [Lernfortschritt](#lernfortschritt) ·
-[Updates und Daten](#updates-und-daten) · [Mit Claude lernen (MCP)](#mit-claude-lernen-mcp)
+[Updates und Daten](#updates-und-daten) · [Von Vorlesung-Sync zu Morpha](#von-vorlesung-sync-zu-morpha) ·
+[Mit Claude lernen (MCP)](#mit-claude-lernen-mcp)
 
 ## Herunterladen
 
-Unter [Releases → neueste Version](https://github.com/timix0513/vorlesung-sync-releases/releases/latest):
+Unter [Releases → neueste Version](https://github.com/timix0513/morpha-releases/releases/latest):
 
 | Datei | wofür |
 |---|---|
-| `Vorlesung-Sync-<v>-mac.dmg` | Mac (Apple Silicon), zum Installieren |
-| `Vorlesung-Sync-<v>-windows-setup.exe` | Windows, zum Installieren |
-| `Vorlesung-Sync-<v>-mac.zip` | nur für die Updates der App, nicht von Hand nötig |
+| `Morpha-<v>-mac.dmg` | Mac (Apple Silicon), zum Installieren |
+| `Morpha-<v>-windows-setup.exe` | Windows, zum Installieren |
+| `Morpha-<v>-mac.zip` | nur für die Updates der App, nicht von Hand nötig |
 
 ## Installieren
 
-**Mac:** Die `.dmg` öffnen, Vorlesung-Sync in „Programme“ ziehen und von dort starten
+**Mac:** Die `.dmg` öffnen, Morpha in „Programme“ ziehen und von dort starten
 (aus „Downloads“ heraus funktionieren die Updates nicht). Die App ist nicht bei Apple
 notarisiert, deshalb meldet macOS beim ersten Öffnen, sie sei nicht überprüft:
 Systemeinstellungen → Datenschutz & Sicherheit → ganz unten „Dennoch öffnen“.
@@ -61,12 +63,13 @@ verloren, wenn man mittendrin aufhört. Die Schritte:
 3. **Stundenplan** – die `.ics`-Datei direkt hier importieren und den Kursen zuordnen.
 4. **Transkription** – welches Whisper-Modell.
 5. **Erinnerung** an die Vorlesung (siehe [Mitteilungen](#heute-woche-und-kurse)).
-6. **Claude als Lernbegleiter** – ein Knopf trägt Vorlesung-Sync in Claude Desktop ein,
-   der Befehl für Claude Code steht zum Kopieren daneben (siehe [MCP](#mit-claude-lernen-mcp)).
+6. **Claude verbinden** – „Mit Claude Desktop verbinden“ installiert Morpha als
+   Erweiterung in Claude Desktop, der Befehl für Claude Code steht zum Kopieren daneben
+   (siehe [MCP](#mit-claude-lernen-mcp)).
 
 Wieder öffnen: Hilfe → „Einrichtung …“.
 
-**Einstellungen.** Das Zahnrad unten in der Seitenleiste, oder Vorlesung-Sync →
+**Einstellungen.** Das Zahnrad unten in der Seitenleiste, oder Morpha →
 „Einstellungen …“ (`⌘,`; Windows: Datei → „Einstellungen …“, `Strg+,`). Sie gelten für
 diesen Rechner und werden sofort gespeichert.
 
@@ -78,7 +81,7 @@ diesen Rechner und werden sofort gespeichert.
 | Wie schreibst du mit? | Tastatur | Die drei Modi wie in der Einrichtung. Jeder Schalter im Recorder lässt sich danach weiter einzeln umlegen. |
 | Tastenleiste und Erklärungen | aus | Die Leiste mit allen Tasten unter den Folien und die Erklärtexte während der Aufnahme. Aus: `?` zeigt die Tasten, wenn man sie braucht. |
 | Bei Vorlesungsbeginn melden | an, 5 min vorher | Siehe Mitteilungen. |
-| Claude | – | Ob Vorlesung-Sync in Claude Desktop eingetragen ist, mit Knopf zum Eintragen. |
+| Claude | – | Ob Claude Desktop verbunden ist, mit Knopf „Verbinden“, und der Befehl für Claude Code. |
 | Whisper-Modell | `large-v3-turbo` | Kleiner = schneller, aber ungenauer. Unter Windows (nur CPU) ist `large-v3-turbo-q5_0` einen Versuch wert. Ein neues Modell lädt die App bei der nächsten Transkription. |
 | Grafikkarte nutzen | an | Nur Windows, nur mit passendem Grafiktreiber: Whisper rechnet auf der Grafikkarte, viel schneller. Aus, falls dabei Unsinn herauskommt. |
 | Farben im Reader | leer | Was jede der acht Markierfarben bedeutet, z.B. Gelb „wichtig“, Rot „widerspricht“. Der Reader zeigt es bei der Farbwahl, im Markdown-Export steht es dabei, und Claude liest es mit. |
@@ -87,7 +90,7 @@ diesen Rechner und werden sofort gespeichert.
 Mikrofon und Pegel gelten ab der nächsten Aufnahme – während einer laufenden ab „Pause“ →
 „Fortsetzen“ –, die Qualität ab der nächsten Aufnahme.
 
-**Hilfe.** Hilfe → „Vorlesung-Sync-Hilfe“: der Ablauf einer Vorlesung, wo was steht, Teilen
+**Hilfe.** Hilfe → „Morpha-Hilfe“: der Ablauf einer Vorlesung, wo was steht, Teilen
 und alle Tasten von Heute, Aufnahme, Nachhören, Großansicht und Reader.
 
 ## So läuft eine Vorlesung
@@ -348,7 +351,7 @@ springt dorthin. Tempo und Stelle merkt sich die App pro Vorlesung.
 ## Teilen
 
 Für alle, die gefehlt haben – und für langsame Rechner: Eine Vorlesung wird eine Datei
-(`VL05 Nachfrage I.vorlesung`), die du per AirDrop, Messenger, Mail oder Stick weitergibst.
+(`VL05 Nachfrage I.morpha`), die du per AirDrop, Messenger, Mail oder Stick weitergibst.
 Ohne Server und ohne Konto.
 
 - **Weitergeben:** in der Auswertung Teilen → „Als Datei weitergeben …“. Ton und
@@ -356,7 +359,7 @@ Ohne Server und ohne Konto.
   Marker, Notizen und Zeichnungen nur, wenn du sie ankreuzt. Ohne Folien ist die Datei
   kleiner, wenn die anderen die PDF schon haben. 90 Minuten Ton sind etwa 43 MB. Dein Name
   aus den Einstellungen steht dabei („aufgenommen von …“).
-- **Bekommen:** Datei doppelklicken, aufs Fenster ziehen oder Ablage (Windows: Datei) →
+- **Bekommen:** Datei doppelklicken (auch alte `.vorlesung` von Vorlesung-Sync), aufs Fenster ziehen oder Ablage (Windows: Datei) →
   „Vorlesung importieren …“ (`⌘O` / `Strg+O`). Die App zeigt, was drin ist, schlägt den Kurs
   vor und legt die Vorlesung zum verpassten Termin in die Woche.
 - **Transkribieren lassen:** Ist dein Rechner langsam (Windows ohne Grafikkarte), teil die
@@ -453,7 +456,7 @@ meldet sie über den MCP-Server (Prompt „Anki-Stand melden“, siehe unten).
 Die App schaut beim Start (höchstens alle 6 Stunden) hier nach einer neueren Version; dann
 hat das Zahnrad unten in der Seitenleiste einen Punkt, und oben in den Einstellungen steht
 „Version X ist da“ mit „Was ist neu?“ und „Aktualisieren“. Sofort geht es über das Menü:
-Vorlesung-Sync → „Nach Updates suchen …“ (Windows: Hilfe → „Nach Updates suchen …“). Ein
+Morpha → „Nach Updates suchen …“ (Windows: Hilfe → „Nach Updates suchen …“). Ein
 Klick lädt das Update, die App schliesst sich und startet neu. Während einer Aufnahme oder
 Transkription wird nie aktualisiert. Zurück zu einer älteren Version: gleich darunter
 „Vorherige Version installieren …“ – die Vorlesungen bleiben.
@@ -463,11 +466,35 @@ Deinstallieren erhalten:
 
 | | Datenordner |
 |---|---|
-| Mac | `~/Library/Application Support/Vorlesung-Sync` |
-| Windows | `%LOCALAPPDATA%\Vorlesung-Sync` |
+| Mac | `~/Library/Application Support/Morpha` |
+| Windows | `%LOCALAPPDATA%\Morpha` |
 
-Ablage (Windows: Datei) → „Datenordner zeigen“ öffnet ihn. Das Log steht dort unter
-`logs/app.log`.
+Bis 0.9 hiess er `Vorlesung-Sync`; Morpha übernimmt ihn beim ersten Start (siehe
+[unten](#von-vorlesung-sync-zu-morpha)). Ablage (Windows: Datei) → „Datenordner zeigen“
+öffnet ihn. Das Log steht dort unter `logs/app.log`.
+
+## Von Vorlesung-Sync zu Morpha
+
+Bis 0.9 hiess die App Vorlesung-Sync. Wer sie hat, bekommt Morpha (ab 0.10.0) über das
+normale Update – Vorlesungen, Einstellungen und die Verbindung zu Claude kommen mit:
+
+- **Vorlesungen und Einstellungen:** Der erste Start von Morpha übernimmt den Datenordner
+  von Vorlesung-Sync (er heisst danach `Morpha`). Läuft Vorlesung-Sync dabei noch, sagt
+  Morpha das und wartet: Vorlesung-Sync beenden (eine laufende Aufnahme vorher stoppen),
+  dann „Erneut versuchen“.
+- **Mac:** Morpha fragt einmal neu nach Mikrofon und Mitteilungen – erlauben. Das alte
+  Symbol im Dock entfernen und Morpha aus „Programme“ neu hineinziehen.
+- **Windows:** Morpha ersetzt Vorlesung-Sync, die Verknüpfungen heissen danach Morpha.
+- **Claude Desktop:** Ein Eintrag `vorlesung-sync` in der Konfiguration wird von selbst
+  auf `morpha` umgestellt – Claude Desktop danach einmal ganz beenden und neu öffnen.
+  Wer Claude mit 0.9.1 als Erweiterung verbunden hat, sieht in Morpha unter Einstellungen
+  → Claude einen Hinweis: dort „Verbinden“, dann in Claude Desktop unter Einstellungen →
+  Erweiterungen die alte Erweiterung „Vorlesung-Sync“ entfernen.
+- **Claude Code:** `claude mcp remove vorlesung-sync`, dann den neuen Befehl aus den
+  Einstellungen (siehe [unten](#1-morpha-verbinden)). Die Prompts heissen jetzt
+  `/mcp__morpha__…`.
+- **Geteilte Vorlesungen** heissen jetzt `.morpha`; alte `.vorlesung`-Dateien öffnet Morpha
+  weiterhin.
 
 ## Mit Claude lernen (MCP)
 
@@ -478,10 +505,10 @@ Erklärung), Begriffe anlegen, Lese-Aufgaben aus einem Syllabus anlegen, Stellen
 Text mit wörtlichem Zitat anstreichen, Anki-Karten mit ihrer Stelle verknüpfen. Alles, was Claude ändert, ist in der App als „von Claude“ zu
 sehen und lässt sich einzeln zurücknehmen.
 
-Es sind zwei MCP-Server, beide laufen nur lokal und Claude startet sie selbst:
+Es sind zwei MCP-Server, beide laufen nur lokal:
 
-- **vorlesung-sync** – in der App enthalten (ab 0.4.2; Lernfortschritt ab 0.5.0). Die App
-  muss offen sein, solange Claude damit arbeitet.
+- **morpha** – in der App enthalten (bis 0.9 `vorlesung-sync`). Die App muss offen sein,
+  solange Claude damit arbeitet.
 - **Anki** (optional) – das Anki-Add-on „Anki MCP Server“. Damit legt Claude Karten direkt
   in Anki an und meldet den Lernstand an die App; Heute rechnet die fälligen Karten dann
   in „offen“ ein.
@@ -489,34 +516,45 @@ Es sind zwei MCP-Server, beide laufen nur lokal und Claude startet sie selbst:
 Gebraucht wird [Claude Desktop](https://claude.ai/download) oder
 [Claude Code](https://claude.com/claude-code).
 
-### 1. Vorlesung-Sync einrichten
+### 1. Morpha verbinden
 
-**Am einfachsten (ab 0.6.0):** Hilfe → „Einrichtung …“, Schritt „Claude als
-Lernbegleiter“ → „In Claude Desktop eintragen“. Die App trägt sich in
-`claude_desktop_config.json` ein, ändert sonst nichts daran und legt vorher eine
-Sicherungskopie daneben. Danach Claude Desktop ganz beenden und neu öffnen. Für Claude
-Code steht dort der fertige Befehl zum Kopieren. Die App muss dafür in „Programme“ liegen
+**Claude Desktop – ein Klick:** Hilfe → „Einrichtung …“, Schritt „Claude verbinden“ →
+„Mit Claude Desktop verbinden“ (oder Einstellungen → Claude → „Verbinden“). Claude
+Desktop öffnet sich und fragt, ob es die Erweiterung „Morpha“ installieren soll –
+bestätigen. Sobald Claude sich das erste Mal meldet, steht in der App „Claude
+verbunden ✓“. Node.js braucht es dafür nicht, und ein Update der App ändert an der
+Erweiterung nichts.
+
+Lässt sich die Erweiterung nicht öffnen (ältere Claude-Desktop-Version), trägt die App
+sich stattdessen in `claude_desktop_config.json` ein – mit Sicherungskopie daneben, sonst
+ändert sie nichts an der Datei. Dann Claude Desktop ganz beenden (Mac: ⌘Q; Windows: auch
+das Symbol im Infobereich) und neu öffnen. Dieser Weg braucht die App in „Programme“
 (nicht aus „Downloads“ gestartet).
 
-Von Hand geht es so:
+**Claude Code:** In der Einrichtung und unter Einstellungen → Claude steht der fertige
+Befehl zum Kopieren, gilt dann in allen Projekten. Mac:
 
-Der Server liegt im App-Paket:
+```bash
+claude mcp add --scope user morpha -- /Applications/Morpha.app/Contents/Resources/server/morpha-server --mcp
+```
 
-| | Pfad |
-|---|---|
-| Mac | `/Applications/Vorlesung-Sync.app/Contents/Resources/server/vorlesung-sync-server` |
-| Windows | `%LOCALAPPDATA%\Programs\Vorlesung-Sync\resources\server\vorlesung-sync-server.exe` |
+Windows (PowerShell):
 
-**Claude Desktop:** Claude → Einstellungen → Entwickler → „Konfiguration bearbeiten“.
-Das öffnet `claude_desktop_config.json` (Mac: `~/Library/Application Support/Claude/`,
-Windows: `%APPDATA%\Claude\`). Eintragen – stehen dort schon andere Server, nur den
-Block `"vorlesung-sync"` dazuschreiben, mit Komma dazwischen:
+```powershell
+claude mcp add --scope user morpha -- "$env:LOCALAPPDATA\Programs\morpha\resources\server\morpha-server.exe" --mcp
+```
+
+**Von Hand in Claude Desktop** (falls der Knopf nicht geht): Claude → Einstellungen →
+Entwickler → „Konfiguration bearbeiten“ öffnet `claude_desktop_config.json` (Mac:
+`~/Library/Application Support/Claude/`, Windows: `%APPDATA%\Claude\`). Eintragen –
+stehen dort schon andere Server, nur den Block `"morpha"` dazuschreiben, mit Komma
+dazwischen:
 
 ```json
 {
   "mcpServers": {
-    "vorlesung-sync": {
-      "command": "/Applications/Vorlesung-Sync.app/Contents/Resources/server/vorlesung-sync-server",
+    "morpha": {
+      "command": "/Applications/Morpha.app/Contents/Resources/server/morpha-server",
       "args": ["--mcp"]
     }
   }
@@ -528,36 +566,25 @@ Windows mit dem vollen Pfad, jeden Backslash doppelt, `NAME` = eigener Benutzern
 ```json
 {
   "mcpServers": {
-    "vorlesung-sync": {
-      "command": "C:\\Users\\NAME\\AppData\\Local\\Programs\\Vorlesung-Sync\\resources\\server\\vorlesung-sync-server.exe",
+    "morpha": {
+      "command": "C:\\Users\\NAME\\AppData\\Local\\Programs\\morpha\\resources\\server\\morpha-server.exe",
       "args": ["--mcp"]
     }
   }
 }
 ```
 
-Dann Claude ganz beenden (Mac: ⌘Q; Windows: auch das Symbol im Infobereich) und neu
-öffnen.
-
-**Claude Code** (gilt dann in allen Projekten), Mac:
-
-```bash
-claude mcp add --scope user vorlesung-sync -- /Applications/Vorlesung-Sync.app/Contents/Resources/server/vorlesung-sync-server --mcp
-```
-
-Windows (PowerShell):
-
-```powershell
-claude mcp add --scope user vorlesung-sync -- "$env:LOCALAPPDATA\Programs\Vorlesung-Sync\resources\server\vorlesung-sync-server.exe" --mcp
-```
+Unter Windows bleibt eine von Vorlesung-Sync aktualisierte App in deren Ordner: dann
+`…\Programs\vorlesung-sync\resources\server\morpha-server.exe` statt `…\Programs\morpha\…`.
+Danach Claude ganz beenden und neu öffnen.
 
 ### 2. Anki einrichten (optional)
 
 1. In Anki: Extras → Erweiterungen → „Erweiterungen herunterladen“, Code `124672614`
    eingeben, Anki neu starten. Solange Anki offen ist, lauscht das Add-on auf
    `http://127.0.0.1:3141` – nur auf diesem Rechner erreichbar.
-2. **Claude Desktop:** in denselben `mcpServers`-Block (braucht
-   [Node.js](https://nodejs.org) für `npx`):
+2. **Claude Desktop:** Claude → Einstellungen → Entwickler → „Konfiguration bearbeiten“,
+   in den `mcpServers`-Block (braucht [Node.js](https://nodejs.org) für `npx`):
 
    ```json
    "anki": {
@@ -565,6 +592,21 @@ claude mcp add --scope user vorlesung-sync -- "$env:LOCALAPPDATA\Programs\Vorles
      "args": ["mcp-remote", "http://127.0.0.1:3141"]
    }
    ```
+
+   Steht dort sonst nichts, sieht die ganze Datei so aus:
+
+   ```json
+   {
+     "mcpServers": {
+       "anki": {
+         "command": "npx",
+         "args": ["mcp-remote", "http://127.0.0.1:3141"]
+       }
+     }
+   }
+   ```
+
+   Danach Claude Desktop ganz beenden und neu öffnen.
 
    **Claude Code:**
 
@@ -575,38 +617,22 @@ claude mcp add --scope user vorlesung-sync -- "$env:LOCALAPPDATA\Programs\Vorles
 Welches Deck zu welchem Kurs gehört, findet Claude beim ersten „Anki-Stand melden“ selbst
 heraus und fragt nur nach, wenn mehrere Decks passen.
 
-So sieht eine vollständige `claude_desktop_config.json` auf dem Mac mit beiden aus:
-
-```json
-{
-  "mcpServers": {
-    "vorlesung-sync": {
-      "command": "/Applications/Vorlesung-Sync.app/Contents/Resources/server/vorlesung-sync-server",
-      "args": ["--mcp"]
-    },
-    "anki": {
-      "command": "npx",
-      "args": ["mcp-remote", "http://127.0.0.1:3141"]
-    }
-  }
-}
-```
-
 ### 3. Ausprobieren
 
-Vorlesung-Sync (und Anki) öffnen und Claude fragen: *„Was steht diese Woche in
-Vorlesung-Sync an?“* Claude antwortet mit den Terminen, offenen Fragen und fälliger
-Lektüre. In Claude Code zeigt `claude mcp list` beide Server als „Connected“.
+Morpha (und Anki) öffnen und Claude fragen: *„Was steht diese Woche in Morpha an?“*
+Claude antwortet mit den Terminen, offenen Fragen und fälliger Lektüre. In Claude Code
+zeigt `claude mcp list` beide Server als „Connected“.
 
 Fertige Abläufe gibt es als Prompts – in Claude Desktop über „+“ im Eingabefeld →
-vorlesung-sync, in Claude Code als Befehl:
+Morpha, in Claude Code als Befehl:
 
 | Prompt | Claude Code | Was passiert |
 |---|---|---|
-| Nachbereitung | `/mcp__vorlesung-sync__nachbereitung` | erst aus dem Kopf abrufen, dann Abgleich mit dem Gesagten, offene Fragen klären, Begriffe festhalten |
-| Syllabus | `/mcp__vorlesung-sync__syllabus` | Syllabus lesen, Lese-Aufgaben mit Fristen vorschlagen, nach Bestätigung anlegen |
-| Anki-Stand melden | `/mcp__vorlesung-sync__anki_stand` | Decks zählen und als Lernfortschritt an die App melden |
-| Zusammenfassung | `/mcp__vorlesung-sync__zusammenfassung` | Kernaussagen, Ablauf mit Folien, Begriffe, Prüfungsrelevantes und Offenes – erst nach deinem Okay in die App (ab 0.6.0) |
+| Nachbereitung | `/mcp__morpha__nachbereitung` | erst aus dem Kopf abrufen, dann Abgleich mit dem Gesagten, offene Fragen klären, Begriffe festhalten |
+| Zusammenfassung | `/mcp__morpha__zusammenfassung` | Kernaussagen, Ablauf mit Folien, Begriffe, Prüfungsrelevantes und Offenes – erst nach deinem Okay in die App |
+| Syllabus | `/mcp__morpha__syllabus` | Syllabus lesen, Lese-Aufgaben mit Fristen vorschlagen, nach Bestätigung anlegen |
+| Anki-Stand melden | `/mcp__morpha__anki_stand` | Decks zählen und als Lernfortschritt an die App melden |
+| Anki lernen | `/mcp__morpha__anki_lernen` | fällige Karten eines Kurses abfragen, Unverstandenes aus der Vorlesung erklären, danach den Stand melden |
 
 Sonst einfach fragen: „Erklär mir meine ?-Stellen aus Mikro VL05“, „Frag mich die
 Definitionen von letzter Woche ab“, „Mach Anki-Karten zu den ★-Stellen von gestern“.
@@ -615,8 +641,10 @@ Definitionen von letzter Woche ab“, „Mach Anki-Karten zu den ★-Stellen von
 
 | Meldung / Problem | Abhilfe |
 |---|---|
-| „Vorlesung-Sync läuft nicht“ / „Keine Verbindung“ | App öffnen. Claude findet sie danach von selbst wieder. |
-| „Fehler 404“ | Die App ist zu alt: Vorlesung-Sync → „Nach Updates suchen …“. |
-| „… ist kein gültiges JSON“ beim Eintragen | Die App fasst eine kaputte `claude_desktop_config.json` nicht an. Die Datei in Claude → Einstellungen → Entwickler → „Konfiguration bearbeiten“ reparieren, dann noch einmal eintragen. |
-| Server fehlt in Claude Desktop | Meist ein Komma zu viel oder zu wenig in der JSON-Datei. Danach Claude ganz beenden. Log: Mac `~/Library/Logs/Claude/mcp-server-vorlesung-sync.log`, Windows `%APPDATA%\Claude\logs\`. |
+| „Morpha läuft nicht“ / „Keine Verbindung“ | App öffnen. Claude findet sie danach von selbst wieder. |
+| „Erweiterung installiert, noch nicht verbunden“ in der App | Claude Desktop öffnen, eine Frage stellen. Bleibt es dabei: Claude Desktop ganz beenden und neu öffnen. |
+| Hinweis auf die Erweiterung „Vorlesung-Sync“ | Siehe [Von Vorlesung-Sync zu Morpha](#von-vorlesung-sync-zu-morpha): neu verbinden, dann die alte in Claude Desktop entfernen. |
+| „Fehler 404“ | Die App ist zu alt: Morpha → „Nach Updates suchen …“. |
+| „… ist kein gültiges JSON“ | Die App fasst eine kaputte `claude_desktop_config.json` nicht an (die Erweiterung geht trotzdem). Die Datei in Claude → Einstellungen → Entwickler → „Konfiguration bearbeiten“ reparieren. |
+| Server fehlt in Claude Desktop (Eintrag von Hand) | Meist ein Komma zu viel oder zu wenig in der JSON-Datei. Danach Claude ganz beenden. Logs: Mac `~/Library/Logs/Claude/`, Windows `%APPDATA%\Claude\logs\`. |
 | Anki-Werkzeuge fehlen | Ist Anki offen und das Add-on aktiv (Extras → Erweiterungen)? Für Claude Desktop: Node.js installiert? |
