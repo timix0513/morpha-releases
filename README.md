@@ -643,6 +643,7 @@ Definitionen von letzter Woche ab“, „Mach Anki-Karten zu den ★-Stellen von
 |---|---|
 | „Morpha läuft nicht“ / „Keine Verbindung“ | App öffnen. Claude findet sie danach von selbst wieder. |
 | „Erweiterung installiert, noch nicht verbunden“ in der App | Claude Desktop öffnen, eine Frage stellen. Bleibt es dabei: Claude Desktop ganz beenden und neu öffnen. |
+| „Morpha wurde aktualisiert … Claude ganz beenden und neu öffnen“ | Kommt nur mit dem Eintrag in der Konfiguration oder in Claude Code vor: Claude ganz beenden und neu öffnen. In Claude Desktop danach besser einmal „Verbinden“ – mit der Erweiterung kommt die Meldung nach Updates nicht mehr. |
 | Hinweis auf die Erweiterung „Vorlesung-Sync“ | Siehe [Von Vorlesung-Sync zu Morpha](#von-vorlesung-sync-zu-morpha): neu verbinden, dann die alte in Claude Desktop entfernen. |
 | „Fehler 404“ | Die App ist zu alt: Morpha → „Nach Updates suchen …“. |
 | „… ist kein gültiges JSON“ | Die App fasst eine kaputte `claude_desktop_config.json` nicht an (die Erweiterung geht trotzdem). Die Datei in Claude → Einstellungen → Entwickler → „Konfiguration bearbeiten“ reparieren. |
