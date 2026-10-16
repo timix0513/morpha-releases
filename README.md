@@ -1,11 +1,13 @@
 # Morpha
 
-Vorlesungen aufnehmen und mit den Folien verknüpfen: Folien mitklicken, Stellen markieren
-(★ klausurrelevant, ? nicht verstanden, ≡ Definition), mit dem Stift auf die Folie
-schreiben. Nach der Vorlesung transkribiert die App lokal mit Whisper und ordnet jeden
-Satz seiner Folie zu. Dazu ein Reader für Pflichtlektüre mit Fristen – und Claude als
-Lernbegleiter, der auf all das zugreifen kann. Nichts verlässt den Rechner, ausser was
-man Claude im Gespräch selbst zeigt.
+Das Gedächtnis deines Studiums: Stundenplan, Vorlesungen, Texte und Lernkarten an einem
+Ort. Vorlesungen aufnehmen und mit den Folien verknüpfen, Stellen markieren
+(★ klausurrelevant, ? nicht verstanden, ≡ Definition), Pflichtlektüre mit Fristen lesen.
+Nach der Vorlesung transkribiert die App lokal mit Whisper und ordnet jeden Satz seiner
+Folie zu. Morpha hält so deinen **Lernstand** und gibt ihn weiter an Anki und, wenn du
+willst, an deinen **KI-Assistenten** (zum Beispiel Claude), der dich abfragt und einträgt,
+was sich geklärt hat. Nichts verlässt den Rechner, ausser was du dem Assistenten im
+Gespräch selbst zeigst.
 
 Hier liegen die fertigen Versionen für Mac und Windows; die App aktualisiert sich von hier.
 Bis 0.9 hiess sie **Vorlesung-Sync** – siehe [Von Vorlesung-Sync zu Morpha](#von-vorlesung-sync-zu-morpha).
@@ -17,11 +19,11 @@ Versionen hatten eine Startseite mit Kacheln.*
 
 **Inhalt:** [Herunterladen](#herunterladen) · [Installieren](#installieren) ·
 [Einrichtung, Einstellungen und Hilfe](#einrichtung-einstellungen-und-hilfe) ·
-[So läuft eine Vorlesung](#so-läuft-eine-vorlesung) · [Heute, Woche und Kurse](#heute-woche-und-kurse) ·
+[So geht’s](#so-gehts) · [Heute, Woche und Kurse](#heute-woche-und-kurse) ·
 [Aufnehmen](#aufnehmen) · [Auswertung](#auswertung) · [Nachhören](#nachhören) · [Teilen](#teilen) ·
 [Lektüre und Reader](#lektüre-und-reader) · [Lernfortschritt](#lernfortschritt) ·
 [Updates und Daten](#updates-und-daten) · [Von Vorlesung-Sync zu Morpha](#von-vorlesung-sync-zu-morpha) ·
-[Mit Claude lernen (MCP)](#mit-claude-lernen-mcp)
+[Mit KI und Anki lernen](#mit-ki-und-anki-lernen)
 
 ## Herunterladen
 
@@ -65,7 +67,7 @@ verloren, wenn man mittendrin aufhört. Die Schritte:
 5. **Erinnerung** an die Vorlesung (siehe [Mitteilungen](#heute-woche-und-kurse)).
 6. **Claude verbinden** – „Mit Claude Desktop verbinden“ installiert Morpha als
    Erweiterung in Claude Desktop, der Befehl für Claude Code steht zum Kopieren daneben
-   (siehe [MCP](#mit-claude-lernen-mcp)).
+   (siehe [Mit KI und Anki lernen](#mit-ki-und-anki-lernen)).
 7. **Anki verbinden** (optional) – „Add-on installieren“ öffnet das Morpha-Add-on in Anki;
    Anki fragt, ob es installieren soll (siehe [Anki einrichten](#2-anki-einrichten-optional)).
    Ohne Anki einfach überspringen.
@@ -97,7 +99,27 @@ Mikrofon und Pegel gelten ab der nächsten Aufnahme – während einer laufenden
 **Hilfe.** Hilfe → „Morpha-Hilfe“: der Ablauf einer Vorlesung, wo was steht, Teilen
 und alle Tasten von Heute, Aufnahme, Nachhören, Großansicht und Reader.
 
-## So läuft eine Vorlesung
+## So geht’s
+
+Vorlesungen, Texte und Stundenplan kommen in Morpha. Morpha hält deinen Lernstand – was
+markiert, offen, gelesen und fällig ist – und gibt ihn weiter an Anki und, wenn du willst,
+an deinen KI-Assistenten. Ein Semester besteht aus fünf Handgriffen:
+
+| | Handgriff | Wo | Braucht |
+|---|---|---|---|
+| 1 | **Planen** – jede Lektüre hängt an ihrer Sitzung, verschiebt sich ein Termin, wandert die Frist mit | [Heute, Woche und Kurse](#heute-woche-und-kurse) | nur Morpha |
+| 2 | **Lesen** – Texte und Scans markieren, mit These und Einwand, Restzeit bis zur Sitzung | [Lektüre und Reader](#lektüre-und-reader) | nur Morpha |
+| 3 | **Aufnehmen** – zuhören, Folien mitklicken, mit einer Taste markieren | [Aufnehmen](#aufnehmen), [Auswertung](#auswertung) | nur Morpha |
+| 4 | **Nachbereiten** – offene Fragen klären, mit dem Satz von damals | [Mit KI und Anki lernen](#mit-ki-und-anki-lernen) | KI-Assistent, z.B. Claude |
+| 5 | **Wiederholen** – Karten mit Quelle, ein Klick führt zurück zur Sekunde | [Lernfortschritt](#lernfortschritt), [Anki einrichten](#2-anki-einrichten-optional) | Anki mit dem Morpha-Add-on |
+
+Planen, Lesen und Aufnehmen gehen ohne KI und ohne Anki. Was du markierst, kommt wieder:
+Eine ?-Stelle aus einer Vorlesung oder einem Text steht im Modul *Offene Fragen* unter
+Heute, wird mit dem Assistenten (oder im Tutorat) geklärt und kann zur Anki-Karte werden,
+mit der Stelle als Quelle. Heute rechnet die fälligen Karten in deine Zeit bis zur nächsten
+Sitzung ein.
+
+### Eine Vorlesung, Schritt für Schritt
 
 1. **Einmal pro Semester:** Stundenplan als `.ics` importieren (Woche → ⋯) und den Kursen
    zuordnen, pro Kurs unter ⋯ → „Plan & Ordner“ den Ordner angeben, in dem die Folien landen.
@@ -105,8 +127,8 @@ und alle Tasten von Heute, Aufnahme, Nachhören, Großansicht und Reader.
    (oder `R`). Folien-PDF anhängen (oder später nachreichen), mitklicken, markieren, schreiben.
 3. **Danach:** „Stop & speichern“, in der Auswertung „Transkription starten“. Das
    Transkript steht dann pro Folie, die markierten Stellen mit dem, was dazu gesagt wurde.
-4. **Lernen:** Nachhören, exportieren, oder Claude die Vorlesung mit dir nachbereiten
-   lassen – Heute schlägt es nach der Vorlesung vor.
+4. **Lernen:** Nachhören, exportieren, oder die Vorlesung mit deinem KI-Assistenten
+   nachbereiten – Heute schlägt es nach der Vorlesung vor („Mit Claude nachbereiten“).
 
 ## Heute, Woche und Kurse
 
@@ -515,10 +537,15 @@ normale Update – Vorlesungen, Einstellungen und die Verbindung zu Claude komme
 - **Geteilte Vorlesungen** heissen jetzt `.morpha`; alte `.vorlesung`-Dateien öffnet Morpha
   weiterhin.
 
-## Mit Claude lernen (MCP)
+## Mit KI und Anki lernen
 
-Die App ist das Gedächtnis des Semesters, Claude der Tutor. Über einen MCP-Server, der in
-der App steckt, liest Claude Vorlesungen, Folien, Transkripte, markierte Stellen,
+Die App ist das Gedächtnis des Semesters, dein KI-Assistent der Tutor. Beides ist
+optional: Ohne Assistent und ohne Anki bleibt alles andere gleich. Verbunden wird der
+Assistent über MCP, einen offenen Standard für KI-Werkzeuge. Eingerichtet und getestet ist
+Morpha mit **Claude** (Claude Desktop und Claude Code) – diese Anleitung beschreibt deshalb
+Claude, und die Knöpfe in der App heissen so.
+
+Über einen MCP-Server, der in der App steckt, liest Claude Vorlesungen, Folien, Transkripte, markierte Stellen,
 Stundenplan und Lektüre – und schreibt zurück: offene Fragen als geklärt markieren (mit
 Erklärung), Begriffe anlegen, Lese-Aufgaben aus einem Syllabus anlegen, Stellen in einem
 Text mit wörtlichem Zitat anstreichen, Anki-Karten anlegen – mit der Stelle, aus der sie
