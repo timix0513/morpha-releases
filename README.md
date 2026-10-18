@@ -21,7 +21,7 @@ Versionen hatten eine Startseite mit Kacheln.*
 [Einrichtung, Einstellungen und Hilfe](#einrichtung-einstellungen-und-hilfe) ·
 [So geht’s](#so-gehts) · [Heute, Woche und Kurse](#heute-woche-und-kurse) ·
 [Aufnehmen](#aufnehmen) · [Auswertung](#auswertung) · [Nachhören](#nachhören) · [Teilen](#teilen) ·
-[Lektüre und Reader](#lektüre-und-reader) · [Lernfortschritt](#lernfortschritt) ·
+[Lektüre und Reader](#lektüre-und-reader) · [Karten und Lernfortschritt](#karten-und-lernfortschritt) ·
 [Updates und Daten](#updates-und-daten) · [Von Vorlesung-Sync zu Morpha](#von-vorlesung-sync-zu-morpha) ·
 [Mit KI und Anki lernen](#mit-ki-und-anki-lernen)
 
@@ -111,7 +111,7 @@ an deinen KI-Assistenten. Ein Semester besteht aus fünf Handgriffen:
 | 2 | **Lesen** – Texte und Scans markieren, mit These und Einwand, Restzeit bis zur Sitzung | [Lektüre und Reader](#lektüre-und-reader) | nur Morpha |
 | 3 | **Aufnehmen** – zuhören, Folien mitklicken, mit einer Taste markieren | [Aufnehmen](#aufnehmen), [Auswertung](#auswertung) | nur Morpha |
 | 4 | **Nachbereiten** – offene Fragen klären, mit dem Satz von damals | [Mit KI und Anki lernen](#mit-ki-und-anki-lernen) | KI-Assistent, z.B. Claude |
-| 5 | **Wiederholen** – Karten mit Quelle, ein Klick führt zurück zur Sekunde | [Lernfortschritt](#lernfortschritt), [Anki einrichten](#2-anki-einrichten-optional) | Anki mit dem Morpha-Add-on |
+| 5 | **Wiederholen** – Karten mit Quelle, ein Klick führt zurück zur Sekunde | [Karten und Lernfortschritt](#karten-und-lernfortschritt), [Anki einrichten](#2-anki-einrichten-optional) | Anki mit dem Morpha-Add-on |
 
 Planen, Lesen und Aufnehmen gehen ohne KI und ohne Anki. Was du markierst, kommt wieder:
 Eine ?-Stelle aus einer Vorlesung oder einem Text steht im Modul *Offene Fragen* unter
@@ -132,7 +132,8 @@ Sitzung ein.
 
 ## Heute, Woche und Kurse
 
-**Das Fenster.** Links die Seitenleiste: *Heute*, *Woche*, darunter deine Kurse, jeder mit
+**Das Fenster.** Links die Seitenleiste: *Heute*, *Woche*, *Karten* (siehe
+[Karten und Lernfortschritt](#karten-und-lernfortschritt)), darunter deine Kurse, jeder mit
 eigener Farbe, und eingeklappt das Archiv. Unten das Zahnrad für die Einstellungen – ein
 Punkt daran heisst, ein Update ist da. Aufnahme, Auswertung und Reader nehmen das ganze
 Fenster; „Zurück“ oder `Esc` führt zurück. **Neu** (oben rechts oder `⌘N`, Windows
@@ -159,7 +160,8 @@ einem Knopf dafür:
 Darunter bis zu drei **Module**: *Lektüre bis zur nächsten Sitzung*, *Diese Woche*, *Offene
 Fragen* (alle ?-Stellen aus Vorlesungen und Texten) und *Fortschritt je Kurs* (Anki). Welche
 und in welcher Reihenfolge: „Startseite anpassen“ ganz unten – ein- und ausschalten,
-ziehen. Ab Werk Lektüre und Woche. Hell oder dunkel richtet sich nach dem System.
+ziehen. Ab Werk Lektüre und Woche. „Karten öffnen“ im Kopf von *Fortschritt* führt zur
+Kartenübersicht. Hell oder dunkel richtet sich nach dem System.
 
 ![Heute im dunklen Modus](bilder/heute-dunkel.png)
 
@@ -189,8 +191,9 @@ Windows, ob die App Mitteilungen senden darf.
 
 **Kurse.** Ein Klick auf einen Kurs in der Seitenleiste öffnet die Kursseite. Oben der
 nächste Termin, der Raum und der Anki-Stand, darunter was **bis zur nächsten Sitzung** zu
-lesen ist, die **Vorlesungen** (✓ grün = transkribiert) und die **Texte** des Kurses.
-Ältere und erledigte Aufgaben sind eingeklappt.
+lesen ist, die **Vorlesungen** (✓ grün = transkribiert), mit Anki-Deck die **Karten**
+nach Unterdeck (siehe [Karten und Lernfortschritt](#karten-und-lernfortschritt)) und die
+**Texte** des Kurses. Ältere und erledigte Aufgaben sind eingeklappt.
 
 ![Kursseite: Lektüre bis Montag, Vorlesungen mit Datum und Dauer, Texte](bilder/kurs.png)
 
@@ -483,7 +486,7 @@ jeder Seite und mit „Bis S. … als gelesen markieren“ lässt sie sich von H
 ungelesen) markieren. Das Tempo lernt die App pro Text (am Anfang 2,5 min pro Seite);
 Restzeit = ungelesene Seiten × Tempo.
 
-## Lernfortschritt
+## Karten und Lernfortschritt
 
 Fällige Anki-Karten zählen unter Heute bei „offen“ mit (mit dem Alter des Stands), das Modul
 *Fortschritt je Kurs* zeigt pro Kurs die fälligen Karten und den Anteil reifer, die
@@ -491,6 +494,31 @@ Kursseite beides in ihrer Kopfzeile. Die Zahlen meldet das Morpha-Add-on in Anki
 selbst – nach dem Öffnen, nach dem Synchronisieren, nach dem Lernen und beim Schliessen
 (siehe [Anki einrichten](#2-anki-einrichten-optional)). Gezählt wird das Deck, das zum Kurs
 gehört, samt Unterdecks: auf der Kursseite ⋯ → „Anki-Deck …“.
+
+**Karten** in der Seitenleiste zeigt alle Kurse mit Deck, die mit den meisten fälligen
+zuerst: ein Balken für den Stand (dunkel reif, heller jung und lernend, grau neu), die
+fälligen Karten, wie viele du in den letzten 7 Tagen gelernt hast, und alle Karten. Ein
+Klick auf einen Kurs klappt seine Unterdecks auf – meist eins pro Vorlesung, wenn dein Deck
+so geteilt ist. Oben steht die **Wochenbilanz**: wie viele Karten seit etwa einer Woche
+dazugekommen sind und wie viele du gelernt hast; kommen mehr dazu, als du lernst, sagt ein
+Satz, in welchen Kursen vor allem. Das alles geht auch bei geschlossenem Anki, es ist der
+Stand der letzten Meldung (wie alt, steht unten). „In Anki lernen“ öffnet Anki.
+
+Auf der **Kursseite** stehen unter den Vorlesungen dieselben Unterdecks als Abschnitt
+*Karten*, mit „In Anki lernen“ für das Deck des Kurses.
+
+**Die Karten eines Unterdecks.** Ein Klick auf ein Unterdeck (in *Karten* oder auf der
+Kursseite) zeigt seine Karten, live aus Anki – dafür muss Anki offen sein. Oben filterst du
+nach *Alle*, *Fällig*, *Neu* und *Gelernt*; jede Zeile zeigt den Anfang der Vorderseite
+(Lücken hervorgehoben), ● fällig oder ○ neu und rechts den Stand, z.B. „jung · 8 T“. Hat die
+Karte eine Quelle in Morpha, steht sie daneben – ein Klick öffnet die Vorlesung bzw. den Text
+an der Stelle. Ein Klick auf die Karte zeigt sie im Anki-Browser, ⋯ → „In Anki zeigen“ das
+ganze Unterdeck. **„Mit Claude abfragen“** kopiert den Auftrag, dich die fälligen Karten
+dieses Unterdecks im Chat abzufragen (siehe [Mit KI und Anki lernen](#mit-ki-und-anki-lernen)).
+Gezeigt werden höchstens 200, den Rest öffnet „in Anki zeigen“.
+
+Die Unterdecks und die Knöpfe nach Anki brauchen das aktuelle Morpha-Add-on: Steht in den
+Einstellungen unter Anki „Aktualisieren“, einmal klicken und Anki neu starten.
 
 ## Updates und Daten
 
@@ -644,7 +672,7 @@ Was das Add-on macht:
   „Mikroökonomie · VL03 · Folie 12 · 14:32 ▶“. Ein Klick öffnet Morpha genau dort, auch
   während einer Aufnahme (sie läuft weiter). Das klappt auch bei geschlossener Morpha – sie
   startet dann. Auf AnkiMobile und AnkiWeb fehlt die Zeile.
-- **Lernfortschritt:** siehe [Lernfortschritt](#lernfortschritt).
+- **Übersicht und Lernfortschritt:** siehe [Karten und Lernfortschritt](#karten-und-lernfortschritt).
 
 Welches Deck zu welchem Kurs gehört: auf der Kursseite ⋯ → „Anki-Deck …“ (oder Claude
 fragen). Dorthin legt Claude neue Karten des Kurses, und dieses Deck zählt die Startseite.
@@ -674,7 +702,7 @@ Morpha, in Claude Code als Befehl:
 | Nachbereitung | `/mcp__morpha__nachbereitung` | erst aus dem Kopf abrufen, dann Abgleich mit dem Gesagten, offene Fragen klären, Begriffe festhalten |
 | Zusammenfassung | `/mcp__morpha__zusammenfassung` | Kernaussagen, Ablauf mit Folien, Begriffe, Prüfungsrelevantes und Offenes – erst nach deinem Okay in die App |
 | Syllabus | `/mcp__morpha__syllabus` | Syllabus lesen, Lese-Aufgaben mit Fristen vorschlagen, nach Bestätigung anlegen |
-| Anki lernen | `/mcp__morpha__anki_lernen` | fällige Karten eines Kurses im Chat abfragen, Unverstandenes aus der Vorlesung erklären; bewertet wird danach in Anki |
+| Anki lernen | `/mcp__morpha__anki_lernen` | fällige Karten eines Kurses oder eines Unterdecks im Chat abfragen, Unverstandenes aus der Vorlesung erklären; bewertet wird danach in Anki. Fürs Unterdeck kopiert ihn „Mit Claude abfragen“ in Morpha |
 
 Sonst einfach fragen: „Erklär mir meine ?-Stellen aus Mikro VL05“, „Frag mich die
 Definitionen von letzter Woche ab“, „Mach Anki-Karten zu den ★-Stellen von gestern“.
