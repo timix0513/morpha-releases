@@ -36,6 +36,9 @@ Unter [Releases → neueste Version](https://github.com/timix0513/morpha-release
 | `Morpha-<v>-windows-setup.exe` | Windows, zum Installieren |
 | `Morpha-<v>-mac.zip` | nur für die Updates der App, nicht von Hand nötig |
 
+Der Eintrag „Modelle für Morpha“ in der Liste ist keine App-Version: Dort liegen die
+Sprachmodelle fürs Übersetzen, die Morpha bei Bedarf selbst lädt.
+
 ## Installieren
 
 **Mac:** Die `.dmg` öffnen, Morpha in „Programme“ ziehen und von dort starten
@@ -92,6 +95,9 @@ diesen Rechner und werden sofort gespeichert.
 | Whisper-Modell | `large-v3-turbo` | Kleiner = schneller, aber ungenauer. Unter Windows (nur CPU) ist `large-v3-turbo-q5_0` einen Versuch wert. Ein neues Modell lädt die App bei der nächsten Transkription. |
 | Grafikkarte nutzen | an | Nur Windows, nur mit passendem Grafiktreiber: Whisper rechnet auf der Grafikkarte, viel schneller. Aus, falls dabei Unsinn herauskommt. |
 | Farben im Reader | leer | Was jede der acht Markierfarben bedeutet, z.B. Gelb „wichtig“, Rot „widerspricht“. Der Reader zeigt es bei der Farbwahl, im Markdown-Export steht es dabei, und Claude liest es mit. |
+| Übersetzen in | Deutsch | Wohin der Reader markierten Text übersetzt; ist er schon in dieser Sprache, in die andere. Darunter steht, welche Sprachmodelle schon geladen sind. |
+| Kürzel (Übersetzen) | `Ü` | Die Taste nach dem Markieren. Anklicken, dann die neue Taste drücken; Tasten, die der Reader schon braucht, gehen nicht. |
+| ß als ss schreiben | an | Übersetzungen ins Deutsche mit ss wie in der Schweiz. |
 | Dein Name | leer | Steht in jeder Vorlesung, die du [teilst](#teilen) („aufgenommen von …“). |
 
 Mikrofon und Pegel gelten ab der nächsten Aufnahme – während einer laufenden ab „Pause“ →
@@ -451,6 +457,16 @@ zählt die Lektüre bei „offen“ mit.
 - **Ändern:** eine Anmerkung anklicken – Farbe, Art und Kommentar ändern, auch per Taste
   (`1`–`8`, `M` `F` `D` `T` `E` schalten die Art an und ab), `⌫` löscht,
   `⌘Z` nimmt zurück, `⇧⌘Z` wiederholt. Bereiche lassen sich verschieben und an den Ecken ziehen.
+- **Übersetzen:** Text markieren, dann `Ü` oder „Übersetzen“ im Menü. An der Auswahl steht
+  die Übersetzung, Englisch → Deutsch oder umgekehrt – die Richtung erkennt die App, unten
+  im Fenster lässt sie sich umstellen. Bei einem einzelnen Wort steht oben gross seine
+  Übersetzung und darunter der ganze Satz, das Wort darin hervorgehoben: Übersetzt wird der
+  Satz, weil ein Wort allein oft falsch herauskommt („putative“ heisst im Satz
+  „vermeintlicher“). „Kopieren“ nimmt die Übersetzung, „Als Notiz“ streicht die Stelle an
+  und schreibt die Übersetzung in die Notiz – sonst wird nichts gespeichert. Alles läuft
+  auf deinem Rechner, der Text verlässt ihn nicht. Nur beim ersten Mal pro Richtung lädt
+  die App ein Sprachmodell (etwa 65 MB), danach geht es ohne Internet. Es ist eine
+  Maschinenübersetzung: bei Fachprosa gut, bei sehr formaler Philosophie holprig.
 - **Rechts die Anmerkungen:** in Lesereihenfolge, filterbar nach Farbe, Art und Status, mit
   Zitat und Kommentar zum Bearbeiten, Status (geklärt / offen / „im Tutorat fragen“) und
   Claudes Erklärung. Ein Klick springt hin.
@@ -476,6 +492,7 @@ zählt die Lektüre bei „offen“ mit.
 | `1`–`8` | nach dem Markieren: in dieser Farbe anstreichen |
 | `H` / `U` | nach dem Markieren: anstreichen / unterstreichen – sonst `H`: Textmarker |
 | `M` `F` `D` `T` `E` | nach dem Markieren: als ★ / ? / ≡ / These / Einwand, dann Notiz – an einer ausgewählten Anmerkung: Art an/aus |
+| `Ü` | nach dem Markieren: übersetzen (Taste in den Einstellungen änderbar) |
 | `B` / `N` | Bereich (Rechteck) / Notiz anheften – `Esc` zurück zum Text |
 | `P` / `R` | Stift / Rand zum Schreiben |
 | `⌫` / `⌘Z` | Anmerkung löschen / letzte Änderung zurücknehmen |
