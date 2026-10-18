@@ -9,7 +9,8 @@ willst, an deinen **KI-Assistenten** (zum Beispiel Claude), der dich abfragt und
 was sich geklärt hat. Nichts verlässt den Rechner, ausser was du dem Assistenten im
 Gespräch selbst zeigst.
 
-Hier liegen die fertigen Versionen für Mac und Windows; die App aktualisiert sich von hier.
+Website: **[morpha.ch](https://morpha.ch)**. Hier liegen die fertigen Versionen für Mac
+und Windows; die App aktualisiert sich von hier.
 Bis 0.9 hiess sie **Vorlesung-Sync** – siehe [Von Vorlesung-Sync zu Morpha](#von-vorlesung-sync-zu-morpha).
 
 ![Heute: oben „Jetzt“ mit dem nächsten Termin, wie viel offen ist und einem Vorschlag, darunter die Lektüre bis zur nächsten Sitzung](bilder/heute.png)
@@ -402,7 +403,8 @@ Mitschnitte nur weitergeben, wo Aufnahmen erlaubt sind.
 ## Lektüre und Reader
 
 Pflichttexte lesen, markieren und die Fristen im Blick haben. Auf der Kursseite steht oben,
-was bis zur nächsten Sitzung zu lesen ist, mit Restzeit, darunter die Texte; unter Heute
+was bis zur nächsten Sitzung zu lesen ist, mit Restzeit und bei angefangenen Texten einem
+kurzen Balken, wie viel schon gelesen ist (auch unter Heute), darunter die Texte; unter Heute
 zählt die Lektüre bei „offen“ mit.
 
 - **Texte aufnehmen:** Neu → „Text …“, auf der Kursseite + → „Aus dem Kursordner …“ oder
@@ -425,8 +427,13 @@ zählt die Lektüre bei „offen“ mit.
 
 ![Reader: Text mit Markierungen, rechts die Anmerkungen, oben der Fortschritt der Aufgabe](bilder/reader.png)
 
-- **Lesen:** scharf bei jedem Zoom. Zoom mit −/+, Strg/⌘ + Mausrad oder Pinch, „Breite
-  anpassen“ und „Ganze Seite“. Scrollen oder Blättern und Rand im Menü ⋯. Das
+- **Leiste oben:** Werkzeuge als Symbole – Text markieren, Textmarker, Bereich, Notiz,
+  Textfeld, Stift, daneben die Farbe. Fährst du über ein Symbol (oder springst mit Tab
+  hin), steht da, was es ist und welche Taste es auslöst. Das Symbol rechts neben der
+  Seitenzahl öffnet die Anmerkungen.
+- **Lesen:** scharf bei jedem Zoom. Zoom über den Knopf mit dem Zoom oben (Kleiner,
+  Grösser, „Breite anpassen“, „Ganze Seite“, Stufen), Strg/⌘ + Mausrad oder Pinch.
+  Scrollen oder Blättern und Rand im Menü ⋯. Das
   Seitenleisten-Symbol links oben öffnet Inhaltsverzeichnis und Suche (`⌘F`). Links in der PDF funktionieren, „‹ S. …“
   springt zurück. Hat die PDF eigene Seitenzahlen (Buchkapitel), zeigt der Reader überall
   diese („S. 213“) – eintippen geht auch. Der Bereich der Aufgabe ist links markiert, der
@@ -441,15 +448,16 @@ zählt die Lektüre bei „offen“ mit.
 - **Textmarker** (`H`, ab 0.7.1): wie in Vorschau – alles, was du markierst (ziehen oder
   Doppelklick auf ein Wort), wird sofort in der gewählten Farbe angestrichen, ohne Leiste
   dazwischen. Die Farbe wechselt mit dem Farbpunkt oben oder `1`–`8`.
-- **Ändern:** eine Anmerkung anklicken – Farbe, Art und Kommentar ändern, `⌫` löscht,
-  `⌘Z` nimmt zurück. Bereiche lassen sich verschieben und an den Ecken ziehen.
+- **Ändern:** eine Anmerkung anklicken – Farbe, Art und Kommentar ändern, auch per Taste
+  (`1`–`8`, `M` `F` `D` `T` `E` schalten die Art an und ab), `⌫` löscht,
+  `⌘Z` nimmt zurück, `⇧⌘Z` wiederholt. Bereiche lassen sich verschieben und an den Ecken ziehen.
 - **Rechts die Anmerkungen:** in Lesereihenfolge, filterbar nach Farbe, Art und Status, mit
   Zitat und Kommentar zum Bearbeiten, Status (geklärt / offen / „im Tutorat fragen“) und
   Claudes Erklärung. Ein Klick springt hin.
 - **Stift:** „Stift“ (`P`) mit Stift, Marker und Radierer – mit dem Surface-Stift oder der
   Maus, wie auf den Folien. „Rand“ (`R`) gibt rechts neben jeder Seite kariertes Papier –
   pro Text, nicht für alle.
-- **Drehen:** ↻ neben dem Zoom dreht die aktuelle Seite um 90° nach rechts, ⋯ → „Alle
+- **Drehen:** ⋯ → „S. … drehen“ dreht die aktuelle Seite um 90° nach rechts, „Alle
   Seiten drehen“ das ganze Dokument. Markierungen, Notizen und Striche drehen mit, `⌘Z`
   dreht zurück; Export und Claude sehen die Seite gedreht. Liegt ein Scan laut
   Texterkennung quer oder steht auf dem Kopf, steht unter der Seite „liegt quer ·
@@ -467,10 +475,11 @@ zählt die Lektüre bei „offen“ mit.
 |---|---|
 | `1`–`8` | nach dem Markieren: in dieser Farbe anstreichen |
 | `H` / `U` | nach dem Markieren: anstreichen / unterstreichen – sonst `H`: Textmarker |
-| `M` `F` `D` `T` `E` | nach dem Markieren: als ★ / ? / ≡ / These / Einwand, dann Notiz |
+| `M` `F` `D` `T` `E` | nach dem Markieren: als ★ / ? / ≡ / These / Einwand, dann Notiz – an einer ausgewählten Anmerkung: Art an/aus |
 | `B` / `N` | Bereich (Rechteck) / Notiz anheften – `Esc` zurück zum Text |
 | `P` / `R` | Stift / Rand zum Schreiben |
 | `⌫` / `⌘Z` | Anmerkung löschen / letzte Änderung zurücknehmen |
+| `⇧⌘Z` | zurückgenommene Änderung wiederholen |
 | `⌘F` | im Text suchen – `⏎` / `⇧⏎` nächster / voriger Treffer |
 | `←` / `→` | vorige / nächste Seite (beim Blättern auch `Leertaste`) |
 | `Home` / `End` | erste / letzte Seite |
