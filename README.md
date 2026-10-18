@@ -517,8 +517,8 @@ ganze Unterdeck. **„Mit Claude abfragen“** kopiert den Auftrag, dich die fä
 dieses Unterdecks im Chat abzufragen (siehe [Mit KI und Anki lernen](#mit-ki-und-anki-lernen)).
 Gezeigt werden höchstens 200, den Rest öffnet „in Anki zeigen“.
 
-Die Unterdecks und die Knöpfe nach Anki brauchen das aktuelle Morpha-Add-on: Steht in den
-Einstellungen unter Anki „Aktualisieren“, einmal klicken und Anki neu starten.
+Die Unterdecks und die Knöpfe nach Anki brauchen das aktuelle Morpha-Add-on. Ist es zu
+alt, steht das an Ort und Stelle mit „Aktualisieren“ – einmal klicken und Anki neu starten.
 
 ## Updates und Daten
 
@@ -677,8 +677,10 @@ Was das Add-on macht:
 Welches Deck zu welchem Kurs gehört: auf der Kursseite ⋯ → „Anki-Deck …“ (oder Claude
 fragen). Dorthin legt Claude neue Karten des Kurses, und dieses Deck zählt die Startseite.
 
-Bringt ein Update von Morpha ein neueres Add-on mit, steht in den Einstellungen unter Anki
-„Aktualisieren“ – derselbe Weg, danach Anki neu starten.
+Bringt ein Update von Morpha ein neueres Add-on mit, hat das Zahnrad unten in der
+Seitenleiste einen Punkt, und oben in den Einstellungen steht „Anki-Add-on X ist da“ mit
+„Aktualisieren“ – derselbe Weg, danach Anki neu starten. In Anki selbst (Erweiterungen →
+„Nach Updates suchen“) erscheint es nicht, das Morpha-Add-on kommt immer über Morpha.
 
 **Bisher mit dem Anki-MCP eingerichtet** (Add-on „Anki MCP Server“, Code `124672614`, mit
 Node.js)? Das braucht es nicht mehr. Erst das Morpha-Add-on installieren, dann in Claude
