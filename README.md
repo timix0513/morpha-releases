@@ -448,6 +448,7 @@ zählt die Lektüre bei „offen“ mit.
 - **Markieren:** Text mit der Maus ziehen, dann eine Farbe (acht wie in Zotero),
   unterstreichen oder kopieren – oder eine Art: `M` ★ klausurrelevant, `F` ? nicht
   verstanden, `D` ≡ Definition, `T` These, `E` Einwand; danach gleich eine Notiz tippen.
+  Die Leiste dafür zeigt nur Symbole; darüberfahren zeigt Name und Taste.
   Auf Abbildungen und Seiten ohne Text zieht dasselbe Ziehen ein Rechteck auf (`B` immer).
   `N` heftet eine Notiz an, „Textfeld“ schreibt auf die Seite. Was eine Farbe bedeutet,
   legst du in den [Einstellungen](#einrichtung-einstellungen-und-hilfe) fest.
@@ -457,7 +458,7 @@ zählt die Lektüre bei „offen“ mit.
 - **Ändern:** eine Anmerkung anklicken – Farbe, Art und Kommentar ändern, auch per Taste
   (`1`–`8`, `M` `F` `D` `T` `E` schalten die Art an und ab), `⌫` löscht,
   `⌘Z` nimmt zurück, `⇧⌘Z` wiederholt. Bereiche lassen sich verschieben und an den Ecken ziehen.
-- **Übersetzen:** Text markieren, dann `Ü` oder „Übersetzen“ im Menü. An der Auswahl steht
+- **Übersetzen:** Text markieren, dann `Ü` oder das Übersetzen-Symbol in der Leiste. An der Auswahl steht
   die Übersetzung, Englisch → Deutsch oder umgekehrt – die Richtung erkennt die App, unten
   im Fenster lässt sie sich umstellen. Bei einem einzelnen Wort steht oben gross seine
   Übersetzung und darunter der ganze Satz, das Wort darin hervorgehoben: Übersetzt wird der
