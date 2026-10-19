@@ -157,12 +157,29 @@ einem Knopf dafür:
   andere darunter zum Wechseln.
 - Kurz nach einer Vorlesung: wie weit die Transkription ist, und „Mit Claude nachbereiten“ –
   der Knopf kopiert den passenden Auftrag für Claude.
+- Steht für heute etwas im **Wochenplan** (den du mit Claude machst, Prompt *Woche planen*):
+  ein Block nach dem anderen. Oben ein Balken mit allen Blöcken des Tages („1 von 4
+  erledigt · noch 1 h 15“), darunter nur der aktuelle Block gross – Kurs, was zu tun ist,
+  wie lange und woran du merkst, dass er fertig ist. **Start** (`Enter`) öffnet, was er
+  braucht: den Text im Reader, Anki oder – bei Blöcken mit Claude – kopiert den passenden
+  Prompt; danach läuft eine Uhr, und **Fertig** hakt ihn ab. Viele Blöcke haken sich von
+  selbst ab: Wiederholen, sobald Anki nichts Fälliges mehr meldet, Lesen, wenn die Seiten
+  im Reader gelesen sind, Nachbereiten und Nachholen, wenn Claude den Stand ◑ im Fahrplan
+  einträgt. Unter ⋯: *Später* (ans Ende von heute), *Auf morgen*, *Erledigt* und
+  *Streichen*. Darunter, was danach kommt, was erledigt ist, was an einem früheren Tag
+  liegen blieb („Heute noch“ holt es auf heute – sonst plant Claude es neu) und der
+  Tagesbedarf bis zur Prüfung.
 - Sonst: der nächste Termin und **wie viel bis zu den nächsten Sitzungen offen ist**, in
   Minuten – fällige Anki-Karten (je etwa 10 Sekunden) plus die Lektüre, die bis zur nächsten
   Sitzung ihres Kurses gelesen sein soll. Überfälliges zählt nicht mit, es steht als
   „1 überfällig“ daneben. Darunter ein **Vorschlag**: zuerst der Text mit der frühesten
   Frist („Lesen“), sonst die Anki-Karten des Kurses mit den meisten fälligen. `Enter` führt
   den Vorschlag aus.
+  Hat ein Kurs ein Prüfungsdatum, steht stattdessen gross der **Tagesbedarf nach Plan**: wie
+  viele Minuten am Tag es braucht, damit bis zur Prüfungsphase alles steht, gegen deine
+  Lernzeit heute (Einstellungen › Lernzeit). Daneben die Kurse, die *hinten* oder *knapp*
+  sind – ein Klick öffnet den Kurs. Was bis zu den nächsten Sitzungen fällig ist, steht
+  weiter darunter.
 - In der ersten Woche eine kurze Checkliste: Stundenplan, Claude, erste Aufnahme.
 
 Darunter bis zu drei **Module**: *Lektüre bis zur nächsten Sitzung*, *Diese Woche*, *Offene
@@ -178,6 +195,17 @@ vergangen, umrandet Hinweise wie Prüfungen oder Abgaben. Heute ist rot markiert
 zeigt die Uhrzeit. Oben die Zeile *Lesen*: welcher Text an welchem Tag fällig ist. Ein
 Klick auf einen Termin öffnet den Kurs, ein Klick auf einen Text den Reader. ‹ Heute ›
 blättert.
+
+Gibt es für die Woche einen **Wochenplan**, wird aus *Lesen* die Zeile **Plan**: pro Tag
+die Blöcke in ihrer Reihenfolge, mit kurzem Titel und Minuten, in der Farbe ihres Kurses –
+erledigte grau mit Haken, der nächste von heute umrandet. Texte mit Frist, die in keinem
+Block stecken, stehen gestrichelt an ihrem Fristtag; so geht keiner verloren. Rechts im
+Tageskopf die geplante Zeit (über der Lernzeit des Tages in Gelb), oben „Plan 9 h 15 von
+11 h, 3 von 21 erledigt“. Ein Klick auf einen Block zeigt, was er ist und wann er fertig
+ist, mit *Start*, *Erledigt* und *Streichen*. Ohne Plan steht über dem Raster „Noch kein
+Plan für KW 44“ mit **Mit Claude planen** (kopiert den Prompt *Woche planen*).
+**Anzeigen** blendet Zeilen (Plan, Anki im Plan, Texte mit Frist, Termine) und einzelne
+Kurse aus – ein Punkt am Knopf heisst, etwas ist ausgeblendet.
 
 ![Woche: Termine als Raster in den Kursfarben, darüber die Texte, die an dem Tag fällig sind](bilder/woche.png)
 
@@ -201,13 +229,36 @@ Windows, ob die App Mitteilungen senden darf.
 nächste Termin, der Raum und der Anki-Stand, darunter **So lernst du diesen Kurs**: die
 Prüfung (Datum, Raum, Form, Format, wie viele Tage noch), die Lernweise und die Zeit pro
 Woche – aus dem Kursprofil, das du mit Claude anlegst (siehe
-[Ausprobieren](#3-ausprobieren)). Ohne Profil steht dort nur die Prüfung aus dem
+[Ausprobieren](#3-ausprobieren)). Die Zeile **Plan** rechnet nach, ob es bis zur
+Prüfungsphase reicht: offene Lektüre (nach Leseweise, in deinem gemessenen Lesetempo), Nachbereiten bzw.
+Nachholen jeder Sitzung, die noch nicht ◑ ist (auch der kommenden), neue Karten (mit einem
+Kartenbudget aus dem Profil höchstens so viele, wie hineinpassen) und das Wiederholen –
+gegen deine Lernzeit bis dahin, ohne Blockseminar-Tage, geteilt unter den Kursen nach ihrer
+Zeit pro Woche. Daraus die Ampel (*im Plan*, *knapp*, *7 h hinten*), was am Tag nötig wäre
+und wie viele neue Karten nicht ins Budget passen. Die Prüfungsphase selbst bleibt fürs
+Abfragen frei. Was wegfällt, entscheidest du mit Claude (Prompt *Woche planen*, Werkzeug
+`get_plan`). Die Zeile **Prüfungsreife** zählt, wie viele Sitzungen schon ● prüfungsfest
+stehen, welche beim letzten Abfragen gewackelt haben oder eine Lücke zeigten (mit Namen)
+und welche du nie abgefragt hast; dazu, wann zuletzt, und deine Altklausuren zum Öffnen.
+Ohne Profil steht dort nur die Prüfung aus dem
 Stundenplan (Hinweise wie „PRÜFUNG: Mikroökonomie I“). Die Zeile **Mit Claude** kopiert
 einen Ablauf für den ganzen Kurs – Vertiefen, Abfragen, Probeklausur oder Sprechen, dazu
 die Blöcke aus deinem Profil –, du fügst ihn in Claude ein. Dann, was **bis zur nächsten
-Sitzung** zu lesen ist, die **Vorlesungen** (✓ grün = transkribiert), mit Anki-Deck die **Karten**
+Sitzung** zu lesen ist, und der **Fahrplan**: jede Sitzung bis zur Prüfung mit Thema, Texten,
+Unterdeck und Stand (○ offen, ◔ gehört, ◑ verstanden, ◕ im Gedächtnis, ● prüfungsfest),
+darüber die Phasen Mitlaufen, Festigen und Prüfungsphase mit der Heute-Marke und den
+Blockseminar-Wochenenden. ◔ kommt von selbst mit der Aufnahme, ◕, wenn das Unterdeck kaum
+noch neue Karten hat und gehalten ist; ◑ trägt Claude nach dem Nachbereiten ein. Nach
+*Abfragen*, *Probeklausur* oder *Sprechen* trägt Claude pro Sitzung ein, wie es sass –
+sicher, wackelig oder Lücke. ● heisst: die letzte Abfrage war sicher; wackelt eine spätere,
+ist das ● wieder weg und in der Zeile steht *wackelig* bzw. *Lücke*. Eine Zeile klappt auf:
+Aufnahme, Texte und Unterdeck zum Öffnen, die Abfragen mit Datum, den Stand von Hand setzen
+(noch einmal anklicken nimmt ihn zurück) und *Mit Claude nachbereiten* oder *Abfragen*. Darunter die **Vorlesungen** (✓ grün = transkribiert), mit Anki-Deck die **Karten**
 nach Unterdeck (siehe [Karten und Lernfortschritt](#karten-und-lernfortschritt)) und die
-**Texte** des Kurses. Ältere und erledigte Aufgaben sind eingeklappt.
+**Texte** des Kurses. Eine alte Prüfung markierst du dort mit ⋯ › *Altklausur*: Sie steht
+dann unter Prüfungsreife, Claude stellt Fragen und Probeklausuren in ihrem Stil, und ⋯ ›
+*Mit Claude als Probeklausur* kopiert den Ablauf, um sie selbst zu schreiben und
+korrigieren zu lassen. Ältere und erledigte Aufgaben sind eingeklappt.
 
 ![Kursseite: Lektüre bis Montag, Vorlesungen mit Datum und Dauer, Texte](bilder/kurs.png)
 
@@ -437,6 +488,14 @@ zählt die Lektüre bei „offen“ mit.
   Aus einem Syllabus legt Claude die Aufgaben an (siehe [Prompts](#3-ausprobieren)).
 - **Als gelesen markieren:** ⋯ an einer Aufgabe → „Als gelesen markieren“ markiert alle
   ihre Seiten auf einmal – z.B. auf Papier gelesen.
+- **Leseweise:** ⋯ an einer Aufgabe → „Gründlich lesen“, „Gezielt lesen (⅓)“, „Als
+  Steckbrief“ oder „Auslassen“. Gezielt verlangt etwa ein Drittel der Seiten (Einleitung,
+  Schluss und was die Vorlesung braucht), ein Steckbrief rund 15 Minuten (Einleitung und
+  Schluss selbst, den Rest mit Claude), Ausgelassenes zählt nicht mehr und wird nie
+  überfällig. Ohne eigene Wahl gilt die Vorgabe des Kurses aus dem Kursprofil (im Menü mit
+  „· Kurs“), sonst gründlich. Danach richten sich Restzeit, „gelesen“ und die Zeile Plan;
+  „Mit Claude lesen“ nimmt die Leseweise mit. Passt die Lektüre nicht in die Woche, schlägt
+  Claude in der Wochenplanung Leseweisen vor und setzt sie nach deinem Okay.
 
 **Der Reader** (wie in Zotero):
 
@@ -544,7 +603,8 @@ Restzeit = ungelesene Seiten × Tempo.
 ## Karten und Lernfortschritt
 
 Fällige Anki-Karten zählen unter Heute bei „offen“ mit (mit dem Alter des Stands), das Modul
-*Fortschritt je Kurs* zeigt pro Kurs die fälligen Karten und den Anteil reifer, die
+*Fortschritt je Kurs* zeigt pro Kurs die Ampel bis zur Prüfung (*im Plan*, *knapp* oder
+*3 h hinten*), die fälligen Karten und den Anteil reifer, die
 Kursseite beides in ihrer Kopfzeile. Die Zahlen meldet das Morpha-Add-on in Anki von
 selbst – nach dem Öffnen, nach dem Synchronisieren, nach dem Lernen und beim Schliessen
 (siehe [Anki einrichten](#2-anki-einrichten-optional)). Gezählt wird das Deck, das zum Kurs
@@ -572,7 +632,21 @@ ganze Unterdeck. **„Mit Claude abfragen“** kopiert den Auftrag, dich die fä
 dieses Unterdecks im Chat abzufragen (siehe [Mit KI und Anki lernen](#mit-ki-und-anki-lernen)).
 Gezeigt werden höchstens 200, den Rest öffnet „in Anki zeigen“.
 
-Die Unterdecks und die Knöpfe nach Anki brauchen das aktuelle Morpha-Add-on. Ist es zu
+**Kartenbudget.** Steht im Kursprofil ein Budget neuer Karten pro Tag (etwa 15), hält sich
+Anki daran: Das Morpha-Add-on setzt es als Limit „Dieser Stapel“ des Kursdecks – beim Öffnen
+von Anki und sobald es sich in Morpha ändert. Es gilt, wenn du das Kursdeck lernst; ein
+Unterdeck allein hat seine eigenen Limits. Ändern lässt du es mit Claude („Setz das
+Kartenbudget für Mikro auf 10“), nicht in Anki – dort setzt Morpha es beim nächsten Öffnen
+zurück. Die Zeile Plan auf der Kursseite rechnet mit demselben Budget.
+
+**Gefilterte Decks.** Für einen Block legt Claude auf Zuruf ein gefiltertes Deck in Anki an,
+etwa „Mach mir ein Deck mit allen Karten zu Downs“ → *Morpha::Downs*. *Vertiefen* und
+*Abfragen* bieten es am Ende an: die Karten zu einer Person, das Kernset (Gerüst und Klausur)
+oder die schwachen Karten. Solange es steht, fehlen seine Karten im Kursdeck – nach dem
+Lernen löst Claude es wieder auf („Lös das Deck auf“). Gelöscht wird dabei nichts.
+
+Die Unterdecks und die Knöpfe nach Anki brauchen das aktuelle Morpha-Add-on (Budget und
+gefilterte Decks ab 0.7). Ist es zu
 alt, steht das an Ort und Stelle mit „Aktualisieren“ – einmal klicken und Anki neu starten.
 
 ## Updates und Daten
@@ -760,12 +834,12 @@ Morpha, in Claude Code als Befehl:
 | Nachbereiten | `/mcp__morpha__nachbereiten` | eine Vorlesung, die du gehört hast: erst aus dem Kopf abrufen, dann Abgleich mit dem Gesagten, offene Fragen klären, Begriffe festhalten. In Morpha: „Mit Claude nachbereiten“ oben in der Vorlesung |
 | Nachholen | `/mcp__morpha__nachholen` | eine verpasste Vorlesung aus der Aufnahme von jemand anderem, ohne sie ganz zu hören: Gerüst, Schritt für Schritt mit Fragen an dich, was sich nachzuhören lohnt |
 | Lesen | `/mcp__morpha__lesen` | einen Text gründlich (zusammen im Reader: Claude sieht Seite und Auswahl, beantwortet deine Fragen, klärt ?-Stellen, schreibt die Antworten an den Rand), gezielt (nur die Seiten, die zur Sitzung passen) oder als Steckbrief statt ganz lesen |
-| Vertiefen | `/mcp__morpha__vertiefen` | eine Person, Schule oder Theorie festigen: du erklärst, Claude prüft mit Beleg, ordnet ein und stellt Prüfungsfragen |
+| Vertiefen | `/mcp__morpha__vertiefen` | eine Person, Schule oder Theorie festigen: du erklärst, Claude prüft mit Beleg, ordnet ein und stellt Prüfungsfragen, auf Wunsch mit einem gefilterten Deck zum Thema in Anki |
 | Rechnen | `/mcp__morpha__rechnen` | ein Thema rechnend erarbeiten: du rechnest auf Papier, Claude prüft nur den Ansatz |
-| Sprechen | `/mcp__morpha__sprechen` | mündliche Prüfung üben, Claude als Prüfer |
-| Abfragen | `/mcp__morpha__abfragen` | Prüfungsfragen aus deinen ★-Stellen, Begriffen und dem, was betont wurde |
-| Probeklausur | `/mcp__morpha__probeklausur` | im Format der echten Prüfung, mit Punkten und Korrektur |
-| Woche planen | `/mcp__morpha__woche` | Rückblick auf die Woche, dann ein Plan aus Blöcken innerhalb deiner Lernzeit – erst nach deinem Okay gespeichert |
+| Sprechen | `/mcp__morpha__sprechen` | mündliche Prüfung üben, Claude als Prüfer; danach steht im Fahrplan, wie jede Sitzung sass |
+| Abfragen | `/mcp__morpha__abfragen` | Prüfungsfragen aus deinen ★-Stellen, Begriffen und dem, was betont wurde (im Stil deiner Altklausuren); danach steht im Fahrplan pro Sitzung sicher, wackelig oder Lücke, auf Wunsch ein gefiltertes Deck fürs Wackelige |
+| Probeklausur | `/mcp__morpha__probeklausur` | im Format der echten Prüfung, mit Punkten und Korrektur – zusammengestellt im Stil deiner Altklausuren oder eine Altklausur selbst geschrieben; danach steht im Fahrplan, wie jede Sitzung sass |
+| Woche planen | `/mcp__morpha__woche` | Rückblick auf die Woche, dann ein Plan aus Blöcken innerhalb deiner Lernzeit – nach deinem Okay steht er in Morpha auf Heute und in der Woche |
 | Zusammenfassung | `/mcp__morpha__zusammenfassung` | Kernaussagen, Ablauf mit Folien, Begriffe, Prüfungsrelevantes und Offenes – erst nach deinem Okay in die App |
 | Syllabus | `/mcp__morpha__syllabus` | Syllabus lesen, Lese-Aufgaben mit Fristen vorschlagen, nach Bestätigung anlegen |
 | Anki lernen | `/mcp__morpha__anki_lernen` | fällige Karten eines Kurses oder eines Unterdecks im Chat abfragen, Unverstandenes aus der Vorlesung erklären; bewertet wird danach in Anki. Fürs Unterdeck kopiert ihn „Mit Claude abfragen“ in Morpha |
