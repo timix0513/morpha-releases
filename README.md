@@ -468,8 +468,24 @@ zählt die Lektüre bei „offen“ mit.
   die App ein Sprachmodell (etwa 65 MB), danach geht es ohne Internet. Es ist eine
   Maschinenübersetzung: bei Fachprosa gut, bei sehr formaler Philosophie holprig.
 - **Rechts die Anmerkungen:** in Lesereihenfolge, filterbar nach Farbe, Art und Status, mit
-  Zitat und Kommentar zum Bearbeiten, Status (geklärt / offen / „im Tutorat fragen“) und
-  Claudes Erklärung. Ein Klick springt hin.
+  Zitat und Kommentar zum Bearbeiten, Status (geklärt / offen / „im Tutorat fragen“),
+  Claudes Antworten und deiner Erklärung. Ein Klick springt hin. Hat der Text Kernaussagen,
+  stehen sie im zweiten Reiter „Kernaussagen“, eine pro Seite: Klick springt hin,
+  Doppelklick ändert.
+- **Mit Claude lesen:** Lies im Reader, wechsle zu Claude und frag *„was heisst das
+  hier?“* – Claude weiss, welcher Text, welche Seite und was du ausgewählt hast; die
+  Auswahl bleibt beim Fensterwechsel stehen. Seine Antwort schreibt Claude an die Stelle:
+  an deine ?-Stelle oder an die Passage, die es dafür anstreicht (gepunktet in Schiefer,
+  der Farbe für Claude). Auf Wunsch schreibt Claude zu jeder Seite die Kernaussage. Der
+  ganze Ablauf steht im Prompt *Lektüre* (siehe [Ausprobieren](#3-ausprobieren)).
+- **Randnotizen** (`C`, auch unter ⋯): neben der Seite oben die Kernaussage, darunter
+  Claudes Antworten auf Höhe ihrer Stelle – lange gekürzt mit „Mehr“, die ausgewählte
+  Stelle ganz. Was Claude schreibt, erscheint von selbst, auch wenn Claude daneben offen
+  ist. Eine Kernaussage änderst du mit Doppelklick (`⏎` sichert, danach steht „von dir“)
+  oder entfernst sie; eine Antwort entfernst du über ⋯ an der Antwort – `⌘Z` holt beides
+  zurück. Eine ?-Stelle mit Antwort bleibt offen, bis du „Verstanden“ klickst; danach
+  kannst du in eigenen Worten festhalten, was du verstanden hast (freiwillig). Den Knopf
+  gibt es nur bei Texten mit Antworten oder Kernaussagen; an oder aus gilt pro Text.
 - **Stift:** „Stift“ (`P`) mit Stift, Marker und Radierer – mit dem Surface-Stift oder der
   Maus, wie auf den Folien. „Rand“ (`R`) gibt rechts neben jeder Seite kariertes Papier –
   pro Text, nicht für alle.
@@ -484,8 +500,9 @@ zählt die Lektüre bei „offen“ mit.
   schon eine schlechte Textebene mitbringen; die wird dabei ersetzt. Im selben Menü steht,
   wie weit die Erkennung ist. In der Bibliothek: ⋯ an einem Text → „Text neu erkennen …“.
 - **Exportieren** (Teilen-Knopf oben): *PDF mit Anmerkungen* – alle Markierungen, Notizen und Striche
-  als echte PDF-Anmerkungen für Vorschau, Acrobat, GoodNotes oder Zotero; *Anmerkungen als
-  Markdown* – Zitate mit Seite, Kommentar und Erklärung, für Obsidian oder Claude.
+  als echte PDF-Anmerkungen für Vorschau, Acrobat, GoodNotes oder Zotero, mit Claudes
+  Antworten; *Anmerkungen als Markdown* – Zitate mit Seite, Kommentar, Erklärung und
+  Claudes Antworten, dazu die Kernaussage jeder Seite, für Obsidian oder Claude.
 
 | Taste | Wirkung |
 |---|---|
@@ -495,6 +512,7 @@ zählt die Lektüre bei „offen“ mit.
 | `Ü` | nach dem Markieren: übersetzen (Taste in den Einstellungen änderbar) |
 | `B` / `N` | Bereich (Rechteck) / Notiz anheften – `Esc` zurück zum Text |
 | `P` / `R` | Stift / Rand zum Schreiben |
+| `C` | Randnotizen an/aus (Antworten und Kernaussagen von Claude, nur wenn es welche gibt) |
 | `⌫` / `⌘Z` | Anmerkung löschen / letzte Änderung zurücknehmen |
 | `⇧⌘Z` | zurückgenommene Änderung wiederholen |
 | `⌘F` | im Text suchen – `⏎` / `⇧⏎` nächster / voriger Treffer |
@@ -603,7 +621,8 @@ Claude, und die Knöpfe in der App heissen so.
 Stundenplan und Lektüre – und schreibt zurück: offene Fragen als geklärt markieren (mit
 Erklärung), Begriffe anlegen, Lese-Aufgaben aus einem Syllabus anlegen, Stellen in einem
 Text mit wörtlichem Zitat anstreichen, Anki-Karten anlegen – mit der Stelle, aus der sie
-stammen. Alles, was Claude ändert, ist in der App als „von Claude“ zu sehen und lässt sich
+stammen. Beim Lesen sieht Claude, was du im Reader offen hast, und schreibt Antworten und
+Kernaussagen an den Rand der Seite. Alles, was Claude ändert, ist in der App als „von Claude“ zu sehen und lässt sich
 einzeln zurücknehmen.
 
 Alles läuft nur lokal:
@@ -730,10 +749,12 @@ Morpha, in Claude Code als Befehl:
 | Nachbereitung | `/mcp__morpha__nachbereitung` | erst aus dem Kopf abrufen, dann Abgleich mit dem Gesagten, offene Fragen klären, Begriffe festhalten |
 | Zusammenfassung | `/mcp__morpha__zusammenfassung` | Kernaussagen, Ablauf mit Folien, Begriffe, Prüfungsrelevantes und Offenes – erst nach deinem Okay in die App |
 | Syllabus | `/mcp__morpha__syllabus` | Syllabus lesen, Lese-Aufgaben mit Fristen vorschlagen, nach Bestätigung anlegen |
+| Lektüre | `/mcp__morpha__lektuere` | zusammen lesen: Claude sieht Seite und Auswahl im Reader, beantwortet deine Fragen und klärt ?-Stellen (erst sagst du, was du denkst), schreibt die Antworten an den Rand; Kernaussagen pro Seite nur auf Wunsch und nach deinem Okay |
 | Anki lernen | `/mcp__morpha__anki_lernen` | fällige Karten eines Kurses oder eines Unterdecks im Chat abfragen, Unverstandenes aus der Vorlesung erklären; bewertet wird danach in Anki. Fürs Unterdeck kopiert ihn „Mit Claude abfragen“ in Morpha |
 
 Sonst einfach fragen: „Erklär mir meine ?-Stellen aus Mikro VL05“, „Frag mich die
-Definitionen von letzter Woche ab“, „Mach Anki-Karten zu den ★-Stellen von gestern“.
+Definitionen von letzter Woche ab“, „Mach Anki-Karten zu den ★-Stellen von gestern“ – oder
+beim Lesen „Was heisst das hier?“.
 
 ### Wenn es nicht klappt
 
