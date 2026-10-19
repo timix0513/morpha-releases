@@ -90,6 +90,7 @@ diesen Rechner und werden sofort gespeichert.
 | Wie schreibst du mit? | Tastatur | Die drei Modi wie in der Einrichtung. Jeder Schalter im Recorder lässt sich danach weiter einzeln umlegen. |
 | Tastenleiste und Erklärungen | aus | Die Leiste mit allen Tasten unter den Folien und die Erklärtexte während der Aufnahme. Aus: `?` zeigt die Tasten, wenn man sie braucht. |
 | Bei Vorlesungsbeginn melden | an, 5 min vorher | Siehe Mitteilungen. |
+| Lernzeit | 1 h pro Tag | Wie viel Zeit du an jedem Wochentag zum Lernen hast. Damit rechnet der Lernplan bis zur Prüfung; Claude sieht sie mit den Kursprofilen. |
 | Claude | – | Ob Claude Desktop verbunden ist, mit Knopf „Verbinden“, und der Befehl für Claude Code. |
 | Anki | – | Ob das Morpha-Add-on in Anki läuft, mit Knopf „Installieren“ bzw. „Aktualisieren“, wenn die App ein neueres mitbringt. |
 | Whisper-Modell | `large-v3-turbo` | Kleiner = schneller, aber ungenauer. Unter Windows (nur CPU) ist `large-v3-turbo-q5_0` einen Versuch wert. Ein neues Modell lädt die App bei der nächsten Transkription. |
@@ -197,8 +198,12 @@ Einstellungen; dort gibt es auch eine Probe-Mitteilung. Beim ersten Mal fragt ma
 Windows, ob die App Mitteilungen senden darf.
 
 **Kurse.** Ein Klick auf einen Kurs in der Seitenleiste öffnet die Kursseite. Oben der
-nächste Termin, der Raum und der Anki-Stand, darunter was **bis zur nächsten Sitzung** zu
-lesen ist, die **Vorlesungen** (✓ grün = transkribiert), mit Anki-Deck die **Karten**
+nächste Termin, der Raum und der Anki-Stand, darunter **So lernst du diesen Kurs**: die
+Prüfung (Datum, Raum, Form, Format, wie viele Tage noch), die Lernweise und die Zeit pro
+Woche – aus dem Kursprofil, das du mit Claude anlegst (siehe
+[Ausprobieren](#3-ausprobieren)). Ohne Profil steht dort nur die Prüfung aus dem
+Stundenplan (Hinweise wie „PRÜFUNG: Mikroökonomie I“). Dann, was **bis zur nächsten
+Sitzung** zu lesen ist, die **Vorlesungen** (✓ grün = transkribiert), mit Anki-Deck die **Karten**
 nach Unterdeck (siehe [Karten und Lernfortschritt](#karten-und-lernfortschritt)) und die
 **Texte** des Kurses. Ältere und erledigte Aufgaben sind eingeklappt.
 
@@ -207,7 +212,9 @@ nach Unterdeck (siehe [Karten und Lernfortschritt](#karten-und-lernfortschritt))
 - **Aufnehmen** legt die nächste Vorlesung an (höchste VL-Nummer + 1) und nimmt sofort auf.
 - **+** legt eine Vorlesung (mit oder ohne PDF, PowerPoint vorher als PDF exportieren),
   einen Text oder eine Lese-Aufgabe an oder holt PDFs aus dem Kursordner.
-- **⋯** am Kurs: *Plan & Ordner*, *Umbenennen*, *Farbe*, *Archivieren* (der Kurs rutscht ins
+- **⋯** am Kurs: *Plan & Ordner*, *Prüfung und Lernweise* (Datum, Form, Format, ECTS,
+  Lernweise und Zeit pro Woche von Hand; ohne eigenes Datum gilt das aus dem Stundenplan
+  und zieht mit, wenn er sich ändert), *Umbenennen*, *Farbe*, *Archivieren* (der Kurs rutscht ins
   Archiv der Seitenleiste und zählt bei „offen“ nicht mehr mit – fürs nächste Semester),
   *Entfernen* (die Vorlesungen bleiben, nur ohne Kurs). Heisst ein Kurs nach dem Umbenennen
   wie ein anderer, werden beide zusammengelegt.
@@ -752,6 +759,13 @@ Morpha, in Claude Code als Befehl:
 | Syllabus | `/mcp__morpha__syllabus` | Syllabus lesen, Lese-Aufgaben mit Fristen vorschlagen, nach Bestätigung anlegen |
 | Lektüre | `/mcp__morpha__lektuere` | zusammen lesen: Claude sieht Seite und Auswahl im Reader, beantwortet deine Fragen und klärt ?-Stellen (erst sagst du, was du denkst), schreibt die Antworten an den Rand; Kernaussagen pro Seite nur auf Wunsch und nach deinem Okay |
 | Anki lernen | `/mcp__morpha__anki_lernen` | fällige Karten eines Kurses oder eines Unterdecks im Chat abfragen, Unverstandenes aus der Vorlesung erklären; bewertet wird danach in Anki. Fürs Unterdeck kopiert ihn „Mit Claude abfragen“ in Morpha |
+
+**Kursprofil:** *„Leg mit mir das Kursprofil für Mikro an“* – Claude fragt nach Prüfungsform,
+Format, wie sich der Kurs lernt, wie viel Zeit er pro Woche bekommt, den Phasen bis zur
+Prüfung, den Blöcken mit ihren Prompts und den Kartenregeln, zeigt dir alles und speichert
+erst nach deinem Okay. Das Datum kommt aus dem Stundenplan; die Kursseite zeigt Prüfung,
+Lernweise und Zeit pro Woche. Ein Profil, das schon in einer Datei steht, übernimmt Claude
+auf Zuruf.
 
 Sonst einfach fragen: „Erklär mir meine ?-Stellen aus Mikro VL05“, „Frag mich die
 Definitionen von letzter Woche ab“, „Mach Anki-Karten zu den ★-Stellen von gestern“ – oder
