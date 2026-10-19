@@ -202,7 +202,9 @@ nächste Termin, der Raum und der Anki-Stand, darunter **So lernst du diesen Kur
 Prüfung (Datum, Raum, Form, Format, wie viele Tage noch), die Lernweise und die Zeit pro
 Woche – aus dem Kursprofil, das du mit Claude anlegst (siehe
 [Ausprobieren](#3-ausprobieren)). Ohne Profil steht dort nur die Prüfung aus dem
-Stundenplan (Hinweise wie „PRÜFUNG: Mikroökonomie I“). Dann, was **bis zur nächsten
+Stundenplan (Hinweise wie „PRÜFUNG: Mikroökonomie I“). Die Zeile **Mit Claude** kopiert
+einen Ablauf für den ganzen Kurs – Vertiefen, Abfragen, Probeklausur oder Sprechen, dazu
+die Blöcke aus deinem Profil –, du fügst ihn in Claude ein. Dann, was **bis zur nächsten
 Sitzung** zu lesen ist, die **Vorlesungen** (✓ grün = transkribiert), mit Anki-Deck die **Karten**
 nach Unterdeck (siehe [Karten und Lernfortschritt](#karten-und-lernfortschritt)) und die
 **Texte** des Kurses. Ältere und erledigte Aufgaben sind eingeklappt.
@@ -485,7 +487,8 @@ zählt die Lektüre bei „offen“ mit.
   Auswahl bleibt beim Fensterwechsel stehen. Seine Antwort schreibt Claude an die Stelle:
   an deine ?-Stelle oder an die Passage, die es dafür anstreicht (gepunktet in Schiefer,
   der Farbe für Claude). Auf Wunsch schreibt Claude zu jeder Seite die Kernaussage. Der
-  ganze Ablauf steht im Prompt *Lektüre* (siehe [Ausprobieren](#3-ausprobieren)).
+  ganze Ablauf steht im Prompt *Lesen* (siehe [Ausprobieren](#3-ausprobieren)); an jeder
+  Aufgabe und jedem Text kopiert ⋯ → „Mit Claude lesen“ ihn so, wie der Kurs Texte liest.
 - **Randnotizen** (`C`, auch unter ⋯): neben der Seite oben die Kernaussage, darunter
   Claudes Antworten auf Höhe ihrer Stelle – lange gekürzt mit „Mehr“, die ausgewählte
   Stelle ganz. Was Claude schreibt, erscheint von selbst, auch wenn Claude daneben offen
@@ -754,10 +757,17 @@ Morpha, in Claude Code als Befehl:
 
 | Prompt | Claude Code | Was passiert |
 |---|---|---|
-| Nachbereitung | `/mcp__morpha__nachbereitung` | erst aus dem Kopf abrufen, dann Abgleich mit dem Gesagten, offene Fragen klären, Begriffe festhalten |
+| Nachbereiten | `/mcp__morpha__nachbereiten` | eine Vorlesung, die du gehört hast: erst aus dem Kopf abrufen, dann Abgleich mit dem Gesagten, offene Fragen klären, Begriffe festhalten. In Morpha: „Mit Claude nachbereiten“ oben in der Vorlesung |
+| Nachholen | `/mcp__morpha__nachholen` | eine verpasste Vorlesung aus der Aufnahme von jemand anderem, ohne sie ganz zu hören: Gerüst, Schritt für Schritt mit Fragen an dich, was sich nachzuhören lohnt |
+| Lesen | `/mcp__morpha__lesen` | einen Text gründlich (zusammen im Reader: Claude sieht Seite und Auswahl, beantwortet deine Fragen, klärt ?-Stellen, schreibt die Antworten an den Rand), gezielt (nur die Seiten, die zur Sitzung passen) oder als Steckbrief statt ganz lesen |
+| Vertiefen | `/mcp__morpha__vertiefen` | eine Person, Schule oder Theorie festigen: du erklärst, Claude prüft mit Beleg, ordnet ein und stellt Prüfungsfragen |
+| Rechnen | `/mcp__morpha__rechnen` | ein Thema rechnend erarbeiten: du rechnest auf Papier, Claude prüft nur den Ansatz |
+| Sprechen | `/mcp__morpha__sprechen` | mündliche Prüfung üben, Claude als Prüfer |
+| Abfragen | `/mcp__morpha__abfragen` | Prüfungsfragen aus deinen ★-Stellen, Begriffen und dem, was betont wurde |
+| Probeklausur | `/mcp__morpha__probeklausur` | im Format der echten Prüfung, mit Punkten und Korrektur |
+| Woche planen | `/mcp__morpha__woche` | Rückblick auf die Woche, dann ein Plan aus Blöcken innerhalb deiner Lernzeit – erst nach deinem Okay gespeichert |
 | Zusammenfassung | `/mcp__morpha__zusammenfassung` | Kernaussagen, Ablauf mit Folien, Begriffe, Prüfungsrelevantes und Offenes – erst nach deinem Okay in die App |
 | Syllabus | `/mcp__morpha__syllabus` | Syllabus lesen, Lese-Aufgaben mit Fristen vorschlagen, nach Bestätigung anlegen |
-| Lektüre | `/mcp__morpha__lektuere` | zusammen lesen: Claude sieht Seite und Auswahl im Reader, beantwortet deine Fragen und klärt ?-Stellen (erst sagst du, was du denkst), schreibt die Antworten an den Rand; Kernaussagen pro Seite nur auf Wunsch und nach deinem Okay |
 | Anki lernen | `/mcp__morpha__anki_lernen` | fällige Karten eines Kurses oder eines Unterdecks im Chat abfragen, Unverstandenes aus der Vorlesung erklären; bewertet wird danach in Anki. Fürs Unterdeck kopiert ihn „Mit Claude abfragen“ in Morpha |
 
 **Kursprofil:** *„Leg mit mir das Kursprofil für Mikro an“* – Claude fragt nach Prüfungsform,
@@ -765,7 +775,9 @@ Format, wie sich der Kurs lernt, wie viel Zeit er pro Woche bekommt, den Phasen 
 Prüfung, den Blöcken mit ihren Prompts und den Kartenregeln, zeigt dir alles und speichert
 erst nach deinem Okay. Das Datum kommt aus dem Stundenplan; die Kursseite zeigt Prüfung,
 Lernweise und Zeit pro Woche. Ein Profil, das schon in einer Datei steht, übernimmt Claude
-auf Zuruf.
+auf Zuruf. Die Prompts von *Nachbereiten* bis *Probeklausur* richten sich danach: Mit `kurs`
+kennt Claude Prüfung, Phase und Lernweise, und hat ein Block im Profil einen eigenen
+Ablauf (etwa „Paper-Steckbrief Q1–Q5“), führt Claude dich durch diesen.
 
 Sonst einfach fragen: „Erklär mir meine ?-Stellen aus Mikro VL05“, „Frag mich die
 Definitionen von letzter Woche ab“, „Mach Anki-Karten zu den ★-Stellen von gestern“ – oder
