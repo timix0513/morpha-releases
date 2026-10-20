@@ -164,9 +164,15 @@ einem Knopf dafür:
   wie lange und woran du merkst, dass er fertig ist. **Start** (`Enter`) öffnet, was er
   braucht: den Text im Reader, Anki oder – bei Blöcken mit Claude – kopiert den passenden
   Prompt; danach läuft eine Uhr, und **Fertig** hakt ihn ab. Viele Blöcke haken sich von
-  selbst ab: Wiederholen, sobald Anki nichts Fälliges mehr meldet, Lesen, wenn die Seiten
-  im Reader gelesen sind, Nachbereiten und Nachholen, wenn Claude den Stand ◑ im Fahrplan
-  einträgt. Unter ⋯: *Später* (ans Ende von heute), *Auf morgen*, *Erledigt* und
+  selbst ab: Wiederholen, sobald Anki nichts Fälliges mehr meldet; Lesen, wenn alle Texte
+  des Blocks nach ihrer Leseweise gelesen sind (hat ein Block mehrere, steht „Text 2 von 3“
+  dabei, und *Lesen* öffnet den ersten offenen); Nachbereiten und Nachholen, wenn Claude den
+  Stand ◑ im Fahrplan einträgt; Abfragen, Probeklausur und Sprechen, wenn Claude dich an dem
+  Tag zu dieser Sitzung abgefragt hat; *Woche planen*, sobald der Plan der nächsten Woche
+  steht. Unter *Erledigt* steht, wie: „gelesen, 11:58“, „abgefragt, 18:30“, „von Hand“.
+  War etwas schon vor dem Plan erledigt, heisst es „schon vorher erledigt“ – Claude plant
+  so etwas nicht mehr ein und sagt dir beim Planen, welche überfälligen Texte keinen Block
+  haben; was bewusst wegfällt, setzt es nach deinem Okay auf *auslassen*. Unter ⋯: *Später* (ans Ende von heute), *Auf morgen*, *Erledigt* und
   *Streichen*. Darunter, was danach kommt, was erledigt ist, was an einem früheren Tag
   liegen blieb („Heute noch“ holt es auf heute – sonst plant Claude es neu) und der
   Tagesbedarf bis zur Prüfung.
