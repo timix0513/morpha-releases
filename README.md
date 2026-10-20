@@ -348,8 +348,9 @@ und Seitentaste des Stifts radieren immer. Ein roter Punkt am Thumbnail zeigt Fo
 Zeichnung.
 
 **Platz zum Schreiben.** `R` oder der letzte Knopf der Leiste legt die Folie auf ein
-weisses, kariertes Blatt mit Rand links und rechts und Papier darunter – für Herleitungen
-und Tafelanschrieb. Das Blatt scrollt mit Trackpad, Mausrad oder Finger und wächst beim
+weisses Blatt mit Rand links und rechts und Papier darunter – für Herleitungen
+und Tafelanschrieb. Der Knopf daneben wählt das Papier: kariert, liniert, punktiert oder
+blanko, gemerkt pro Vorlesung. Das Blatt scrollt mit Trackpad, Mausrad oder Finger und wächst beim
 Schreiben nach rechts und unten mit. Ein roter Punkt am Knopf zeigt, dass daneben oder
 darunter etwas steht.
 
@@ -372,7 +373,10 @@ Tooltip der Pegelanzeige oben.
 **Ohne Folien.** Kommen die Folien erst nach der Vorlesung: ohne PDF starten und die
 Foliennummer vom Beamer eintippen. Ins Feld daneben ein paar Stichworte, was auf der
 Folie steht („Malthus Kriege Tabelle“) – daran findet die App die Folie später in der
-PDF. Auf der Fläche liegt leeres kariertes Papier zum Schreiben, eins pro Nummer. „Folien hinzufügen“ hängt
+PDF. Auf der Fläche liegt leeres Papier zum Schreiben, eins pro Nummer (Sorte über den
+letzten Knopf der Stiftleiste). Bei einer neuen Nummer ohne Stichworte steht der Cursor schon
+im Feld: einfach lostippen, Enter speichert. Solange das Feld leer ist, blättern → und die
+Leertaste weiter; die Marker-Tasten gehen erst wieder ausserhalb des Felds (Esc). „Folien hinzufügen“ hängt
 die PDF an, auch mitten in der Vorlesung; das Papier wandert dann unter die zugeordnete
 Folie.
 
@@ -425,8 +429,8 @@ aufnehmen, Folienzuordnung, Neu transkribieren).
     Gesagte mit Zeitstempeln.
   - *PDF mit Zeichnungen* – die Folien-PDF mit allen Strichen und Notizen als echte
     PDF-Anmerkungen (in Vorschau, Acrobat, GoodNotes einzeln lösch- und ausblendbar).
-    Seiten mit Platz zum Schreiben werden um den beschriebenen Rand grösser, kariert wie in
-    der App.
+    Seiten mit Platz zum Schreiben werden um den beschriebenen Rand grösser, mit demselben
+    Papier wie in der App.
   - *Markdown* – pro Folie mit Notizen, Markern und Stichworten, vorne die
     Zusammenfassung – gut für Obsidian, Notion oder als Vorlage für Lernkarten.
 
@@ -471,7 +475,9 @@ Mitschnitte nur weitergeben, wo Aufnahmen erlaubt sind.
 Pflichttexte lesen, markieren und die Fristen im Blick haben. Auf der Kursseite steht oben,
 was bis zur nächsten Sitzung zu lesen ist, mit Restzeit und bei angefangenen Texten einem
 kurzen Balken, wie viel schon gelesen ist (auch unter Heute), darunter die Texte; unter Heute
-zählt die Lektüre bei „offen“ mit.
+zählt die Lektüre bei „offen“ mit. Was du heute fertig gelesen hast, bleibt bis Mitternacht
+abgehakt am Ende der Liste stehen, zum schnellen Nachschlagen („Öffnen“) – es zählt nicht
+mehr mit und rutscht danach im Kurs unter „Älteres“.
 
 - **Texte aufnehmen:** Neu → „Text …“, auf der Kursseite + → „Aus dem Kursordner …“ oder
   PDFs auf die Kursseite ziehen.
@@ -557,8 +563,9 @@ zählt die Lektüre bei „offen“ mit.
   kannst du in eigenen Worten festhalten, was du verstanden hast (freiwillig). Den Knopf
   gibt es nur bei Texten mit Antworten oder Kernaussagen; an oder aus gilt pro Text.
 - **Stift:** „Stift“ (`P`) mit Stift, Marker und Radierer – mit dem Surface-Stift oder der
-  Maus, wie auf den Folien. „Rand“ (`R`) gibt rechts neben jeder Seite kariertes Papier –
-  pro Text, nicht für alle.
+  Maus, wie auf den Folien. „Rand“ (`R`) gibt rechts neben jeder Seite weisses Papier –
+  pro Text, nicht für alle. Der Knopf daneben wählt kariert, liniert, punktiert oder blanko;
+  der PDF-Export zeichnet dasselbe.
 - **Drehen:** ⋯ → „S. … drehen“ dreht die aktuelle Seite um 90° nach rechts, „Alle
   Seiten drehen“ das ganze Dokument. Markierungen, Notizen und Striche drehen mit, `⌘Z`
   dreht zurück; Export und Claude sehen die Seite gedreht. Liegt ein Scan laut
