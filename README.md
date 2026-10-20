@@ -506,14 +506,29 @@ mehr mit und rutscht danach im Kurs unter „Älteres“.
   Aus einem Syllabus legt Claude die Aufgaben an (siehe [Prompts](#3-ausprobieren)).
 - **Als gelesen markieren:** ⋯ an einer Aufgabe → „Als gelesen markieren“ markiert alle
   ihre Seiten auf einmal – z.B. auf Papier gelesen.
-- **Leseweise:** ⋯ an einer Aufgabe → „Gründlich lesen“, „Gezielt lesen (⅓)“, „Als
-  Steckbrief“ oder „Auslassen“. Gezielt verlangt etwa ein Drittel der Seiten (Einleitung,
-  Schluss und was die Vorlesung braucht), ein Steckbrief rund 15 Minuten (Einleitung und
-  Schluss selbst, den Rest mit Claude), Ausgelassenes zählt nicht mehr und wird nie
-  überfällig. Ohne eigene Wahl gilt die Vorgabe des Kurses aus dem Kursprofil (im Menü mit
-  „· Kurs“), sonst gründlich. Danach richten sich Restzeit, „gelesen“ und die Zeile Plan;
-  „Mit Claude lesen“ nimmt die Leseweise mit. Passt die Lektüre nicht in die Woche, schlägt
-  Claude in der Wochenplanung Leseweisen vor und setzt sie nach deinem Okay.
+- **Leseweise:** ⋯ an einer Aufgabe → „Gründlich lesen“, „Gezielt lesen (⅓)“, „Nur
+  Kernaussagen lesen“ oder „Auslassen“. Ohne eigene Wahl gilt die Vorgabe des Kurses aus
+  dem Kursprofil (im Menü mit „· Kurs“), sonst gründlich. Danach richten sich Restzeit,
+  „gelesen“ und die Zeile Plan; „Mit Claude lesen“ nimmt die Leseweise mit. Passt die
+  Lektüre nicht in die Woche, schlägt Claude in der Wochenplanung Leseweisen vor und setzt
+  sie nach deinem Okay.
+  - *Gründlich:* alle Seiten.
+  - *Gezielt:* die erste und die letzte Seite und insgesamt etwa ein Drittel – was die
+    Vorlesung braucht. Hat Claude dir die Seiten genannt und festgehalten, zählen genau diese.
+  - *Nur Kernaussagen:* Du liest statt des Texts die Kernaussagen, die Claude pro Seite
+    schreibt, dazu einen kurzen Überblick über den ganzen Text. Fehlen sie noch, steht in
+    der Zeile „Kernaussagen fehlen · Mit Claude“: Ein Klick kopiert den Prompt *Lesen*, und
+    Claude schreibt sie. Danach liest du sie im Reader am Rand, Seite für Seite – die
+    Randnotizen sind dafür an, rechts ist der Reiter „Kernaussagen“ offen, der Überblick
+    steht zuoberst. Rechne etwa 20 Sekunden pro Seite. (Früher hiess das „Steckbrief“.)
+  - *Auslassen:* zählt nicht mehr und wird nie überfällig.
+- **Wann eine Aufgabe gelesen ist:** von selbst, ohne Klick. Eine Seite zählt nach 15
+  Sekunden im Bild, bei Kernaussagen nach 5 Sekunden – aber erst, wenn es die
+  Kernaussagen gibt; was du vorher gelesen hattest, zählt dafür nicht. Es darf höchstens
+  jede zehnte Seite fehlen (mindestens eine; bei Texten bis 3 Seiten keine), die letzte
+  Seite musst du gelesen haben. Hast du bis zum Schluss gelesen und dabei Seiten zu schnell
+  übersprungen, steht in der Zeile und oben im Reader „fehlt S. 100, 101“ – ein Klick auf
+  die Zahl springt hin.
 
 **Der Reader** (wie in Zotero):
 
@@ -557,8 +572,8 @@ mehr mit und rutscht danach im Kurs unter „Älteres“.
 - **Rechts die Anmerkungen:** in Lesereihenfolge, filterbar nach Farbe, Art und Status, mit
   Zitat und Kommentar zum Bearbeiten, Status (geklärt / offen / „im Tutorat fragen“),
   Claudes Antworten und deiner Erklärung. Ein Klick springt hin. Hat der Text Kernaussagen,
-  stehen sie im zweiten Reiter „Kernaussagen“, eine pro Seite: Klick springt hin,
-  Doppelklick ändert.
+  stehen sie im zweiten Reiter „Kernaussagen“, eine pro Seite, zuoberst Claudes Überblick:
+  Klick springt hin, Doppelklick ändert.
 - **Mit Claude lesen:** Lies im Reader, wechsle zu Claude und frag *„was heisst das
   hier?“* – Claude weiss, welcher Text, welche Seite und was du ausgewählt hast; die
   Auswahl bleibt beim Fensterwechsel stehen. Seine Antwort schreibt Claude an die Stelle:
@@ -566,7 +581,8 @@ mehr mit und rutscht danach im Kurs unter „Älteres“.
   der Farbe für Claude). Auf Wunsch schreibt Claude zu jeder Seite die Kernaussage. Der
   ganze Ablauf steht im Prompt *Lesen* (siehe [Ausprobieren](#3-ausprobieren)); an jeder
   Aufgabe und jedem Text kopiert ⋯ → „Mit Claude lesen“ ihn so, wie der Kurs Texte liest.
-- **Randnotizen** (`C`, auch unter ⋯): neben der Seite oben die Kernaussage, darunter
+- **Randnotizen** (`C`, auch unter ⋯): neben der Seite oben die Kernaussage (an der
+  ersten Seite davor der Überblick), darunter
   Claudes Antworten auf Höhe ihrer Stelle – lange gekürzt mit „Mehr“, die ausgewählte
   Stelle ganz. Was Claude schreibt, erscheint von selbst, auch wenn Claude daneben offen
   ist. Eine Kernaussage änderst du mit Doppelklick (`⏎` sichert, danach steht „von dir“)
@@ -592,7 +608,7 @@ mehr mit und rutscht danach im Kurs unter „Älteres“.
 - **Exportieren** (Teilen-Knopf oben): *PDF mit Anmerkungen* – alle Markierungen, Notizen und Striche
   als echte PDF-Anmerkungen für Vorschau, Acrobat, GoodNotes oder Zotero, mit Claudes
   Antworten; *Anmerkungen als Markdown* – Zitate mit Seite, Kommentar, Erklärung und
-  Claudes Antworten, dazu die Kernaussage jeder Seite, für Obsidian oder Claude.
+  Claudes Antworten, dazu der Überblick und die Kernaussage jeder Seite, für Obsidian oder Claude.
 
 | Taste | Wirkung |
 |---|---|
@@ -853,7 +869,7 @@ Morpha, in Claude Code als Befehl:
 |---|---|---|
 | Nachbereiten | `/mcp__morpha__nachbereiten` | eine Vorlesung, die du gehört hast: erst aus dem Kopf abrufen, dann Abgleich mit dem Gesagten, offene Fragen klären, Begriffe festhalten. In Morpha: „Mit Claude nachbereiten“ oben in der Vorlesung |
 | Nachholen | `/mcp__morpha__nachholen` | eine verpasste Vorlesung aus der Aufnahme von jemand anderem, ohne sie ganz zu hören: Gerüst, Schritt für Schritt mit Fragen an dich, was sich nachzuhören lohnt |
-| Lesen | `/mcp__morpha__lesen` | einen Text gründlich (zusammen im Reader: Claude sieht Seite und Auswahl, beantwortet deine Fragen, klärt ?-Stellen, schreibt die Antworten an den Rand), gezielt (nur die Seiten, die zur Sitzung passen) oder als Steckbrief statt ganz lesen |
+| Lesen | `/mcp__morpha__lesen` | einen Text gründlich (zusammen im Reader: Claude sieht Seite und Auswahl, beantwortet deine Fragen, klärt ?-Stellen, schreibt die Antworten an den Rand), gezielt (nur die Seiten, die zur Sitzung passen) oder nur über die Kernaussagen (fehlen sie, schreibt Claude sie und einen Überblick; du liest sie am Rand) |
 | Vertiefen | `/mcp__morpha__vertiefen` | eine Person, Schule oder Theorie festigen: du erklärst, Claude prüft mit Beleg, ordnet ein und stellt Prüfungsfragen, auf Wunsch mit einem gefilterten Deck zum Thema in Anki |
 | Rechnen | `/mcp__morpha__rechnen` | ein Thema rechnend erarbeiten: du rechnest auf Papier, Claude prüft nur den Ansatz |
 | Sprechen | `/mcp__morpha__sprechen` | mündliche Prüfung üben, Claude als Prüfer; danach steht im Fahrplan, wie jede Sitzung sass |
@@ -871,7 +887,7 @@ erst nach deinem Okay. Das Datum kommt aus dem Stundenplan; die Kursseite zeigt 
 Lernweise und Zeit pro Woche. Ein Profil, das schon in einer Datei steht, übernimmt Claude
 auf Zuruf. Die Prompts von *Nachbereiten* bis *Probeklausur* richten sich danach: Mit `kurs`
 kennt Claude Prüfung, Phase und Lernweise, und hat ein Block im Profil einen eigenen
-Ablauf (etwa „Paper-Steckbrief Q1–Q5“), führt Claude dich durch diesen.
+Ablauf (etwa „Paper nach Q1–Q5“), führt Claude dich durch diesen.
 
 Sonst einfach fragen: „Erklär mir meine ?-Stellen aus Mikro VL05“, „Frag mich die
 Definitionen von letzter Woche ab“, „Mach Anki-Karten zu den ★-Stellen von gestern“ – oder
