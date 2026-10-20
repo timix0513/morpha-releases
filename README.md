@@ -89,6 +89,7 @@ diesen Rechner und werden sofort gespeichert.
 | Pegel automatisch anpassen | an | Hebt leise Stellen an – gut fürs eingebaute Mikrofon hinten im Saal. Mit einem externen Mikrofon nahe am Prof eher aus. |
 | Wie schreibst du mit? | Tastatur | Die drei Modi wie in der Einrichtung. Jeder Schalter im Recorder lässt sich danach weiter einzeln umlegen. |
 | Tastenleiste und Erklärungen | aus | Die Leiste mit allen Tasten unter den Folien und die Erklärtexte während der Aufnahme. Aus: `?` zeigt die Tasten, wenn man sie braucht. |
+| Stift: Gerade Linie | nach 0,4 s · **0,6 s** · 0,9 s · aus | Wie lange du am Ende eines Strichs stillhalten musst, bis er gerade wird (Folien und Reader). |
 | Bei Vorlesungsbeginn melden | an, 5 min vorher | Siehe Mitteilungen. |
 | Lernzeit | 1 h pro Tag | Wie viel Zeit du an jedem Wochentag zum Lernen hast. Damit rechnet der Lernplan bis zur Prüfung; Claude sieht sie mit den Kursprofilen. |
 | Claude | – | Ob Claude Desktop verbunden ist, mit Knopf „Verbinden“, und der Befehl für Claude Code. |
@@ -342,10 +343,21 @@ Das Feld lässt sich ausblenden (`×`); dann holt `B` es kurz her. Ein Punkt am
 Notiz-Knopf zeigt, dass zur Folie etwas dasteht.
 
 **Zeichnen.** Mit dem Stift direkt auf die Folie (Surface, Grafiktablett, zur Not die
-Maus). Leiste unten links: Stift (druckempfindlich), Textmarker, Radierer, Farben,
-Rückgängig. Finger zeichnen nicht, der Handballen bleibt also folgenlos. Radierer-Ende
-und Seitentaste des Stifts radieren immer. Ein roter Punkt am Thumbnail zeigt Folien mit
-Zeichnung.
+Maus). Leiste unten links: Stift (druckempfindlich), Textmarker, Text, Radierer, Farben,
+drei Stärken, Rückgängig. Finger zeichnen nicht, der Handballen bleibt also folgenlos.
+Radierer-Ende und Seitentaste des Stifts radieren immer. Ein roter Punkt am Thumbnail
+zeigt Folien mit Zeichnung.
+
+- **Dicke:** Die drei Punkte neben den Farben wählen fein, mittel oder dick – für Stift und
+  Textmarker getrennt, beim Text die Schriftgrösse (klein, mittel, gross).
+- **Gerade Linie:** Strich ziehen und am Ende mit der Spitze kurz liegen bleiben – er wird
+  gerade, wie in OneNote. Solange der Stift noch unten ist, folgt das Ende der Spitze;
+  waagrecht, senkrecht und 45° rasten ein. Mit der Maus: `⇧` gedrückt halten. Schrift und
+  Bögen bleiben, wie sie sind. Die Haltezeit (oder aus) steht in den Einstellungen.
+- **Text:** „T“ in der Leiste, auf die Folie klicken und tippen. `⏎` macht eine neue Zeile,
+  `Esc`, `⌘⏎` oder ein Klick daneben beendet das Feld. Mit „T“ auf einen Text klicken
+  bearbeitet ihn; der Radierer und `⌘Z` nehmen ihn wie einen Strich weg. Solange du tippst,
+  wechseln Pfeile und Leertaste keine Folien. Der Text kommt mit in die PDF mit Zeichnungen.
 
 **Platz zum Schreiben.** `R` oder der letzte Knopf der Leiste legt die Folie auf ein
 weisses Blatt mit Rand links und rechts und Papier darunter – für Herleitungen
@@ -563,7 +575,8 @@ mehr mit und rutscht danach im Kurs unter „Älteres“.
   kannst du in eigenen Worten festhalten, was du verstanden hast (freiwillig). Den Knopf
   gibt es nur bei Texten mit Antworten oder Kernaussagen; an oder aus gilt pro Text.
 - **Stift:** „Stift“ (`P`) mit Stift, Marker und Radierer – mit dem Surface-Stift oder der
-  Maus, wie auf den Folien. „Rand“ (`R`) gibt rechts neben jeder Seite weisses Papier –
+  Maus, wie auf den Folien, auch mit drei Stärken und der geraden Linie (am Ende
+  stillhalten oder `⇧`). „Rand“ (`R`) gibt rechts neben jeder Seite weisses Papier –
   pro Text, nicht für alle. Der Knopf daneben wählt kariert, liniert, punktiert oder blanko;
   der PDF-Export zeichnet dasselbe.
 - **Drehen:** ⋯ → „S. … drehen“ dreht die aktuelle Seite um 90° nach rechts, „Alle
