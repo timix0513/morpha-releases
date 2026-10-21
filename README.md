@@ -89,6 +89,7 @@ diesen Rechner und werden sofort gespeichert.
 | Pegel automatisch anpassen | an | Hebt leise Stellen an – gut fürs eingebaute Mikrofon hinten im Saal. Mit einem externen Mikrofon nahe am Prof eher aus. |
 | Wie schreibst du mit? | Tastatur | Die drei Modi wie in der Einrichtung. Jeder Schalter im Recorder lässt sich danach weiter einzeln umlegen. |
 | Tastenleiste und Erklärungen | aus | Die Leiste mit allen Tasten unter den Folien und die Erklärtexte während der Aufnahme. Aus: `?` zeigt die Tasten, wenn man sie braucht. |
+| Aufnahme verbergen | aus | Damit die laufende Aufnahme nicht ablenkt: kein roter Punkt, keine Dauer, keine Knöpfe – siehe *Aufnahme verbergen* unter Aufnehmen. |
 | Stift: Gerade Linie | nach 0,4 s · **0,6 s** · 0,9 s · aus | Wie lange du am Ende eines Strichs stillhalten musst, bis er gerade wird (Folien und Reader). |
 | Bei Vorlesungsbeginn melden | an, 5 min vorher | Siehe Mitteilungen. |
 | Lernzeit | 1 h pro Tag | Wie viel Zeit du an jedem Wochentag zum Lernen hast. Damit rechnet der Lernplan bis zur Prüfung; Claude sieht sie mit den Kursprofilen. |
@@ -408,6 +409,15 @@ nicht die Vorlesung.
 
 „Stop & speichern“ fragt vorher nach, damit ein Fehlklick neben „Pause“ die Vorlesung
 nicht beendet. Wird ein Fenster während der Aufnahme geschlossen, warnt die App.
+
+**Aufnahme verbergen.** Wen die laufende Uhr ablenkt, schaltet in den Einstellungen
+„Aufnahme verbergen“ ein. Oben rechts im Recorder stehen dann nur noch das Morpha-Zeichen
+in Grau und die Folie („Folie 14 / 42“) – kein roter Punkt, keine Dauer, keine Knöpfe.
+Ein Klick auf das Zeichen pausiert, ein zweiter setzt fort; pausiert ist sein Punkt hohl.
+Bleibt der Zeiger 5 Sekunden auf der Folienzahl, erscheinen alle Knöpfe (Pause, Später
+weiter, Stop) und verschwinden wieder, sobald er sie verlässt. Auch in der Übersicht und
+auf der Kursseite steht dann nur „Zur Vorlesung“ bzw. „jetzt“. Kein Ton oder ein
+getrenntes Mikrofon meldet die App trotzdem laut, mit allen Knöpfen.
 
 ## Auswertung
 
