@@ -772,7 +772,8 @@ bestätigen. Sobald Claude sich das erste Mal meldet, steht in der App „Claude
 verbunden ✓“. Node.js braucht es dafür nicht, und ein Update der App ändert an der
 Erweiterung nichts.
 
-Lässt sich die Erweiterung nicht öffnen (ältere Claude-Desktop-Version), trägt die App
+Lässt sich die Erweiterung nicht öffnen (ältere Claude-Desktop-Version, oder unter Windows
+ist Claude nicht als Programm für `.mcpb`-Dateien eingetragen), trägt die App
 sich stattdessen in `claude_desktop_config.json` ein – mit Sicherungskopie daneben, sonst
 ändert sie nichts an der Datei. Dann Claude Desktop ganz beenden (Mac: ⌘Q; Windows: auch
 das Symbol im Infobereich) und neu öffnen. Dieser Weg braucht die App in „Programme“
