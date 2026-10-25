@@ -884,15 +884,15 @@ Morpha, in Claude Code als Befehl:
 
 | Prompt | Claude Code | Was passiert |
 |---|---|---|
-| Nachbereiten | `/mcp__morpha__nachbereiten` | eine Vorlesung, die du gehört hast: erst aus dem Kopf abrufen, dann Abgleich mit dem Gesagten, offene Fragen klären, Begriffe festhalten. In Morpha: „Mit Claude nachbereiten“ oben in der Vorlesung |
+| Nachbereiten | `/mcp__morpha__nachbereiten` | eine Vorlesung, die du gehört hast: kurz die vorige abrufen, Kernaussagen und ihr Warum aus dem Kopf, dann Abgleich mit dem Gesagten, offene Fragen klären, Begriffe festhalten, zwei eigene Prüfungsfragen. In Morpha: „Mit Claude nachbereiten“ oben in der Vorlesung |
 | Nachholen | `/mcp__morpha__nachholen` | eine verpasste Vorlesung aus der Aufnahme von jemand anderem, ohne sie ganz zu hören: Gerüst, Schritt für Schritt mit Fragen an dich, was sich nachzuhören lohnt |
 | Lesen | `/mcp__morpha__lesen` | einen Text gründlich (zusammen im Reader: Claude sieht Seite und Auswahl, beantwortet deine Fragen, klärt ?-Stellen, schreibt die Antworten an den Rand), gezielt (nur die Seiten, die zur Sitzung passen) oder nur über die Kernaussagen (fehlen sie, schreibt Claude sie und einen Überblick; du liest sie am Rand) |
 | Vertiefen | `/mcp__morpha__vertiefen` | eine Person, Schule oder Theorie festigen: du erklärst, Claude prüft mit Beleg, ordnet ein und stellt Prüfungsfragen, auf Wunsch mit einem gefilterten Deck zum Thema in Anki |
 | Rechnen | `/mcp__morpha__rechnen` | ein Thema rechnend erarbeiten: du rechnest auf Papier, Claude prüft nur den Ansatz |
-| Sprechen | `/mcp__morpha__sprechen` | mündliche Prüfung üben, Claude als Prüfer; danach steht im Fahrplan, wie jede Sitzung sass |
-| Abfragen | `/mcp__morpha__abfragen` | Prüfungsfragen aus deinen ★-Stellen, Begriffen und dem, was betont wurde (im Stil deiner Altklausuren); danach steht im Fahrplan pro Sitzung sicher, wackelig oder Lücke, auf Wunsch ein gefiltertes Deck fürs Wackelige |
+| Sprechen | `/mcp__morpha__sprechen` | mündliche Prüfung üben: du sprichst zwei Minuten frei, Claude fragt als Prüfer nach (mit Einwänden, Stichwort statt Antwort); zum Schluss schreibst du drei Zeilen Position – Einwand – Antwort, und im Fahrplan steht, wie jede Sitzung sass |
+| Abfragen | `/mcp__morpha__abfragen` | Prüfungsfragen aus deinen ★-Stellen, Begriffen und dem, was betont wurde (im Stil deiner Altklausuren), gemischt über die Sitzungen, Wackeliges zuerst; bei Fehlern erst ein Hinweis, dann die Erklärung. Danach steht im Fahrplan pro Sitzung sicher, wackelig oder Lücke, und Claude sagt, wann sie wieder dran ist; auf Wunsch ein gefiltertes Deck fürs Wackelige |
 | Probeklausur | `/mcp__morpha__probeklausur` | im Format der echten Prüfung, mit Punkten und Korrektur – zusammengestellt im Stil deiner Altklausuren oder eine Altklausur selbst geschrieben; danach steht im Fahrplan, wie jede Sitzung sass |
-| Woche planen | `/mcp__morpha__woche` | Rückblick auf die Woche, dann ein Plan aus Blöcken innerhalb deiner Lernzeit – nach deinem Okay steht er in Morpha auf Heute und in der Woche |
+| Woche planen | `/mcp__morpha__woche` | Rückblick auf die Woche, dann ein Plan aus Blöcken innerhalb deiner Lernzeit – ab acht Wochen vor einer Prüfung mit einem Abfragen-Block pro Woche (mündlich: zweimal Sprechen), in den letzten zehn Tagen nach festem Ablauf. Nach deinem Okay steht er in Morpha auf Heute und in der Woche |
 | Zusammenfassung | `/mcp__morpha__zusammenfassung` | Kernaussagen, Ablauf mit Folien, Begriffe, Prüfungsrelevantes und Offenes – erst nach deinem Okay in die App |
 | Syllabus | `/mcp__morpha__syllabus` | Syllabus lesen, Lese-Aufgaben mit Fristen vorschlagen, nach Bestätigung anlegen |
 | Anki lernen | `/mcp__morpha__anki_lernen` | fällige Karten eines Kurses oder eines Unterdecks im Chat abfragen, Unverstandenes aus der Vorlesung erklären; bewertet wird danach in Anki. Fürs Unterdeck kopiert ihn „Mit Claude abfragen“ in Morpha |
