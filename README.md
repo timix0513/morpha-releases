@@ -419,6 +419,24 @@ weiter, Stop) und verschwinden wieder, sobald er sie verlässt. Auch in der Übe
 auf der Kursseite steht dann nur „Zur Vorlesung“ bzw. „jetzt“. Kein Ton oder ein
 getrenntes Mikrofon meldet die App trotzdem laut, mit allen Knöpfen.
 
+**Panikmodus.** Soll niemand auf deinem Bildschirm sehen, dass du aufnimmst, drück
+⌘⇧P (Windows: Strg+Umschalt+P), während Morpha vorn ist. Dann verschwindet in der App
+alles, was mit Aufnahmen zu tun hat: Aufnahme-Knöpfe, die laufende Aufnahme, Ton,
+Transkript, Dauer und Transkriptionsstand, dazu Teilen, Importieren, Erinnerungen vor
+Vorlesungen und die Einstellungen zu Mikrofon und Transkription. Vorlesungen mit Folien
+bleiben und zeigen nur ihre Folien mit Markern, Stichworten und Notizen; Vorlesungen ohne
+Folien sind ganz weg. Dasselbe Kürzel holt alles zurück. Nichts in Morpha zeigt an, dass
+der Modus an ist, und er bleibt auch nach einem Neustart an, bis du das Kürzel wieder
+drückst.
+
+- Eine laufende Aufnahme nimmt unsichtbar ohne Lücke weiter auf. Warnungen gibt es dabei
+  keine: kein „Kein Ton“, keine Nachfrage beim Beenden (dann fehlen nur die letzten
+  Sekunden). Eine neue Aufnahme geht erst nach dem Ausschalten.
+- Gelöscht oder verschoben wird nichts, der Modus ändert nur die Anzeige.
+- Was Morpha nicht verbergen kann: das Mikrofon-Symbol des Systems (am Mac der orange
+  Punkt in der Menüleiste, mit dem Namen Morpha), solange eine Aufnahme läuft. Claude
+  sieht Transkripte weiterhin, und Anki-Karten behalten ihre Quelle mit Zeit.
+
 ## Auswertung
 
 Nach dem Stop öffnet sich die Auswertung der Vorlesung (später über die Kursseite). Oben
