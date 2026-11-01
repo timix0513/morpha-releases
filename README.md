@@ -95,6 +95,7 @@ diesen Rechner und werden sofort gespeichert.
 | Lernzeit | 1 h pro Tag | Wie viel Zeit du an jedem Wochentag zum Lernen hast. Damit rechnet der Lernplan bis zur Prüfung; Claude sieht sie mit den Kursprofilen. |
 | Claude | – | Ob Claude Desktop verbunden ist, mit Knopf „Verbinden“, und der Befehl für Claude Code. |
 | Anki | – | Ob das Morpha-Add-on in Anki läuft, mit Knopf „Installieren“ bzw. „Aktualisieren“, wenn die App ein neueres mitbringt. |
+| Erklären über Claude Code | aus | Taste `H` in Anki: Claude erklärt die Karte direkt dort, siehe [Anki einrichten](#2-anki-einrichten-optional). Aus: Karte kopieren. Darunter das **Modell** (Standard von Claude Code, Haiku, Sonnet oder Opus); stärkere Modelle brauchen dein Abo schneller auf. |
 | Whisper-Modell | `large-v3-turbo` | Kleiner = schneller, aber ungenauer. Unter Windows (nur CPU) ist `large-v3-turbo-q5_0` einen Versuch wert. Ein neues Modell lädt die App bei der nächsten Transkription. |
 | Grafikkarte nutzen | an | Nur Windows, nur mit passendem Grafiktreiber: Whisper rechnet auf der Grafikkarte, viel schneller. Aus, falls dabei Unsinn herauskommt. |
 | Farben im Reader | leer | Was jede der acht Markierfarben bedeutet, z.B. Gelb „wichtig“, Rot „widerspricht“. Der Reader zeigt es bei der Farbwahl, im Markdown-Export steht es dabei, und Claude liest es mit. |
@@ -897,6 +898,15 @@ Was das Add-on macht:
   „Mikroökonomie · VL03 · Folie 12 · 14:32 ▶“. Ein Klick öffnet Morpha genau dort, auch
   während einer Aufnahme (sie läuft weiter). Das klappt auch bei geschlossener Morpha – sie
   startet dann. Auf AnkiMobile und AnkiWeb fehlt die Zeile.
+- **Karte erklären:** Hängst du an einer Karte, drück auf der Antwortseite `H` oder
+  „Erklären“ neben „Bearbeiten“ (auf der Frageseite zeigt `H` zuerst die Antwort). Morpha
+  gibt dir die Karte samt Auftrag zum Kopieren, für einen Chat mit Claude. Wer Claude Code
+  nutzt, kann in den Einstellungen unter Anki „Erklären über Claude Code“ einschalten: Dann
+  erscheint die Erklärung direkt unter der Karte, `N` führt sie im Fenster daneben als Chat
+  weiter, und bei Karten aus einer Vorlesung holt „Mit Folie und Transkript“ den Beleg dazu.
+  Dafür müssen Morpha und Anki offen sein, und Claude Code braucht eine eigene Anmeldung
+  (`claude auth login`, die von Claude Desktop zählt nicht). Jeder Tastendruck und jede
+  Nachfrage zählt auf dein Abo; Morpha speichert davon nichts.
 - **Übersicht und Lernfortschritt:** siehe [Karten und Lernfortschritt](#karten-und-lernfortschritt).
 
 Welches Deck zu welchem Kurs gehört: auf der Kursseite ⋯ → „Anki-Deck …“ (oder Claude
