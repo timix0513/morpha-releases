@@ -465,7 +465,7 @@ drückst.
 
 Nach dem Stop öffnet sich die Auswertung der Vorlesung (später über die Kursseite). Oben
 rechts „Nachhören“, daneben Teilen (Exporte, Weitergeben) und ⋯ (Großansicht, Weiter
-aufnehmen, Folienzuordnung, Neu transkribieren).
+aufnehmen, Folienzuordnung, Mit Claude zuordnen, Neu transkribieren).
 
 ![Auswertung: markierte Stellen mit dem, was dazu gesagt wurde, darunter das Transkript pro Folie](bilder/auswertung.png)
 
@@ -493,6 +493,13 @@ aufnehmen, Folienzuordnung, Neu transkribieren).
 - **Folienzuordnung:** Wurde ohne Folien aufgenommen, schlägt die App vor, welche
   PDF-Seite zu welcher getippten Nummer gehört (aus Stichworten, Gesagtem und
   Reihenfolge) – bitte prüfen, Seitenzahl ändern, „Zuordnung übernehmen“.
+- **Mit Claude zuordnen:** Nicht weitergeklickt, und das ganze Gesagte hängt an einer
+  Folie? ⋯ → „Mit Claude zuordnen“ kopiert einen Prompt; in Claude einfügen. Claude liest
+  Transkript und Folien und zeigt eine Tabelle, welche Folie wann lief. Erst nach deinem
+  Okay schreibt es die Zuordnung in die App – kommst du zurück ins Fenster, ist das
+  Gesagte auf die Folien verteilt. Oben steht dann „Von Claude zugeordnet“;
+  „Zurücknehmen …“ stellt die Zuordnung davor wieder her. Geht, sobald Folien und
+  Transkript da sind.
 - **Exportieren** (Teilen-Knopf oben):
   - *PDF mit Transkript* – zum Lesen, Ausdrucken, Weitergeben: oben die Zusammenfassung,
     dann jede Folie mit deinen Zeichnungen, darunter Notiz, markierte Stellen und das
@@ -946,6 +953,7 @@ Morpha, in Claude Code als Befehl:
 | Probeklausur | `/mcp__morpha__probeklausur` | im Format der echten Prüfung, mit Punkten und Korrektur – zusammengestellt im Stil deiner Altklausuren oder eine Altklausur selbst geschrieben; danach steht auf der Kursseite, wie jede Sitzung sass |
 | Woche planen | `/mcp__morpha__woche` | Rückblick auf die Woche, dann ein Plan aus Blöcken innerhalb deiner Lernzeit – ab acht Wochen vor einer Prüfung mit einem Abfragen-Block pro Woche (mündlich: zweimal Sprechen), in den letzten zehn Tagen nach festem Ablauf. Nach deinem Okay steht er in Morpha auf Heute und in der Woche |
 | Zusammenfassung | `/mcp__morpha__zusammenfassung` | Kernaussagen, Ablauf mit Folien, Begriffe, Prüfungsrelevantes und Offenes – erst nach deinem Okay in die App |
+| Folien zuordnen | `/mcp__morpha__folien` | wenn nicht weitergeklickt wurde: welche Folie wann lief, aus Transkript und Folientexten – erst nach deinem Okay in die App. In Morpha: ⋯ → „Mit Claude zuordnen“ in der Vorlesung |
 | Syllabus | `/mcp__morpha__syllabus` | Syllabus lesen, Lese-Aufgaben mit Fristen vorschlagen, nach Bestätigung anlegen |
 | Anki lernen | `/mcp__morpha__anki_lernen` | fällige Karten eines Kurses oder eines Unterdecks im Chat abfragen, Unverstandenes aus der Vorlesung erklären; bewertet wird danach in Anki. Fürs Unterdeck kopiert ihn „Mit Claude abfragen“ in Morpha |
 
