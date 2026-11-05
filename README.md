@@ -20,7 +20,7 @@ Versionen hatten eine Startseite mit Kacheln.*
 
 **Inhalt:** [Herunterladen](#herunterladen) · [Installieren](#installieren) ·
 [Einrichtung, Einstellungen und Hilfe](#einrichtung-einstellungen-und-hilfe) ·
-[So geht’s](#so-gehts) · [Heute, Woche und Kurse](#heute-woche-und-kurse) ·
+[So geht’s](#so-gehts) · [Heute, Woche und Kurse](#heute-woche-und-kurse) · [Lernsitzung](#lernsitzung) ·
 [Aufnehmen](#aufnehmen) · [Auswertung](#auswertung) · [Nachhören](#nachhören) · [Teilen](#teilen) ·
 [Lektüre und Reader](#lektüre-und-reader) · [Karten und Lernfortschritt](#karten-und-lernfortschritt) ·
 [Updates und Daten](#updates-und-daten) · [Von Vorlesung-Sync zu Morpha](#von-vorlesung-sync-zu-morpha) ·
@@ -93,6 +93,9 @@ diesen Rechner und werden sofort gespeichert.
 | Stift: Gerade Linie | nach 0,4 s · **0,6 s** · 0,9 s · aus | Wie lange du am Ende eines Strichs stillhalten musst, bis er gerade wird (Folien und Reader). |
 | Bei Vorlesungsbeginn melden | an, 5 min vorher | Siehe Mitteilungen. |
 | Lernzeit | 1 h pro Tag | Wie viel Zeit du an jedem Wochentag zum Lernen hast. Damit rechnet der Lernplan bis zur Prüfung; Claude sieht sie mit den Kursprofilen. |
+| Eigene Musik | – | Link zu einer Spotify- oder Apple-Music-Playlist für die [Lernsitzung](#lernsitzung) (Klang „Musik-App“). |
+| Ablenkende Apps | keine | Apps, bei denen Morpha dich während des Fokus erinnert, siehe [Lernsitzung](#lernsitzung). Auswahl aus den laufenden Apps. |
+| Fokus einschalten | aus | Nur Mac: schaltet beim Start einer Lernsitzung einen Fokus von macOS (z. B. *Nicht stören*) ein und am Ende aus – über zwei Kurzbefehle, siehe [Lernsitzung](#lernsitzung). |
 | Claude | – | Ob Claude Desktop verbunden ist, mit Knopf „Verbinden“, und der Befehl für Claude Code. |
 | Anki | – | Ob das Morpha-Add-on in Anki läuft, mit Knopf „Installieren“ bzw. „Aktualisieren“, wenn die App ein neueres mitbringt. |
 | Erklären über Claude Code | aus | Taste `H` in Anki: Claude erklärt die Karte direkt dort, siehe [Anki einrichten](#2-anki-einrichten-optional). Aus: Karte kopieren. Darunter das **Modell** (Standard von Claude Code, Haiku, Sonnet oder Opus); stärkere Modelle brauchen dein Abo schneller auf. |
@@ -209,8 +212,10 @@ Gibt es für die Woche einen **Wochenplan**, wird aus *Lesen* die Zeile **Plan**
 die Blöcke in ihrer Reihenfolge, mit kurzem Titel und Minuten, in der Farbe ihres Kurses –
 erledigte grau mit Haken, der nächste von heute umrandet. Texte mit Frist, die in keinem
 Block stecken, stehen gestrichelt an ihrem Fristtag; so geht keiner verloren. Rechts im
-Tageskopf die geplante Zeit (über der Lernzeit des Tages in Gelb), oben „Plan 9 h 15 von
-11 h, 3 von 21 erledigt“. Ein Klick auf einen Block zeigt, was er ist und wann er fertig
+Tageskopf die geplante Zeit (über der Lernzeit des Tages in Gelb), oben „Gelernt 6 h 20 ·
+geplant 9 h 15 · 3 von 21 erledigt“. *Gelernt* ist die Fokuszeit deiner
+[Lernsitzungen](#lernsitzung) in dieser Woche (Pausen zählen nicht), *geplant* die Summe der
+Blöcke; deine Lernzeit der Woche steht im Tooltip. Ein Klick auf einen Block zeigt, was er ist und wann er fertig
 ist, mit *Start*, *Erledigt* und *Streichen*. Ohne Plan steht über dem Raster „Noch kein
 Plan für KW 44“ mit **Mit Claude planen** (kopiert den Prompt *Woche planen*).
 **Anzeigen** blendet Zeilen (Plan, Anki im Plan, Texte mit Frist, Termine) und einzelne
@@ -309,6 +314,63 @@ kopiert den Ablauf, um sie selbst zu schreiben und korrigieren zu lassen.
   für Kurse, die nicht im Stundenplan stehen. Mit Kursordner zeigt der Recorder die
   neuesten PDFs daraus (bis zwei Ebenen tief); ein Klick hängt sie an – bewusst nicht
   automatisch, sonst landen die Folien von letzter Woche an der neuen Vorlesung.
+
+## Lernsitzung
+
+Ein Timer fürs Lernen: Fokus, Pause, Weiter – und Morpha bleibt dabei im Hintergrund, damit
+Anki oder der Text vorn sein kann.
+
+**Starten.** *Lernen* in der Seitenleiste oder im Kopf von *Heute* öffnet das Startfenster:
+- **Kurs** – optional. *Ohne Kurs* ist es ein reiner Lerntimer; mit Kurs kann Morpha gleich
+  das Kursdeck in Anki öffnen.
+- **Rhythmus** – *Pomodoro* (25 min Fokus, 5 Pause, nach 4 Runden 15), *50/10*, *Am Stück*
+  (eine Dauer oder „bis 16:00“) oder *Eigene* (Fokus, Pause, lange Pause, nach wie vielen
+  Runden). Morpha merkt sich die Wahl pro Kurs.
+- **Ende** – nach so vielen Runden, oder leer: offen, bis du beendest.
+- **Öffnen** – was gleich mit aufgeht (Anki mit dem Deck, der Text im Reader).
+- **Klang** – *Still*, Rauschen (weiss, rosa, braun) oder deine *Musik-App*, mit Lautstärke.
+  Klang läuft nur im Fokus, die Pause bleibt still.
+
+Aus der **Woche**: *Start* auf einem Block von heute öffnet dasselbe Fenster, schon mit Kurs
+und so vielen Runden, wie in den Block passen. *Nur öffnen* öffnet ihn wie früher ohne Timer.
+
+**Während der Sitzung.** Endet ein Fokus, beginnt die Pause sofort, mit Gong und Mitteilung.
+Nach der Pause wartet der Timer auf **Weiter** – so läuft keine Runde ohne dich. Weiter,
+Pause und Beenden gehen an drei Orten:
+- **Menüleiste** (Mac; Windows: Symbol in der Taskleiste): die Restzeit („● 18:42“,
+  „Pause 4:12“) und ein Menü mit Pause, Weiter, Phase überspringen, 5 Minuten länger,
+  Beenden und *Morpha öffnen*. Das Symbol gibt es nur, solange eine Sitzung läuft.
+- **Anki** (Morpha-Add-on ab 0.12): im Fokus eine feine Linie und leise die Restzeit, in der
+  Pause und beim Warten eine Zeile mit *Weiter* und *Beenden*.
+- **Morpha**: eine Leiste oben im Fenster; beim Warten startet `Enter` die nächste Runde.
+
+Morpha holt sich dabei nie selbst nach vorn. Schliesst du das Fenster (Mac), läuft die
+Sitzung weiter; Beenden der App fragt nach. Auch nach einem Neustart ist sie an derselben
+Stelle wieder da. Während einer Aufnahme bleibt alles still: kein Klang, kein Gong, keine
+Mitteilungen.
+
+**Ende.** Nach der letzten Runde fragt Morpha „Noch eine Runde?“. Danach steht auf *Heute* der
+**Rückblick**: Fokuszeit, Runden, Karten (wie viele du in Anki bewertet hast), Ablenkungen,
+dazu „Wie lief’s?“ und – wenn die Sitzung von einem Block kam – **Block erledigt**. Die
+Fokuszeit zählt in der Woche als *Gelernt*.
+
+**Eigene Musik.** Unter Einstellungen › Lernzeit einen Spotify- oder Apple-Music-Link
+eintragen und als Klang *Musik-App* wählen. Beim ersten Fokus geht die Playlist auf (Spotify
+spielt gleich, bei Apple Music startest du sie beim ersten Mal selbst). Am Mac hält die Musik
+in der Pause an und spielt mit *Weiter* weiter; beim ersten Mal fragt macOS, ob Morpha das
+darf. Windows: nur öffnen.
+
+**Ablenkungen.** Unter Einstellungen › Lernzeit › *Ablenkende Apps* wählst du aus den
+laufenden Apps die, die dich ablenken (z. B. Nachrichten, Telegram, ein Browser). Ist eine
+davon im Fokus 20 Sekunden lang vorn, kommt eine Mitteilung „Fokus läuft noch · 14 min“,
+danach 5 Minuten Ruhe. Gesperrt wird nichts, und Websites sieht Morpha nicht – nur Apps.
+Anki und Morpha zählen nie. Der Rückblick nennt, wie oft und wie lange.
+
+**Fokus von macOS** (nur Mac). Einstellungen › Lernzeit › *Fokus einschalten* schaltet beim
+Start einen Fokus ein und am Ende aus. macOS lässt das nur über Kurzbefehle zu: In der App
+*Kurzbefehle* zwei anlegen, „Morpha Fokus an“ (Aktion *Fokus festlegen* → z. B. *Nicht
+stören* ein) und „Morpha Fokus aus“ (dasselbe, aus). Andere Namen trägst du in der
+Einstellung ein; fehlt einer, ist das Feld rot, mit *Kurzbefehle öffnen*.
 
 ## Aufnehmen
 
