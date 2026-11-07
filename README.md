@@ -267,6 +267,31 @@ schmal, steht die Spalte oben.
 - **Mit Claude:** kopiert einen Ablauf für den ganzen Kurs – Vertiefen, Abfragen,
   Probeklausur oder Sprechen, dazu die Blöcke aus deinem Profil –, du fügst ihn in Claude ein.
 
+**Landkarte und Lernablauf.** Damit die Karten nicht dein erster Kontakt mit dem Stoff sind,
+gibt es pro Sitzung einen festen Ablauf: **1** die Landkarte des Kurses anschauen (eine
+Seite: Leitfrage, ein Satz pro Sitzung, die Linien durch den Kurs), **2** die
+Sitzungsübersicht lesen (halbe Seite), **3** in Anki die Karten der Stufe 1 (Gerüst,
+Klausurfragen, Personen, Grundbegriffe), **4** Stufe 2 (Argumente, Zusammenhänge), **5** eine
+Klausurfrage beantworten.
+
+- Die **Landkarte** steht ganz oben auf der Kursseite, eingeklappt; ein Klick klappt sie auf.
+  „Landkarte erstellen“ kopiert einen fertigen Prompt für Claude, Claude schreibt sie über
+  Morpha zurück. Liegen im Kursordner unter `_Notizen` schon `00_Landkarte.md` und
+  `01_Sitzungen_kurz.md` (ein Abschnitt `## VL06 · …` pro Sitzung), holt „Einlesen“ sie
+  herein – auch die Übersichten von Sitzungen ohne Aufnahme.
+- In der Liste **Sitzungen** zeigen fünf kleine Punkte, wie weit der Ablauf ist (grün =
+  erledigt). Aufgeklappt stehen die fünf Schritte, die **Übersicht** (mit Hinweis
+  „Vorschau“, wenn sie ohne Folien geschrieben ist) und die **Karten je Stufe**. Schritt 1
+  und 2 hakst du selbst ab, 3 und 4 sind erledigt, sobald in Anki keine Karte der Stufe mehr
+  neu ist, 5, sobald Claude dich zur Sitzung abgefragt hat.
+- **Lernen: Stufe 1** legt in Anki ein gefiltertes Deck an – die fälligen Karten der Stufe
+  und höchstens so viele neue, wie dein Kartenbudget erlaubt. Stufe 2 kommt dran, wenn Stufe 1
+  erledigt ist. Die Stufen sind Tags `stufe::1` bis `stufe::3` an den Karten; ohne sie steht
+  „nicht eingeteilt“, und „Karten in Stufen einteilen“ kopiert den Prompt dafür.
+- Die vier Prompts (Landkarte, Übersicht, Stufen, Klausurfrage) lassen sich unter
+  Einstellungen → *Prompts zum Lernablauf* anpassen. In Claude gibt es sie auch über „+“ →
+  Morpha.
+
 **Als Nächstes** zeigt bis zu drei Dinge, das wichtigste mit Knopf: eine laufende oder
 unterbrochene Aufnahme, die letzte Aufnahme ohne Transkript („Transkribieren“), fehlende
 Folien, die Lektüre bis zur nächsten Sitzung, Überfälliges, fällige Karten und verpasste
