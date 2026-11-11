@@ -386,8 +386,9 @@ spielt gleich, bei Apple Music startest du sie beim ersten Mal selbst). Am Mac h
 in der Pause an und spielt mit *Weiter* weiter; beim ersten Mal fragt macOS, ob Morpha das
 darf. Windows: nur öffnen.
 
-**Eigene Dateien.** Im Klang-Menü der Leiste (Lautsprecher) unter *Eigene Musik* ›
-*Hinzufügen …* wählst du Dateien oder einen ganzen Ordner (MP3, WAV, M4A, AAC, FLAC, AIFF,
+**Eigene Dateien.** Im Fenster *Lernen* bei *Klang* › *Dateien hinzufügen …* oder *Ordner
+hinzufügen …* – während der Sitzung auch im Klang-Menü der Leiste (Lautsprecher) unter
+*Eigene Musik* › *Hinzufügen …* – wählst du Dateien oder einen ganzen Ordner (MP3, WAV, M4A, AAC, FLAC, AIFF,
 OGG, Opus; bis 200 MB pro Datei). Die Titel stehen danach im Menü. Ein Klick setzt das
 Häkchen oder nimmt es weg, *Alle* wählt alle. Gespielt werden die angehakten der Reihe nach;
 mit *Wiederholen* geht es danach von vorn (ein einzelner Titel läuft als Schleife), ohne ist
