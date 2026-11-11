@@ -353,7 +353,8 @@ Anki oder der Text vorn sein kann.
   Runden). Morpha merkt sich die Wahl pro Kurs.
 - **Ende** – nach so vielen Runden, oder leer: offen, bis du beendest.
 - **Öffnen** – was gleich mit aufgeht (Anki mit dem Deck, der Text im Reader).
-- **Klang** – *Still*, Rauschen (weiss, rosa, braun) oder deine *Musik-App*, mit Lautstärke.
+- **Klang** – *Still*, Rauschen (weiss, rosa, braun), deine *Musik-App* oder eigene
+  Musikdateien, mit Lautstärke.
   Klang läuft nur im Fokus, die Pause bleibt still.
 
 Aus der **Woche**: *Start* auf einem Block von heute öffnet dasselbe Fenster, schon mit Kurs
@@ -384,6 +385,16 @@ eintragen und als Klang *Musik-App* wählen. Beim ersten Fokus geht die Playlist
 spielt gleich, bei Apple Music startest du sie beim ersten Mal selbst). Am Mac hält die Musik
 in der Pause an und spielt mit *Weiter* weiter; beim ersten Mal fragt macOS, ob Morpha das
 darf. Windows: nur öffnen.
+
+**Eigene Dateien.** Im Klang-Menü der Leiste (Lautsprecher) unter *Eigene Musik* ›
+*Hinzufügen …* wählst du Dateien oder einen ganzen Ordner (MP3, WAV, M4A, AAC, FLAC, AIFF,
+OGG, Opus; bis 200 MB pro Datei). Die Titel stehen danach im Menü. Ein Klick setzt das
+Häkchen oder nimmt es weg, *Alle* wählt alle. Gespielt werden die angehakten der Reihe nach;
+mit *Wiederholen* geht es danach von vorn (ein einzelner Titel läuft als Schleife), ohne ist
+nach dem letzten Titel Ruhe. In der Pause blendet die Musik aus und spielt im nächsten Fokus
+an derselben Stelle weiter. Morpha gleicht die Lautstärke der Titel an. WAV, AIFF und FLAC
+werden beim Hinzufügen verkleinert. Die Dateien bleiben auf deinem Rechner und kommen nicht
+mit, wenn du Vorlesungen teilst.
 
 **Ablenkungen.** Unter Einstellungen › Lernzeit › *Ablenkende Apps* wählst du aus den
 laufenden Apps die, die dich ablenken (z. B. Nachrichten, Telegram, ein Browser). Ist eine
