@@ -486,7 +486,10 @@ zeigt Folien mit Zeichnung.
   Bögen bleiben, wie sie sind. Die Haltezeit (oder aus) steht in den Einstellungen.
 - **Text:** „T“ in der Leiste, auf die Folie klicken und tippen. `⏎` macht eine neue Zeile,
   `Esc`, `⌘⏎` oder ein Klick daneben beendet das Feld. Mit „T“ auf einen Text klicken
-  bearbeitet ihn; der Radierer und `⌘Z` nehmen ihn wie einen Strich weg. Solange du tippst,
+  bearbeitet ihn, ihn ziehen verschiebt ihn. Am rechten Rand (Griff erscheint beim Darüberfahren)
+  ziehst du die Breite, der Text bricht dann neu um. Ist ein Text offen, gelten Farbe und
+  Schriftgrösse aus der Leiste ihm. Der Radierer und `⌘Z` nehmen ihn wie einen Strich weg;
+  `⌘Z` macht auch Verschieben, Breite und Farbe rückgängig. Solange du tippst,
   wechseln Pfeile und Leertaste keine Folien. Der Text kommt mit in die PDF mit Zeichnungen.
 
 **Platz zum Schreiben.** `R` oder der letzte Knopf der Leiste legt die Folie auf ein
