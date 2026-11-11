@@ -389,7 +389,7 @@ darf. Windows: nur öffnen.
 **Eigene Dateien.** Im Fenster *Lernen* bei *Klang* › *Dateien hinzufügen …* oder *Ordner
 hinzufügen …* – während der Sitzung auch im Klang-Menü der Leiste (Lautsprecher) unter
 *Eigene Musik* › *Hinzufügen …* – wählst du Dateien oder einen ganzen Ordner (MP3, WAV, M4A, AAC, FLAC, AIFF,
-OGG, Opus; bis 200 MB pro Datei). Die Titel stehen danach im Menü. Ein Klick setzt das
+OGG, Opus; bis 1 GB pro Datei, auch lange Mixe). Die Titel stehen danach im Menü. Ein Klick setzt das
 Häkchen oder nimmt es weg, *Alle* wählt alle. Gespielt werden die angehakten der Reihe nach;
 mit *Wiederholen* geht es danach von vorn (ein einzelner Titel läuft als Schleife), ohne ist
 nach dem letzten Titel Ruhe. In der Pause blendet die Musik aus und spielt im nächsten Fokus
