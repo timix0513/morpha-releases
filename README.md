@@ -639,8 +639,17 @@ Ohne Server und ohne Konto.
   kleiner, wenn die anderen die PDF schon haben. 90 Minuten Ton sind etwa 43 MB. Dein Name
   aus den Einstellungen steht dabei („aufgenommen von …“).
 - **Bekommen:** Datei doppelklicken (auch alte `.vorlesung` von Vorlesung-Sync), aufs Fenster ziehen oder Ablage (Windows: Datei) →
-  „Vorlesung importieren …“ (`⌘O` / `Strg+O`). Die App zeigt, was drin ist, schlägt den Kurs
+  „Vorlesung oder Kurs importieren …“ (`⌘O` / `Strg+O`). Die App zeigt, was drin ist, schlägt den Kurs
   vor und legt die Vorlesung zum verpassten Termin in die Woche.
+- **Ganzer Kurs:** auf der Kursseite ⋯ → „Kurs teilen …“: alle Aufnahmen des Kurses in einer
+  Datei – etwa am Semesterende oder für jemanden, der neu dazukommt. Was die anderen schon
+  haben, hakst du ab; mitgegeben wird wie bei einer Vorlesung, für alle gemeinsam. Ein
+  Semester sind schnell einige hundert MB, also eher Stick oder geteilter Ordner.
+- **Kurs bekommen:** Die Datei öffnest du wie eine Vorlesung. Morpha zeigt jede Aufnahme mit
+  dem, was passiert: *fehlt* (angehakt), *Transkript fehlt* (die Vorlesung hast du schon, das
+  Transkript wird ergänzt), *andere Aufnahme* (dieselbe Sitzung hast du schon, selbst
+  aufgenommen oder von jemand anderem – nicht angehakt) und *schon da*. Übernommen wird nur,
+  was angehakt ist; dieselbe Datei später nochmal öffnen schadet nicht.
 - **Transkribieren lassen:** Ist dein Rechner langsam (Windows ohne Grafikkarte), teil die
   Vorlesung ohne Transkript mit jemandem, der einen schnelleren hat. Dort transkribieren und
   unter Teilen „Transkript an … zurückschicken …“ – die kleine Datei ziehst du auf dein
