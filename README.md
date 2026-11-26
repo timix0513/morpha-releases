@@ -360,6 +360,13 @@ Anki oder der Text vorn sein kann.
 Aus der **Woche**: *Start* auf einem Block von heute öffnet dasselbe Fenster, schon mit Kurs
 und so vielen Runden, wie in den Block passen. *Nur öffnen* öffnet ihn wie früher ohne Timer.
 
+Aus **Anki** (Morpha-Add-on ab 0.16): Im Menü *Extras* startet **Morpha: Lernsitzung
+starten** (`⌘⇧L`, Windows `Strg+Shift+L`) sofort – mit dem Kurs des Decks, das gerade offen
+ist, und dem Rhythmus, den du zuletzt für diesen Kurs gewählt hast. **Morpha: Lernsitzung …**
+öffnet ein kleines Fenster mit Kurs, Rhythmus und Runden. Morpha muss dafür laufen (es hält
+Uhr, Klang und Wächter); ist es zu, fragt Anki, ob es Morpha öffnen soll. Läuft eine
+Sitzung, stehen im selben Menü *Anhalten*/*Fortsetzen* und *Beenden*.
+
 **Während der Sitzung.** Endet ein Fokus, beginnt die Pause sofort, mit Gong und Mitteilung.
 Nach der Pause wartet der Timer auf **Weiter** – so läuft keine Runde ohne dich. Weiter,
 Pause und Beenden gehen an drei Orten:
@@ -367,7 +374,8 @@ Pause und Beenden gehen an drei Orten:
   „Pause 4:12“) und ein Menü mit Pause, Weiter, Phase überspringen, 5 Minuten länger,
   Beenden und *Morpha öffnen*. Das Symbol gibt es nur, solange eine Sitzung läuft.
 - **Anki** (Morpha-Add-on ab 0.12): im Fokus eine feine Linie und leise die Restzeit, in der
-  Pause und beim Warten eine Zeile mit *Weiter* und *Beenden*.
+  Pause und beim Warten eine Zeile mit *Weiter* und *Beenden*; ab 0.16 auch Anhalten und
+  Beenden im Menü *Extras*.
 - **Morpha**: eine Leiste oben im Fenster; beim Warten startet `Enter` die nächste Runde.
 
 Morpha holt sich dabei nie selbst nach vorn. Schliesst du das Fenster (Mac), läuft die
@@ -499,8 +507,9 @@ blanko, gemerkt pro Vorlesung. Das Blatt scrollt mit Trackpad, Mausrad oder Fing
 Schreiben nach rechts und unten mit. Ein roter Punkt am Knopf zeigt, dass daneben oder
 darunter etwas steht.
 
-**Zoomen.** Zwei Finger, Trackpad-Pinch oder Strg/⌘ + Mausrad. Der Knopf oben rechts
-(zeigt die Prozent) setzt zurück.
+**Zoomen.** Zwei Finger, Trackpad-Pinch oder Strg/⌘ + Mausrad – hinein und auch heraus,
+bis die Folie kleiner ist als der Platz. Der Knopf oben rechts (zeigt die Prozent) setzt
+zurück.
 
 **Rückspulen (`Z`).** Kurz abgelenkt? `Z` zeigt die letzten 90 Sekunden als Text über der
 Folie, mit „vor 40 s“ an jedem Satz; nochmal `Z` holt den neuesten Stand. „als ?
@@ -884,6 +893,26 @@ Bis 0.9 hiess er `Vorlesung-Sync`; Morpha übernimmt ihn beim ersten Start (sieh
 [unten](#von-vorlesung-sync-zu-morpha)). Ablage (Windows: Datei) → „Datenordner zeigen“
 öffnet ihn. Das Log steht dort unter `logs/app.log`.
 
+### Datensicherung
+
+Vor einem Update oder wenn du etwas ausprobierst: Einstellungen → **Datensicherung**.
+Einmal unter „Ordner“ wählen, wohin die Sicherungen kommen – am besten ein externes
+Laufwerk oder ein Cloud-Ordner (iCloud Drive, OneDrive), nicht der Datenordner selbst.
+„Sichern“ legt dort eine Datei `Morpha-Sicherung-<Datum>.zip` an, mit allem: Vorlesungen
+samt Ton und Folien, Texte mit Markierungen, Lernstand und Stundenplan, Gespräche mit Claude
+und die Einstellungen. Nicht dabei sind die Whisper-Modelle, die lädt Morpha bei Bedarf neu.
+Eine Sicherung ist etwa so gross wie alle Aufnahmen zusammen, ein Semester sind schnell ein
+paar GB. Ist ein Update da, steht in den Einstellungen dabei, wann du zuletzt gesichert
+hast. Während einer Aufnahme geht beides nicht.
+
+**Zurückholen:** „Wiederherstellen …“, eine Sicherung wählen (die aus dem Ordner oder mit
+„Andere …“ eine beliebige). Morpha zeigt, was drin ist, fragt nach, packt sie aus und
+startet neu. Was vorher da war, wird nicht gelöscht: Es liegt im Datenordner unter „Vor
+Wiederherstellung <Datum>“ – löschen, wenn alles passt. Hat ein Update etwas kaputt
+gemacht: erst „Vorherige Version installieren …“, dann die Sicherung von vor dem Update
+wiederherstellen. Die ZIP öffnet auch jeder Entpacker, falls du nur eine einzelne Datei
+brauchst.
+
 ## Von Vorlesung-Sync zu Morpha
 
 Bis 0.9 hiess die App Vorlesung-Sync. Wer sie hat, bekommt Morpha (ab 0.10.0) über das
@@ -1025,6 +1054,11 @@ Was das Add-on macht:
   Dafür müssen Morpha und Anki offen sein, und Claude Code braucht eine eigene Anmeldung
   (`claude auth login`, die von Claude Desktop zählt nicht). Jeder Tastendruck und jede
   Nachfrage zählt auf dein Abo; Morpha speichert davon nichts.
+- **Deutsche Version mit `↓`:** Hat eine Karte unten ein aufklappbares „Deutsch“ (bei den
+  Notiztypen „Vorlesung Basic-Karte“ und „Vorlesung Cloze-Karte“, sobald das Feld Deutsch
+  gefüllt ist), klappt der Pfeil nach unten es auf und wieder zu – wie ein Klick darauf.
+  Ohne deutsche Version scrollt der Pfeil wie gewohnt. Eine andere Taste: in Anki unter
+  Extras → Erweiterungen → Morpha → Konfiguration, `ausklappen_taste`. Ab Add-on 0.15.
 - **Übersicht und Lernfortschritt:** siehe [Karten und Lernfortschritt](#karten-und-lernfortschritt).
 
 Welches Deck zu welchem Kurs gehört: auf der Kursseite ⋯ → „Anki-Deck …“ (oder Claude
