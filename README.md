@@ -1100,6 +1100,7 @@ Morpha, in Claude Code als Befehl:
 | Zusammenfassung | `/mcp__morpha__zusammenfassung` | Kernaussagen, Ablauf mit Folien, Begriffe, Prüfungsrelevantes und Offenes – erst nach deinem Okay in die App |
 | Folien zuordnen | `/mcp__morpha__folien` | wenn nicht weitergeklickt wurde: welche Folie wann lief, aus Transkript und Folientexten – erst nach deinem Okay in die App. In Morpha: ⋯ → „Mit Claude zuordnen“ in der Vorlesung |
 | Syllabus | `/mcp__morpha__syllabus` | Syllabus lesen, Lese-Aufgaben mit Fristen vorschlagen, nach Bestätigung anlegen |
+| Kurs aufräumen | `/mcp__morpha__aufraeumen` | listet, was in einem Kurs nicht stimmt – fehlende Folien, nicht transkribierte Aufnahmen, Vorlesungen ohne Sitzung, doppelte oder leere, Scans ohne Text oder quer – und was Claude dagegen tun würde; geändert wird erst nach deinem Okay |
 | Anki lernen | `/mcp__morpha__anki_lernen` | fällige Karten eines Kurses oder eines Unterdecks im Chat abfragen, Unverstandenes aus der Vorlesung erklären; bewertet wird danach in Anki. Fürs Unterdeck kopiert ihn „Mit Claude abfragen“ in Morpha |
 
 **Kursprofil:** *„Leg mit mir das Kursprofil für Mikro an“* – Claude fragt nach Prüfungsform,
@@ -1110,6 +1111,18 @@ Lernweise und Zeit pro Woche. Ein Profil, das schon in einer Datei steht, übern
 auf Zuruf. Die Prompts von *Nachbereiten* bis *Probeklausur* richten sich danach: Mit `kurs`
 kennt Claude Prüfung, Phase und Lernweise, und hat ein Block im Profil einen eigenen
 Ablauf (etwa „Paper nach Q1–Q5“), führt Claude dich durch diesen.
+
+**Kurse aufräumen:** Claude kann Vorlesungen umbenennen, in einen anderen Kurs
+verschieben und der richtigen Sitzung im Fahrplan zuordnen, Folien aus dem Kursordner
+anhängen oder durch eine neue Fassung ersetzen, die Transkription starten (mehrere laufen
+nacheinander, nie während einer Aufnahme), Vorlesungen schon vor der Sitzung mit den
+Folien anlegen, leere Vorlesungen löschen (nur solche ohne Aufnahme – alles andere löschst
+du selbst in der App), Kurse umbenennen, zusammenlegen, einfärben oder archivieren, Texte
+umbenennen und einem Kurs zuordnen, gescannte Seiten drehen und neu erkennen lassen, in
+allen Texten suchen und doppelte Begriffe zusammenlegen. Zum Beispiel: *„Häng an Mikro
+VL07 die Folien aus dem Kursordner und starte die Transkription“* oder *„Räum Mikro auf“*.
+Titel, Kurs und Folien gehören nicht zum Lernstand: Diese Änderungen lassen sich nicht
+über den Verlauf zurücknehmen, Claude nennt dir deshalb jeweils den Stand davor.
 
 Sonst einfach fragen: „Erklär mir meine ?-Stellen aus Mikro VL05“, „Frag mich die
 Definitionen von letzter Woche ab“, „Mach Anki-Karten zu den ★-Stellen von gestern“ – oder
